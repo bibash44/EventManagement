@@ -1,0 +1,90 @@
+.nav-container {
+  position: fixed;
+  width: 100%;
+  z-index: 99999;
+}
+
+nav {
+  /* background: #B6121B; */
+  background: linear-gradient(left, #B6121B, #db4c4c);
+  box-shadow: 5px 5px 25px black;
+  font-family: Cambria;
+}
+
+.navbar-brand{
+  font-size:1.5pc;
+}
+
+nav a {
+  color: white;
+}
+
+ul li {
+  color: white;
+  font-weight: bold;
+}
+
+ul li a {
+  text-decoration: none;
+}
+
+.nav-hover:hover {
+  border-bottom: 3px solid #c5af84;
+  border-radius: 5px;
+}
+
+.services-menu {
+  background: rgb(182, 18, 27, 0.9);
+}
+
+.services-menu a {
+  text-decoration: none;
+  color: white;
+  font-family: Cambria;
+}
+
+#search-bar {
+  box-shadow: 5px 5px 25px black;
+  display: none;
+  background: rgb(255, 255, 255);
+}
+
+#txt-nav-bar-search {
+  /* display: none; */
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  background: none;
+  width: 95%;
+  font-family: Cambria;
+}
+
+#txt-nav-bar-search::placeholder {
+  font-style: italic;
+}
+
+#services-menu {
+  display: none;
+}
+
+#services-menu a {
+  font-size: 18px;
+}
+
+#nav-search:hover {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+#nav-search-icon {
+  color: black;
+  width: 5%;
+}
+
+.active-nav-bar{
+  border-bottom: 3px solid rgba(197, 175, 132, 1);
+  border-radius: 5px;
+}
+
+#brandfname{
+
+}

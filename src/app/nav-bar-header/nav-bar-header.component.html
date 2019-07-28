@@ -1,0 +1,74 @@
+<div class="nav-container">
+  <nav class="navbar navbar-expand-lg navbar-dark p-4">
+    <a class="navbar-brand mr-5" href="#">
+      <!-- <img src="assets/images/logo2.png" id="site-logo"> -->
+      <span id="brandfname">Best </span>
+      <span id="brandmname">Event </span>
+      <span id="brandlname">Management </span>
+    </a>
+    <button class="navbar-toggler" type="button" (click)="openNav()" data-toggle="collapse"
+      data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item mr-3">
+          <a href="/" id="nav-home" class="nav-hover">
+            <span *ngIf="activenavhome=='activehome'" class="active-nav-bar"> HOME </span>
+            <span *ngIf="activenavhome==null" class="nav-hover"> HOME </span>
+          </a>
+        </li>
+        <li class="nav-item mr-3">
+          <a href="#" id="nav-clients" class="nav-hover">CLIENTS</a>
+        </li>
+        <li class="nav-item mr-3">
+          <a href=# id="nav-services" (click)="showServices()" class="nav-hover"> SERVICES </a>
+          <i class="fa fa-chevron-down"></i>
+        </li>
+
+        <li class="nav-item mr-3">
+          <a href="#" id="nav-portfolio" class="nav-hover">PROTFOLIO</a>
+        </li>
+
+        <li class="nav-item mr-3">
+          <a href="#" id="nav-contact" class="nav-hover">CONTACT</a>
+        </li>
+
+        <li class="nav-item mr-3">
+          <a href="#" id="nav-about" class="nav-hover">ABOUT</a>
+        </li>
+
+        <li class="nav-item mr-3">
+          <a href="#" id="nav-search" (click)="showSearchInput()"> <i class="fa fa-search"></i> </a>
+        </li>
+
+
+        <li class="nav-item mr-5">
+
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="row">
+    <div class="container-fluid no-gutters">
+      <div class="services-menu col-sm-12 p-3" id="services-menu" aria-labelledby="navbarDropdown">
+        <a href="#" class="col-sm-4">Weeding</a>
+        <a href="#" class="col-sm-4">Party</a>
+        <a href="#" class="col-sm-4">Birthday</a>
+      </div>
+
+
+      <div class="w-100 no-gutters p-3" id="search-bar">
+        <input class="no-gutters" type="text" id="txt-nav-bar-search"
+          placeholder="Search .............................">
+        <i class="fa fa-search" id="nav-search-icon"></i>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
