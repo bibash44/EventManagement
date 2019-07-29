@@ -1,0 +1,35 @@
+.footer-container{
+  border:5px solid black;
+  font-family: cambria;
+  text-align: center;
+  background: rgba(0, 0, 0, 1);
+  color: white;
+}
+
+.copyright-footer{
+  font-size: 18px;
+}
+
+.contact_icons a{
+  color: white;
+  text-decoration: none;
+  font-size: 25px;
+
+}
+
+#contact-facebook :hover{
+color: #3F51B5;
+}
+
+#contact-twitter :hover{
+  color: #03A9F4;
+}
+
+#contact-instagram :hover{
+  color: #F50057;
+}
+
+#contact-snapchat :hover{
+  color: #FFEE58;
+}
+

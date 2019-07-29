@@ -1,13 +1,14 @@
 .nav-container {
-  position: fixed;
   width: 100%;
   z-index: 99999;
+  position: fixed;
+  box-shadow: 5px 5px 25px black;
 }
 
 nav {
-  /* background: #B6121B; */
-  background: linear-gradient(left, #B6121B, #db4c4c);
-  box-shadow: 5px 5px 25px black;
+  background: rgba(0, 0, 0, 0.8);
+  /* background: linear-gradient(left, , #db4c4c); */
+
   font-family: Cambria;
 }
 

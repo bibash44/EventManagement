@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { NavBarHeaderComponent } from './nav-bar-header/nav-bar-header.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ImagesliderComponent } from './homepage/imageslider/imageslider.component';
+import { ClientspageComponent } from './clientspage/clientspage.component';
+import { FootercomponentComponent } from './footercomponent/footercomponent.component';
 
 
 
@@ -16,6 +18,8 @@ import { ImagesliderComponent } from './homepage/imageslider/imageslider.compone
     NavBarHeaderComponent,
     HomepageComponent,
     ImagesliderComponent,
+    ClientspageComponent,
+    FootercomponentComponent,
 
   ],
   imports: [
