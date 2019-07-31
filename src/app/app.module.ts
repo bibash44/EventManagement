@@ -9,6 +9,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { ImagesliderComponent } from './homepage/imageslider/imageslider.component';
 import { ClientspageComponent } from './clientspage/clientspage.component';
 import { FootercomponentComponent } from './footercomponent/footercomponent.component';
+import { ContactuspageComponent } from './contactuspage/contactuspage.component';
 
 
 
@@ -20,6 +21,7 @@ import { FootercomponentComponent } from './footercomponent/footercomponent.comp
     ImagesliderComponent,
     ClientspageComponent,
     FootercomponentComponent,
+    ContactuspageComponent,
 
   ],
   imports: [

@@ -1,5 +1,16 @@
+.ngb-carousel {
+  border: none;
+}
 
-img {
+.picsum-img-wrapper img {
+  position: relative;
+  float: left;
   width: 100%;
-
+  height: 600px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('../../../assets/sliderimages/sliderimage2.png');
+  outline: none;
+  border: none;
 }

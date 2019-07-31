@@ -1,6 +1,6 @@
-<div class="nav-container">
+<div class="nav-container animated bounceInUp">
   <nav class="navbar navbar-expand-lg navbar-dark p-4">
-    <a class="navbar-brand mr-5" href="#">
+    <a class="navbar-brand mr-5" href="/">
       <!-- <img src="assets/images/logo2.png" id="site-logo"> -->
       <span id="brandfname">Best </span>
       <span id="brandmname">Event </span>
@@ -21,10 +21,13 @@
           </a>
         </li>
         <li class="nav-item mr-3">
-          <a href="#" id="nav-clients" class="nav-hover">CLIENTS</a>
+          <a href="clients" id="nav-client" class="nav-hover">
+            <span *ngIf="activenavclient=='activeclient'" class="active-nav-bar"> CLIENTS </span>
+            <span *ngIf="activenavclient==null" class="nav-hover"> CLIENTS </span>
+          </a>
         </li>
         <li class="nav-item mr-3">
-          <a href=# id="nav-services" (click)="showServices()" class="nav-hover"> SERVICES </a>
+          <a id="nav-services" (click)="showServices()" class="nav-hover"> SERVICES </a>
           <i class="fa fa-chevron-down"></i>
         </li>
 
@@ -33,7 +36,10 @@
         </li>
 
         <li class="nav-item mr-3">
-          <a href="#" id="nav-contact" class="nav-hover">CONTACT</a>
+          <a href="contact" id="nav-contact" class="nav-hover">
+            <span *ngIf="activenavcontact=='activecontact'" class="active-nav-bar"> CONTACT </span>
+            <span *ngIf="activenavcontact==null" class="nav-hover"> CONTACT </span>
+          </a>
         </li>
 
         <li class="nav-item mr-3">
@@ -41,7 +47,7 @@
         </li>
 
         <li class="nav-item mr-3">
-          <a href="#" id="nav-search" (click)="showSearchInput()"> <i class="fa fa-search"></i> </a>
+          <a id="nav-search" (click)="showSearchInput()"> <i class="fa fa-search"></i> </a>
         </li>
 
 
@@ -53,20 +59,16 @@
   </nav>
 
 
-      <div class="services-menu col-sm-12 p-3" id="services-menu" aria-labelledby="navbarDropdown">
-        <a href="#" class="col-sm">Weeding</a>
-        <a href="#" class="col-sm">Party</a>
-        <a href="#" class="col-sm">Birthday</a>
-      </div>
+  <div class="services-menu col-sm-12 p-3" id="services-menu" aria-labelledby="navbarDropdown">
+    <a href="#" class="col-sm">Weeding</a>
+    <a href="#" class="col-sm">Party</a>
+    <a href="#" class="col-sm">Birthday</a>
+  </div>
 
 
-      <div class="w-100 no-gutters p-3" id="search-bar">
-        <input class="no-gutters" type="text" id="txt-nav-bar-search"
-          placeholder="Search .............................">
-        <i class="fa fa-search" id="nav-search-icon"></i>
-      </div>
+  <div class="w-100 no-gutters p-3" id="search-bar">
+    <input class="no-gutters" type="text" id="txt-nav-bar-search" placeholder="Search .............................">
+    <i class="fa fa-search" id="nav-search-icon"></i>
+  </div>
 
-    </div>
-
-
-
+</div>

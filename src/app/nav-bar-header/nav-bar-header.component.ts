@@ -10,6 +10,8 @@ import { ActivatedRoute } from '@angular/router';
 export class NavBarHeaderComponent implements OnInit {
 
   activenavhome = '';
+  activenavclient = '';
+  activenavcontact = '';
 
   openNav() {
     $('#navbarSupportedContent').fadeToggle(500);
@@ -32,9 +34,12 @@ export class NavBarHeaderComponent implements OnInit {
       .data
       .subscribe(data => {
         this.activenavhome = data.activehome;
+        this.activenavclient = data.activeclient;
+        this.activenavcontact = data.activecontact;
       });
 
-    console.log(this.activenavhome)
+    console.log(this.activenavhome);
+    console.log(this.activenavclient);
 
   }
 
