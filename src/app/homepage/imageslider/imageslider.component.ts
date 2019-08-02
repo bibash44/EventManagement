@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-imageslider',
@@ -6,11 +7,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./imageslider.component.css']
 })
 export class ImagesliderComponent implements OnInit {
-  images = [1, 2, 3].map(() => `https://picsum.photos/900/500?random&t=${Math.random()}`);
+  sliderimages = [
+    { src: 'assets/success-story-images/sample1.jpg' },
+
+    { src: 'assets/success-story-images/sample2.jpg' },
+
+    { src: 'assets/success-story-images/sample3.jpg' }
+  ];
+
+
 
   constructor() { }
 
+
+
+
   ngOnInit() {
+
+
   }
 
 }

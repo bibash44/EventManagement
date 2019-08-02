@@ -10,6 +10,9 @@ import { ImagesliderComponent } from './homepage/imageslider/imageslider.compone
 import { ClientspageComponent } from './clientspage/clientspage.component';
 import { FootercomponentComponent } from './footercomponent/footercomponent.component';
 import { ContactuspageComponent } from './contactuspage/contactuspage.component';
+import { OurSuccessStoryComponentComponent } from './homepage/our-success-story-component/our-success-story-component.component';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+// import { LightboxModule, CarouselModule, ModalsModule, WavesModule } from 'angular-bootstrap-md';
 
 
 
@@ -22,13 +25,16 @@ import { ContactuspageComponent } from './contactuspage/contactuspage.component'
     ClientspageComponent,
     FootercomponentComponent,
     ContactuspageComponent,
+    OurSuccessStoryComponentComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
-  ],
+    NgbModule,
+    MDBBootstrapModule,
+    MDBBootstrapModule.forRoot()
+,  ],
   providers: [],
   bootstrap: [AppComponent]
 })
