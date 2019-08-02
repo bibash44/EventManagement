@@ -1,0 +1,34 @@
+<!-- <div class="row">
+    <mdb-image-modal [modalImages]="imagesBasic" type="no-margin"></mdb-image-modal>
+  </div> -->
+<!--Section: gallery-->
+<section id="gallery" class="text-center py-5">
+
+  <!-- Container -->
+  <div class="container-fluid">
+
+    <!-- Section heading -->
+
+    <!-- Section description -->
+
+
+    <div id="success-gallery" class="animated mr-0">
+      <div class="container">
+        <div class="row no-gutters m-0 p-0 mr-0" id="gallery-row">
+            <h2 class="font-weight-bolder m-2 col-md-3"> </h2>
+            <h2 class="font-weight-bolder m-2 col-md-3"> Our Success Story</h2>
+            <h2 class="font-weight-bolder m-2 col-md-3"> </h2>
+          <div class="col-md-3 m-2 no-gutters" *ngFor="let photo of images" id="images-container">
+            <a href="{{photo}}" target="_blank">
+            <img src="{{photo}}" id="image">
+            </a>
+            <span id="image-caption">Abc</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Container -->
+
+</section>
+<!--Section: gallery-->
