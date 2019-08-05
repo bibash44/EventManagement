@@ -12,6 +12,8 @@ import { FootercomponentComponent } from './footercomponent/footercomponent.comp
 import { ContactuspageComponent } from './contactuspage/contactuspage.component';
 import { OurSuccessStoryComponentComponent } from './homepage/our-success-story-component/our-success-story-component.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { ServeicesPageComponent } from './serveices-page/serveices-page.component';
+
 // import { LightboxModule, CarouselModule, ModalsModule, WavesModule } from 'angular-bootstrap-md';
 
 
@@ -26,6 +28,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     FootercomponentComponent,
     ContactuspageComponent,
     OurSuccessStoryComponentComponent,
+    ServeicesPageComponent,
 
   ],
   imports: [

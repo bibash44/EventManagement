@@ -20,8 +20,8 @@ export class NavBarHeaderComponent implements OnInit {
   }
 
   showServices() {
-    $('#services-menu').fadeToggle(500);
-    $('#services-menu').addClass('fadeInDown');
+    $('#services-menu').fadeToggle(200);
+    // $('#services-menu').addClass('fadeInDown');
   }
 
   showSearchInput() {

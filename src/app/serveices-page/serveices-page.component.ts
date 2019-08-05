@@ -1,14 +1,12 @@
-import { Component, OnInit, Inject, HostListener } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
+import { Component, OnInit, HostListener } from '@angular/core';
 import * as $ from 'jquery';
 
 @Component({
-  selector: 'app-our-success-story-component',
-  templateUrl: './our-success-story-component.component.html',
-  styleUrls: ['./our-success-story-component.component.css']
+  selector: 'app-serveices-page',
+  templateUrl: './serveices-page.component.html',
+  styleUrls: ['./serveices-page.component.css']
 })
-export class OurSuccessStoryComponentComponent implements OnInit {
-
+export class ServeicesPageComponent implements OnInit {
 
   images = [
     'assets/success-story-images/sample1.jpg',
@@ -30,7 +28,8 @@ export class OurSuccessStoryComponentComponent implements OnInit {
     'assets/success-story-images/sample2.jpg',
   ];
 
-  constructor(@Inject(DOCUMENT) private document: Document) { }
+
+  constructor() { }
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
@@ -38,16 +37,13 @@ export class OurSuccessStoryComponentComponent implements OnInit {
     console.log(window.scrollY);
     var scroll = window.scrollY;
 
-    if (scroll > 500) {
-      $('#success-gallery').addClass('flipInX');
+    if (scroll > 20) {
+      $('#services').addClass('flipInY');
     }
   }
 
 
-
   ngOnInit() {
-
-
   }
 
 }
