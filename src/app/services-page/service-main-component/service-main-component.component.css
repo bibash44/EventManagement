@@ -1,0 +1,18 @@
+#services-menu a {
+  font-size: 18px;
+}
+
+.services-menu {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.services-menu a {
+  text-decoration: none;
+  color: white;
+  font-family: Cambria;
+  cursor: pointer;
+}
+
+.active-services{
+  border-bottom: 3px solid rgba(197, 175, 132, 1);
+}

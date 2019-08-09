@@ -27,8 +27,10 @@
           </a>
         </li>
         <li class="nav-item mr-3">
-          <a id="nav-services" (click)="showServices()" class="nav-hover"> SERVICES </a>
-          <i class="fa fa-chevron-down"></i>
+          <a href="services" id="nav-services"  class="nav-hover">
+              <span *ngIf="activenavservice=='activeservice'" class="active-nav-bar"> SERVICES </span>
+              <span *ngIf="activenavservice==null" class="nav-hover"> SERVICES </span>
+          </a>
         </li>
 
         <li class="nav-item mr-3">
@@ -57,13 +59,6 @@
       </ul>
     </div>
   </nav>
-
-
-  <div class="services-menu col-sm-12 p-3 animated" id="services-menu" aria-labelledby="navbarDropdown">
-    <a href="#" class="col-sm">Weeding</a>
-    <a href="#" class="col-sm">Party</a>
-    <a href="#" class="col-sm">Birthday</a>
-  </div>
 
 
   <div class="w-100 no-gutters p-4 animated" id="search-bar">

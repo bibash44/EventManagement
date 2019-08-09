@@ -9,20 +9,27 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/autofill/2.3.3/css/autoFill.dataTables.min.css">
+  <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/autofill/2.3.3/js/dataTables.autoFill.min.js"></script>
 </head>
 
+
+
+
 <body>
+
+
   <app-root></app-root>
+
+  <script>
+    $(document).ready( function () {
+    $('#table_id').DataTable();
+} );
+  </script>
 </body>
 
 </html>
 
-<script>
-  wow = new WOW({
-    boxClass: 'wow', // default
-    animateClass: 'animated', // default
-    offset: 0, // default
-    mobile: true, // default
-    live: true // default
-  })
-</script>
+

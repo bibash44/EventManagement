@@ -1,0 +1,36 @@
+
+<div class="booking-weeding container-fluid p-2 mb-5">
+  <div class="weeding-booking-heading p-3">Make booking </div>
+
+
+  <div class="input-name m-3">
+    <i class="fa fa-user input-icons p-2"></i>
+    <input class="p-2" placeholder="Enter your name *" type="text" name="name" id="name" ngModel #name="ngModel">
+  </div>
+
+
+  <div class="input-phone m-3">
+    <i class="fa fa-phone input-icons p-2"></i>
+    <input class="p-2" placeholder="Enter your phone number *" type="text" name="phone_number" id="phone_number" ngModel
+      #phone_number="ngModel">
+  </div>
+
+  <div class="input-email m-3">
+    <i class="fa fa-envelope input-icons p-2"></i>
+    <input class="p-2" placeholder="Enter your phone email *" type="text" name="email" id="email" ngModel
+      #email="ngModel">
+  </div>
+
+
+  <div class="input-prefered-location m-3">
+    <i class="fa fa-map-marker input-icons p-2"></i>
+    <input class="p-2" placeholder="Enter your prefered-location (optional)" type="text" name="prefered_location"
+      id="prefered_location" ngModel #prefered_location="ngModel">
+  </div>
+
+
+  <div class="input-prefered-location m-3">
+    <button (click)="bookingFormSubmit(name, phone_number, email, prefered_location)" class="btn btn-primary m-3 p-2">Submit booking details</button>
+  </div>
+
+</div>

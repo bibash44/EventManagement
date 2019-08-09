@@ -1,8 +1,10 @@
+import { WeedingComponentComponent } from './services-page/weeding-component/weeding-component.component';
 import { ContactuspageComponent } from './contactuspage/contactuspage.component';
 import { ClientspageComponent } from './clientspage/clientspage.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomepageComponent } from './homepage/homepage.component';
+import { ServiceMainComponentComponent } from './services-page/service-main-component/service-main-component.component';
 
 
 const routes: Routes = [
@@ -22,6 +24,12 @@ const routes: Routes = [
     path: 'contact',
     component: ContactuspageComponent,
     data: { activecontact: 'activecontact' }
+  },
+
+  {
+    path: 'services',
+    component: ServiceMainComponentComponent,
+    data: { activservice: 'activeservice' }
   },
 ];
 

@@ -1,0 +1,24 @@
+<app-nav-bar-header></app-nav-bar-header>
+
+<div class="services-menu col-sm-12 p-3 animated" id="services-menu" aria-labelledby="navbarDropdown">
+  <a  class="active-services m-2" id="weeding-service" (click)="showWeedingService()">Weeding</a>
+  <a class="m-2" id="party-service" (click)="showPartyService()">Party</a>
+  <a  class="m-2" id="birthday-service" (click)="showBirthdayService()">Birthday</a>
+</div>
+
+
+<div class="weeding-component">
+  <app-weeding-component></app-weeding-component>
+</div>
+
+<div class="birthday-component" style="display: none">
+  <app-birthday-component></app-birthday-component>
+</div>
+
+<div class="party-component" style="display: none">
+  <app-party-component></app-party-component>
+</div>
+
+<app-booking-form-component></app-booking-form-component>
+
+<app-footercomponent></app-footercomponent>

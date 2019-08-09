@@ -8,7 +8,7 @@ import { DOCUMENT } from '@angular/common';
 })
 export class HomepageComponent implements OnInit {
 
-  constructor(@Inject(DOCUMENT) private document: Document) { }
+  constructor() { }
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
@@ -20,6 +20,7 @@ export class HomepageComponent implements OnInit {
       $('#success-gallery').addClass('fadeInRight');
     }
   }
+
 
   ngOnInit() {
 

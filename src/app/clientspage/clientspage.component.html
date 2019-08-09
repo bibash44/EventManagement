@@ -1,2 +1,25 @@
 <app-nav-bar-header></app-nav-bar-header>
-<app-footercomponent></app-footercomponent>
+
+<br>
+<br>
+<br>
+<div class="clients-container container-fluid w-100">
+  <div class="clients-container-heading w-100 align-items-center col">
+    <h2>What does our client say</h2>
+  </div>
+
+  <div class="clients-details-container container-fluid m-0">
+    <div class="client-details-content row">
+
+      <div class="col-sm-3 client-details p-2 mt-5 mb-4 mr-5" *ngFor="let client of clients_details">
+        <img src="{{client.image}}" alt="" class="img-client"> <br>
+        <span class="clients-saying font-italic">  " {{client.client_saying}} "</span> <br>
+        <span class="client-name font-weight-bold"> {{client.client_name}}</span> <br>
+        <span class="client-company font-weight-bold"> {{client.client_company}} </span>
+      </div>
+    </div>
+  </div>
+
+
+
+  <app-footercomponent></app-footercomponent>

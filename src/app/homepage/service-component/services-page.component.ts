@@ -2,10 +2,16 @@ import { Component, OnInit, HostListener } from '@angular/core';
 import * as $ from 'jquery';
 
 @Component({
-  selector: 'app-serveices-page',
-  templateUrl: './serveices-page.component.html',
-  styleUrls: ['./serveices-page.component.css']
+  selector: 'app-services-page',
+  templateUrl: './services-page.component.html',
+  styleUrls: ['./services-page.component.css']
 })
+
+// @Component({
+//   selector:'app-services-page',
+//   templateUrl:'./services-page.component.html',
+//   styleUrls:[]
+// })
 export class ServeicesPageComponent implements OnInit {
 
   images = [
@@ -29,6 +35,7 @@ export class ServeicesPageComponent implements OnInit {
   ];
 
 
+
   constructor() { }
 
   @HostListener('window:scroll', [])
@@ -44,6 +51,7 @@ export class ServeicesPageComponent implements OnInit {
 
 
   ngOnInit() {
+
   }
 
 }

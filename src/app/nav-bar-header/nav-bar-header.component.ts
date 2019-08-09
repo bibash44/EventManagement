@@ -13,16 +13,15 @@ export class NavBarHeaderComponent implements OnInit {
   activenavhome = '';
   activenavclient = '';
   activenavcontact = '';
+  activenavservice = '';
+
+
 
   openNav() {
     $('#navbarSupportedContent').fadeToggle(500);
     // $('#site-logo').fadeOut();
   }
 
-  showServices() {
-    $('#services-menu').fadeToggle(200);
-    // $('#services-menu').addClass('fadeInDown');
-  }
 
   showSearchInput() {
     $('#search-bar').fadeToggle(500);
@@ -31,7 +30,7 @@ export class NavBarHeaderComponent implements OnInit {
 
   }
 
-  constructor(private routeDetails: ActivatedRoute, @Inject(DOCUMENT) private document: Document) { }
+  constructor(private routeDetails: ActivatedRoute) { }
 
 
 
@@ -72,7 +71,10 @@ export class NavBarHeaderComponent implements OnInit {
         this.activenavhome = data.activehome;
         this.activenavclient = data.activeclient;
         this.activenavcontact = data.activecontact;
+        this.activenavservice = data.activservice;
       });
+
+    console.log(this.activenavservice);
 
 
 
