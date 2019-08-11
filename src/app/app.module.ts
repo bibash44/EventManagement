@@ -29,6 +29,7 @@ import { ServiceMainComponentComponent } from './services-page/service-main-comp
 import { BirthdayComponentComponent } from './services-page/birthday-component/birthday-component.component';
 import { BookingFormComponentComponent } from './services-page/booking-form-component/booking-form-component.component';
 import { PartyComponentComponent } from './services-page/party-component/party-component.component';
+import { AdminLoginPageComponent } from './admin-login-page/admin-login-page.component';
 
 
 // import { LightboxModule, CarouselModule, ModalsModule, WavesModule } from 'angular-bootstrap-md';
@@ -50,7 +51,8 @@ import { PartyComponentComponent } from './services-page/party-component/party-c
     ServiceMainComponentComponent,
     BirthdayComponentComponent,
     BookingFormComponentComponent,
-    PartyComponentComponent
+    PartyComponentComponent,
+    AdminLoginPageComponent
 
 
   ],

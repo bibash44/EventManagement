@@ -1,6 +1,6 @@
 
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
-
+import * as $ from 'jquery';
 
 
 @Component({

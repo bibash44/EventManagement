@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ServiceMainComponentComponent } from './services-page/service-main-component/service-main-component.component';
+import { AdminLoginPageComponent } from './admin-login-page/admin-login-page.component';
 
 
 const routes: Routes = [
@@ -30,6 +31,11 @@ const routes: Routes = [
     path: 'services',
     component: ServiceMainComponentComponent,
     data: { activservice: 'activeservice' }
+  },
+
+  {
+    path: 'admin/login',
+    component: AdminLoginPageComponent
   },
 ];
 

@@ -21,8 +21,11 @@ export class ServiceMainComponentComponent implements OnInit {
     $('.weeding-component').fadeIn(100);
 
     $('#weeding-service').addClass('active-services');
+    $('.weeding-component').addClass('bounceInUp');
+
     $('#birthday-service').removeClass('active-services');
     $('#party-service').removeClass('active-services');
+
     this.service_category = 'Weeding';
 
   }
@@ -35,7 +38,9 @@ export class ServiceMainComponentComponent implements OnInit {
 
     $('#weeding-service').removeClass('active-services');
     $('#birthday-service').removeClass('active-services');
+
     $('#party-service').addClass('active-services');
+    $('.party-component').addClass('bounceInUp');
 
     this.service_category = 'Party';
 
@@ -50,7 +55,9 @@ export class ServiceMainComponentComponent implements OnInit {
 
     $('#weeding-service').removeClass('active-services');
     $('#birthday-service').addClass('active-services');
+
     $('#party-service').removeClass('active-services');
+    $('.birthday-component').addClass('bounceInUp');
 
     this.service_category = 'Birthday';
 

@@ -1,0 +1,51 @@
+<div id="whitebackground"></div>
+
+
+<div class="w-100  login-contanier">
+
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm"></div>
+
+      <div class="col-sm">
+        <div class="login-form w-100 p-5">
+
+          <div id="login-heading" class="w-100">
+            <img src="../../assets/images/logo2.png" alt=""> <br>
+            <span>Login</span> <br> <br>
+          </div>
+
+
+          <div class="input-fields w-100">
+
+            <div class="w-100 input-email">
+             <input type="email" name="email" id="email" class="w-100 p-2" placeholder="Enter email *" ngModel #login_email="ngModel"> <br>
+              <span id="email-validation" class=""></span> <br> <br>
+            </div>
+
+            <div class="w-100 input-password">
+              <input type="password" name="password" id="password" class="w-100 p-2" placeholder="Enter password *" ngModel #login_password="ngModel"> <br>
+              <span id="password-validation"></span> <br> <br>
+            </div>
+
+
+            <div class="w-100 input-login-button">
+              <button class="w-100 btn btn-primary p-2" id="btn-login" (click)="adminLogin(login_email, login_password)"> Login </button>
+
+            </div>
+
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm"></div>
+    </div>
+  </div>
+
+
+
+</div>
