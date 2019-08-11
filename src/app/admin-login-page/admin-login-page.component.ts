@@ -8,23 +8,100 @@ import * as $ from 'jquery';
 })
 export class AdminLoginPageComponent implements OnInit {
 
-  email: string = '';
+  base_url: string = 'http://localhost:1954/';
+  getPassword(email) {
+    let emailLogin = email.value;
+    if (emailLogin == '') {
+      $('#email-validation').css({ 'color': 'red' });
+      $('#email-validation').text('Please enter your email *');
+      $('#email').focus();
+
+    } else if (!emailLogin.match('[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$')) {
+      $('#email-validation').css({ 'color': 'red' });
+      $('#email-validation').text('Please enter valid email *');
+      $('#email').val('')
+      $('#email').focus();
+    }
+
+    else {
+      $.ajax({
+        url: this.base_url + 'checkemail',
+        type: 'POST',
+        data: {
+          email: emailLogin
+        },
+        success: function (data) {
+          if (data == true) {
+            $('#email-validation').css({ 'color': 'green' });
+            $('#email-validation').text('New Password Requested, check your email and login');
+          }
+
+          else {
+            $('#email-validation').css({ 'color': 'red' });
+            $('#email-validation').text('Invalid username');
+            $('#email').val('');
+            $('#email').focus();
+          }
+        },
+        error: function (err) {
+          console.log(err);
+        }
+      });
+    }
+  }
+
 
   adminLogin(email, password) {
     let emailLogin = email.value;
     let passwordLogin = password.value;
 
     if (emailLogin == '') {
+      $('#email-validation').css({ 'color': 'red' });
       $('#email-validation').text('Please enter your email *');
       $('#email').focus();
 
     } else if (!emailLogin.match('[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$')) {
+      $('#email-validation').css({ 'color': 'red' });
       $('#email-validation').text('Please enter valid email *');
       $('#email').val('')
       $('#email').focus();
     }
-  }
 
+    else if (passwordLogin == '') {
+      $('#password-validation').css({ 'color': 'red' });
+      $('#password-validation').text('Please enter your password *');
+      $('#password').focus();
+
+    }
+    else {
+      $.ajax({
+        url: this.base_url + 'login',
+        type: 'POST',
+        data: {
+          email: emailLogin,
+          password: passwordLogin
+        },
+        success: function (data) {
+          if (data == true) {
+            $('#email-validation').css({ 'color': 'green' });
+            $('#email-validation').text('Success Login');
+            $('#password-validatioin').text('');
+          }
+
+          else {
+            $('#email-validation').css({ 'color': 'red' });
+            $('#email-validation').text('Invalid username name and password');
+            $('#email').focus();
+            $('#password-validation').text('');
+          }
+        },
+        error: function (err) {
+          console.log(err);
+        }
+      })
+    }
+
+  }
 
   constructor() { }
 
