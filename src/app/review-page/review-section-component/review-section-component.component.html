@@ -1,0 +1,20 @@
+<div class="review-section">
+  <div class="review-heading">
+    <h1>Reviews</h1>
+  </div>
+
+
+  <div class="review-content w-100 p-2">
+
+    <div class="row review-container no-gutters ml-2 mr-2 mb-3 p-2" *ngFor="let comment of comments">
+      <div class="container-fluid">
+        <div class="col-sm commment">
+          <span id="username">{{comment.username}} </span> <br>
+          <span id="user-comment"> {{comment.user_comment}} </span> <br>
+          <span id="comment-time"> {{comment.comment_time}} </span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

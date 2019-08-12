@@ -1,3 +1,4 @@
+import { ReviewPageComponent } from './review-page/review-page.component';
 import { PortfolioPageComponent } from './portfolio-page/portfolio-page.component';
 import { WeedingComponentComponent } from './services-page/weeding-component/weeding-component.component';
 import { ContactuspageComponent } from './contactuspage/contactuspage.component';
@@ -38,6 +39,12 @@ const routes: Routes = [
     path: 'portfolio',
     component: PortfolioPageComponent,
     data: { activeportfolio: 'activeportfolio' }
+  },
+
+  {
+    path: 'review',
+    component: ReviewPageComponent,
+    data: { activepreview: 'activepreview' }
   },
 
 

@@ -16,3 +16,8 @@
 .active-services{
   border-bottom: 3px solid rgba(197, 175, 132, 1);
 }
+
+.reviews{
+  width: 100%;
+  text-align: center;
+}

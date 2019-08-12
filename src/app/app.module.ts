@@ -36,6 +36,8 @@ import { WeedingImagesComponent } from './portfolio-page/weeding-images/weeding-
 import { BirthdayImagesComponent } from './portfolio-page/birthday-images/birthday-images.component';
 import { PartyImagesComponent } from './portfolio-page/party-images/party-images.component';
 import { AllImagesComponent } from './portfolio-page/all-images/all-images.component';
+import { ReviewSectionComponentComponent } from './review-page/review-section-component/review-section-component.component';
+import { ReviewFormComponentComponent } from './review-page/review-form-component/review-form-component.component';
 
 
 // import { LightboxModule, CarouselModule, ModalsModule, WavesModule } from 'angular-bootstrap-md';
@@ -64,7 +66,9 @@ import { AllImagesComponent } from './portfolio-page/all-images/all-images.compo
     WeedingImagesComponent,
     BirthdayImagesComponent,
     PartyImagesComponent,
-    AllImagesComponent
+    AllImagesComponent,
+    ReviewSectionComponentComponent,
+    ReviewFormComponentComponent
 
 
   ],
