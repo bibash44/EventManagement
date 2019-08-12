@@ -10,9 +10,6 @@ export class ReviewFormComponentComponent implements OnInit {
 
   name = '';
   comment = '';
-  emai = '';
-  prefered_location = '';
-
 
   commentFormSubmit(name, comment) {
     let nameValue = name.value;
