@@ -34,7 +34,10 @@
         </li>
 
         <li class="nav-item mr-3">
-          <a href="#" id="nav-portfolio" class="nav-hover">PROTFOLIO</a>
+          <a href="portfolio" id="nav-contact" class="nav-hover">
+            <span *ngIf="activenavportfolio=='activeportfolio'" class="active-nav-bar"> PORTFOLIO </span>
+            <span *ngIf="activenavportfolio==null" class="nav-hover"> PORTFOLIO </span>
+          </a>
         </li>
 
         <li class="nav-item mr-3">

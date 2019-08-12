@@ -14,6 +14,7 @@ export class NavBarHeaderComponent implements OnInit {
   activenavclient = '';
   activenavcontact = '';
   activenavservice = '';
+  activenavportfolio = '';
 
 
 
@@ -72,6 +73,7 @@ export class NavBarHeaderComponent implements OnInit {
         this.activenavclient = data.activeclient;
         this.activenavcontact = data.activecontact;
         this.activenavservice = data.activservice;
+        this.activenavportfolio = data.activeportfolio;
       });
 
     console.log(this.activenavservice);

@@ -30,6 +30,12 @@ import { BirthdayComponentComponent } from './services-page/birthday-component/b
 import { BookingFormComponentComponent } from './services-page/booking-form-component/booking-form-component.component';
 import { PartyComponentComponent } from './services-page/party-component/party-component.component';
 import { AdminLoginPageComponent } from './admin-login-page/admin-login-page.component';
+import { ReviewPageComponent } from './review-page/review-page.component';
+import { PortfolioPageComponent } from './portfolio-page/portfolio-page.component';
+import { WeedingImagesComponent } from './portfolio-page/weeding-images/weeding-images.component';
+import { BirthdayImagesComponent } from './portfolio-page/birthday-images/birthday-images.component';
+import { PartyImagesComponent } from './portfolio-page/party-images/party-images.component';
+import { AllImagesComponent } from './portfolio-page/all-images/all-images.component';
 
 
 // import { LightboxModule, CarouselModule, ModalsModule, WavesModule } from 'angular-bootstrap-md';
@@ -52,7 +58,13 @@ import { AdminLoginPageComponent } from './admin-login-page/admin-login-page.com
     BirthdayComponentComponent,
     BookingFormComponentComponent,
     PartyComponentComponent,
-    AdminLoginPageComponent
+    AdminLoginPageComponent,
+    ReviewPageComponent,
+    PortfolioPageComponent,
+    WeedingImagesComponent,
+    BirthdayImagesComponent,
+    PartyImagesComponent,
+    AllImagesComponent
 
 
   ],

@@ -1,3 +1,4 @@
+import { PortfolioPageComponent } from './portfolio-page/portfolio-page.component';
 import { WeedingComponentComponent } from './services-page/weeding-component/weeding-component.component';
 import { ContactuspageComponent } from './contactuspage/contactuspage.component';
 import { ClientspageComponent } from './clientspage/clientspage.component';
@@ -34,9 +35,30 @@ const routes: Routes = [
   },
 
   {
-    path: 'admin/login',
-    component: AdminLoginPageComponent
+    path: 'portfolio',
+    component: PortfolioPageComponent,
+    data: { activeportfolio: 'activeportfolio' }
   },
+
+
+
+
+
+  {
+    path: 'admin',
+
+    children: [
+      {
+        path: 'login',
+        component: AdminLoginPageComponent
+      },
+
+
+    ]
+
+  },
+
+
 ];
 
 @NgModule({
