@@ -1,4 +1,4 @@
-*{
+/* *{
   font-family: Cambria;
   color: black;
 }
@@ -35,4 +35,55 @@
 
 #comment-time{
   color: grey;
+} */
+
+* {
+  font-family: Cambria;
+}
+
+.comments-container {
+  text-align: center;
+  margin-top: 5%;
+}
+
+.comments-container-heading h2 {
+  text-align: center;
+  font-weight: bold;
+}
+
+.img-comment {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.comment-details {
+  border-radius: 5px;
+  box-shadow: 2px 5px 10px rgb(167, 163, 163);
+  margin-left: 5%;
+  border: 1px solid rgba(161, 157, 157);
+}
+
+.footer {
+  bottom: 0;
+  margin-top: 20%;
+  width: 100%;
+}
+
+#show-previous-images, #show-next-images {
+  z-index: 9999;
+  font-size: 3vh;
+  font-weight: bold;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+}
+
+.comment-date {
+  color: rgb(141, 141, 141);
+}
+
+.comment-name {
+  font-size: 2.5vh;
+  color: #0078D7;
 }

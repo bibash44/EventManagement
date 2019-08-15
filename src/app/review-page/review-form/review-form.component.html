@@ -1,0 +1,38 @@
+<div class="comment-form container-fluid p-3 mb-5">
+  <div class="form-comment-heading p-3">Make comment </div>
+
+  <div class="comment-validation alert alert-success p-3 mt-3" role="alert" id="comment-validation"
+    style="display: none"> </div>
+
+
+  <div class="input-name m-3">
+    <i class="fa fa-user"></i>
+    <input class="p-2 w-75" placeholder="Enter your name *" type="text" name="name" id="name" ngModel #name="ngModel">
+  </div>
+
+
+  <div class="input-comment m-3">
+    <i class="fa fa-comment"></i>
+    <input class="p-2 w-75" placeholder="comment *" type="text" name="comment" id="comment" ngModel #comment="ngModel">
+  </div>
+
+  <div class="input-comment m-3">
+    <i class="fa fa-image"></i>
+
+    <!-- <input class="p-2 w-75" type="file" name="image" id="image" ngModel #image="ngModel"> -->
+
+    <input class="p-2 w-75"  #file type="file" accept='image/*' (change)="preview(file.files)" name="image" id="image"> <br> <br>
+    <img [src]="imgURL" height="200" *ngIf="imgURL" id="display-image" class="img-fluid img-thumbnail">
+
+
+    <input hidden type="text" ngModel #imagename="ngModel" id="imagename">
+
+  </div>
+
+
+  <div class="input-prefered-location m-3">
+    <button (click)="commentFormSubmit(name, comment)" class="btn btn-primary m-3 p-3 w-75 font-weight-bold"> Comment
+      <i class="fa fa-send"></i> </button>
+  </div>
+
+</div>

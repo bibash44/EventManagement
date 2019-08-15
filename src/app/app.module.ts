@@ -1,3 +1,4 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -16,6 +17,7 @@ import { OurSuccessStoryComponentComponent } from './homepage/our-success-story-
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { ServeicesPageComponent } from './homepage/service-component/services-page.component';
 import { WeedingComponentComponent } from './services-page/weeding-component/weeding-component.component';
+
 
 
 import {
@@ -37,7 +39,12 @@ import { BirthdayImagesComponent } from './portfolio-page/birthday-images/birthd
 import { PartyImagesComponent } from './portfolio-page/party-images/party-images.component';
 import { AllImagesComponent } from './portfolio-page/all-images/all-images.component';
 import { ReviewSectionComponentComponent } from './review-page/review-section-component/review-section-component.component';
-import { ReviewFormComponentComponent } from './review-page/review-form-component/review-form-component.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ReviewFormComponent } from './review-page/review-form/review-form.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+
 
 
 // import { LightboxModule, CarouselModule, ModalsModule, WavesModule } from 'angular-bootstrap-md';
@@ -68,10 +75,11 @@ import { ReviewFormComponentComponent } from './review-page/review-form-componen
     PartyImagesComponent,
     AllImagesComponent,
     ReviewSectionComponentComponent,
-    ReviewFormComponentComponent
-
+    ReviewFormComponent,
 
   ],
+
+
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -85,8 +93,14 @@ import { ReviewFormComponentComponent } from './review-page/review-form-componen
     MatCardModule,
     MatButtonModule,
     MatToolbarModule,
-    MatExpansionModule],
+    MatExpansionModule,
+    HttpClientModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
+  ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+
 })
 export class AppModule { }

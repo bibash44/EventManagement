@@ -1,4 +1,4 @@
-<div class="review-section">
+<!-- <div class="review-section">
   <div class="review-heading">
     <h1>Reviews</h1>
   </div>
@@ -9,12 +9,67 @@
     <div class="row review-container no-gutters ml-2 mr-2 mb-3 p-2" *ngFor="let comment of comments">
       <div class="container-fluid">
         <div class="col-sm commment">
-          <span id="username">{{comment.username}} </span>
-          <span id="user-comment"> {{comment.user_comment}} </span> <br>
-          <span id="comment-time"> {{comment.comment_time}} </span>
+          <span id="username">{{comment.name}} </span>
+          <span id="user-comment"> {{comment.comment}} </span> <br>
+          <span id="comment-time"> {{comment.date}} </span>
+
         </div>
       </div>
     </div>
 
   </div>
-</div>
+</div> -->
+
+
+<div class="comments-container container-fluid w-100">
+    <div class="comments-container-heading w-100 align-items-center col">
+      <h2>Reviews</h2>
+    </div>
+
+    <div class="comments-details-container container-fluid m-0">
+
+      <div class="row">
+        <div class="col-sm">
+
+        </div>
+
+        <div class="col-sm">
+
+
+
+        </div>
+        <div class="col-sm">
+
+        </div>
+      </div>
+
+      <div class="comment-details-content row animated" id="comment-details-content">
+
+        <button class="p-2 m-2" (click)=ShowPreviosSlides() id="show-previous-images"> <span style='font: size 50px;'>&#8882;</span>   </button>
+
+        <div class="col-sm-3 comment-details p-2 mt-5 mb-4 animated" id="f-comment-details">
+          <img src="http://localhost:1954/uploads/images/clients/{{comments[firstImage].image}}" alt="" class="img-comment"> <br>
+          <span class="comments-saying font-italic"> " {{comments[firstImage].comment}} "</span> <br>
+          <span class="comment-name font-weight-bold"> {{comments[firstImage].name}}</span> <br>
+          <span class="comment-date font-weight-bold"> {{comments[firstImage].date}} </span>
+        </div>
+
+        <div class="col-sm-3 comment-details p-2 mt-5 mb-4 animated" id="s-comment-details">
+          <img src="http://localhost:1954/uploads/images/clients/{{comments[secondImage].image}}" alt="" class="img-comment"> <br>
+          <span class="comments-saying font-italic"> " {{comments[secondImage].comment}} "</span> <br>
+          <span class="comment-name font-weight-bold"> {{comments[secondImage].name}}</span> <br>
+          <span class="comment-date font-weight-bold"> {{comments[secondImage].date}} </span>
+        </div>
+
+        <div class="col-sm-3 comment-details p-2 mt-5 mb-4 mr-5 animated" id="t-comment-details">
+          <img src="http://localhost:1954/uploads/images/clients/{{comments[thirdImage].image}}" alt="" class="img-comment"> <br>
+          <span class="comments-saying font-italic"> " {{comments[thirdImage].comment}} "</span> <br>
+          <span class="comment-name font-weight-bold"> {{comments[thirdImage].name}}</span> <br>
+          <span class="comment-date font-weight-bold"> {{comments[thirdImage].date}} </span>
+        </div>
+
+        <button class="p-2 m-2" (click)=showNextSlide() id="show-next-images"> <span style='font: size 50px;'>&#8883;</span> </button>
+
+      </div>
+    </div>
+  </div>
