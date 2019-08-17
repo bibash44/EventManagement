@@ -1,33 +1,36 @@
+section {
+  background-image: url('../../../assets/images/weeding_background.jpg');
+  background-size: cover;
+}
 
-#success-gallery img{
+#success-gallery img {
   height: 200px;
   width: 100%;
   float: left;
-
   /* background-image: url('../../../assets/success-story-images/sample1.jpg') */
 }
 
-#images-container{
-box-shadow: 5px 5px 10px black;
-border-radius: 5px;
+#images-container {
+  box-shadow: 5px 5px 10px black;
+  border-radius: 5px;
+  background: black;
 }
 
-#image:hover{
+#image:hover {
   opacity: 0.8;
   cursor: pointer;
 }
 
-#image-caption{
+#image-caption {
   font-weight: bold;
   font-family: Cambria;
+  color: white;
 }
 
-#success-gallery #images{
+#success-gallery #images {
   text-align: center;
 }
 
-.row h1{
+.row h1 {
   text-align: center;
 }
-
-

@@ -10,11 +10,11 @@
         <div class="container">
           <div class="row no-gutters m-0 p-0 mr-0" id="gallery-row">
             <h2 class="font-weight-bolder m-2 col-md-3"> </h2>
-            <h2 class="font-weight-bolder m-2 col-md-3"> Birthday Images</h2>
+            <h2 class="font-weight-bolder m-2 col-md-3" style="color: white"> Birthday Images</h2>
             <h2 class="font-weight-bolder m-2 col-md-3"> </h2>
 
             <div class="col-md-3 m-2 no-gutters" *ngFor="let photo of images" id="images-container">
-              <a href="{{photo.src}}">
+              <a target="_blank" href="{{photo.src}}">
                 <img src="{{photo.src}}" id="image">
               </a>
             </div>

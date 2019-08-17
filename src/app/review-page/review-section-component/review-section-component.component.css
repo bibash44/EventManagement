@@ -1,41 +1,4 @@
-/* *{
-  font-family: Cambria;
-  color: black;
-}
 
-.review-section > .review-heading > h1{
-  font-weight: bold;
-  text-align: center;
-}
-
-.review-section{
-  box-shadow: 5px 5px 15px  black;
-  border-radius: 5px;
-}
-
-.review-content{
-
-}
-
-.review-container{
-  background: rgb(207, 203, 203);
-  border-radius: 100px;
-}
-
-#username{
-  color: #3858A4;
-  font-size: 2vh;
-  font-weight: bold;
-}
-
-
-#user-comment{
-  font-size: 1.5vh;
-}
-
-#comment-time{
-  color: grey;
-} */
 
 * {
   font-family: Cambria;
@@ -45,6 +8,7 @@
   text-align: center;
   margin-top: 5%;
 }
+
 
 .comments-container-heading h2 {
   text-align: center;
@@ -61,7 +25,9 @@
   border-radius: 5px;
   box-shadow: 2px 5px 10px rgb(167, 163, 163);
   margin-left: 5%;
-  border: 1px solid rgba(161, 157, 157);
+  border: 1px solid rgb(119, 116, 116);
+  background: white;
+  padding-top: 2%;
 }
 
 .footer {

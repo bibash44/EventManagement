@@ -1,3 +1,7 @@
+section{
+  background-image: url('../../../assets/images/birthday_background.jpg');
+  background-size: cover;
+  }
 
 #success-gallery img{
   height: 200px;

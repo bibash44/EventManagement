@@ -1,3 +1,8 @@
+section{
+background-image: url('../../../assets/images/birthday_background.jpg');
+background-size: cover;
+}
+
 
 #success-gallery img{
   height: 200px;
@@ -10,6 +15,7 @@
 #images-container{
 box-shadow: 5px 5px 10px black;
 border-radius: 5px;
+background: black;
 }
 
 #image:hover{
@@ -20,6 +26,7 @@ border-radius: 5px;
 #image-caption{
   font-weight: bold;
   font-family: Cambria;
+  color: white;
 }
 
 #success-gallery #images{

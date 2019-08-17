@@ -1,3 +1,7 @@
+section{
+  background-image: url('../../assets/images/review__background.jpg')
+}
+
 *{
   font-family: Cambria;
   color: black;
@@ -6,3 +10,4 @@
 .review-section > .review-heading > h1{
   font-weight: bold;
 }
+

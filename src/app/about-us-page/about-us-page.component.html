@@ -1,0 +1,31 @@
+<section>
+
+  <app-nav-bar-header></app-nav-bar-header>
+
+  <br>
+  <br>
+  <br>
+  <div class="aboutcontainer container">
+
+
+    <div class="row mb-5" *ngFor="let about of aboutPage">
+      <div class="col-sm"></div>
+      <div class="col-sm about-us-content">
+        <div class="about-us-heading">
+          <h1> {{about.title}} </h1>
+        </div>
+        <div class="about-us-text">
+          <h3> {{about.content}} </h3>
+        </div>
+      </div>
+      <div class="col-sm"></div>
+    </div>
+
+
+
+
+
+  </div>
+
+  <app-footercomponent></app-footercomponent>
+</section>

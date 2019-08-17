@@ -1,3 +1,4 @@
+import { AboutUsPageComponent } from './about-us-page/about-us-page.component';
 import { ReviewPageComponent } from './review-page/review-page.component';
 import { PortfolioPageComponent } from './portfolio-page/portfolio-page.component';
 import { WeedingComponentComponent } from './services-page/weeding-component/weeding-component.component';
@@ -46,6 +47,13 @@ const routes: Routes = [
     component: ReviewPageComponent,
     data: { activepreview: 'activepreview' }
   },
+
+  {
+    path: 'about',
+    component: AboutUsPageComponent,
+    data: { aboutactive: 'aboutactive' }
+  },
+
 
 
 

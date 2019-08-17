@@ -44,6 +44,7 @@ import { ReviewFormComponent } from './review-page/review-form/review-form.compo
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { AboutUsPageComponent } from './about-us-page/about-us-page.component';
 
 
 
@@ -76,6 +77,7 @@ import { MatSortModule } from '@angular/material/sort';
     AllImagesComponent,
     ReviewSectionComponentComponent,
     ReviewFormComponent,
+    AboutUsPageComponent,
 
   ],
 

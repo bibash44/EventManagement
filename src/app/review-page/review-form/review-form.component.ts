@@ -75,7 +75,7 @@ export class ReviewFormComponent implements OnInit {
         processData: false,
         data: formData,
         success: function (data) {
-          this.imagename = data.image;
+         console.log(data)
           $('#imagename').val(data.image);
         },
         error: function () {

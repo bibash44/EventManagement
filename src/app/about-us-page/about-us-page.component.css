@@ -1,0 +1,16 @@
+*{
+  font-family: Cambria;
+  font-weight: bolder
+}
+.about-us-heading{
+  text-align: center;
+}
+
+.about-us-text{
+  text-align: center;
+}
+
+section{
+  background-image: url('../../assets/images/about-us-background.png');
+  background-size: cover;
+}

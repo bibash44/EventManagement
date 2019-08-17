@@ -16,6 +16,7 @@ export class NavBarHeaderComponent implements OnInit {
   activenavservice = '';
   activenavportfolio = '';
   activenavreview = '';
+  activenavabout = '';
 
 
 
@@ -76,12 +77,8 @@ export class NavBarHeaderComponent implements OnInit {
         this.activenavservice = data.activservice;
         this.activenavportfolio = data.activeportfolio;
         this.activenavreview = data.activepreview;
+        this.activenavabout = data.aboutactive;
       });
-
-    console.log(this.activenavservice);
-
-
-
   }
 
 }

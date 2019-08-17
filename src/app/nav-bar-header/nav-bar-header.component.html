@@ -41,7 +41,7 @@
         </li>
 
         <li class="nav-item mr-3">
-            <a href="review" id="nav-contact" class="nav-hover">
+            <a href="review" id="nav-review" class="nav-hover">
               <span *ngIf="activenavreview=='activepreview'" class="active-nav-bar"> REVIEW </span>
               <span *ngIf="activenavreview==null" class="nav-hover"> REVIEW </span>
             </a>
@@ -55,7 +55,10 @@
         </li>
 
         <li class="nav-item mr-3">
-          <a href="#" id="nav-about" class="nav-hover">ABOUT</a>
+          <a href="about" id="nav-nav" class="nav-hover">
+            <span *ngIf="activenavabout=='aboutactive'" class="active-nav-bar"> ABOUT </span>
+            <span *ngIf="activenavabout==null" class="nav-hover"> ABOUT </span>
+          </a>
         </li>
 
         <li class="nav-item mr-3">
