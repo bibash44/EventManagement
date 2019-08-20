@@ -1,0 +1,43 @@
+<form class="border border-light m-2" id="servicecreateform">
+    <div class="form-group p-2">
+      <div class="comment-validation alert alert-success p-3 mt-3" role="alert" id="comment-validation"
+           style="display: none"> </div>
+      <select class="form-control form-control-lg mt-2" name="type" id="type"
+              ngModel
+              #type="ngModel">
+        <option selected="true">Select Type</option>
+        <option>Wedding</option>
+        <option>Birthday</option>
+        <option>Party</option>
+      </select>
+      <input type="file" class="form-control-file mt-2" id="create-services"
+             (change)="handleFileInput($event.target.files)" name="image"
+             ngModel
+             #image="ngModel" hidden/>
+
+      <input class="form-control form-control-lg mt-2" type="text" placeholder="Package Title" name="title" id="title"
+             ngModel
+             #title="ngModel">
+
+      <input class="form-control form-control-lg mt-2" type="text" name="imagename" id="imagename" hidden>
+
+      <label class="select-image btn btn-secondary mt-2 mb-2 w-100" for="create-services"> <i
+        class="fa fa-photo fa-3x "></i>
+
+      </label>
+
+      <span class="display-image mt-2" id="img" style="display: none">
+                <img [src]="imageUrl" class="w-100">
+      </span>
+      <textarea class="form-control form-control-lg mt-2" type="text" rows="5"
+                placeholder="Package Description" name="packageDescription" id="packageDescription"
+                ngModel
+                #packageDescription="ngModel"></textarea>
+      <button type="button" class="btn btn-info mt-2" style="margin-top: 0px"
+              (click)="servicesFormSubmit(type,image,title,packageDescription)">Upload
+      </button>
+
+
+    </div>
+  </form>
+

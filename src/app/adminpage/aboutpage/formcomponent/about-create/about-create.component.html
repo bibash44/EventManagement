@@ -1,0 +1,10 @@
+<form class="border border-light m-2">
+  <div class="form-group p-2">
+    <input class="form-control form-control-lg mt-2" type="text" placeholder="Title" name="title"
+           id="title" ngModel #title="ngModel">
+    <textarea class="form-control form-control-sm mt-2" type="text" placeholder="Content" name="content"
+              id="content" ngModel #content="ngModel"></textarea>
+    <button type="button" class="btn btn-info mt-2" (click)="aboutFormSubmit(title,content)" style="margin-top: 0px">Upload</button>
+  </div>
+</form>
+

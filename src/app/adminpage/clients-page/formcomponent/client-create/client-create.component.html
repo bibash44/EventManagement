@@ -1,0 +1,30 @@
+<form class="border border-light m-2">
+  <div class="form-group p-2">
+    <div class="comment-validation alert alert-success p-3 mt-3" role="alert" id="comment-validation"
+         style="display: none"></div>
+    <input type="file" class="form-control-file mt-2" id="create-clients"
+           (change)="handleFileInput($event.target.files); " hidden/>
+    <input class="form-control form-control-lg mt-2" type="text" placeholder="Client Name" name="clientName"
+           id="clientName" ngModel #name="ngModel">
+    <input class="form-control form-control-lg mt-2" type="text" name="imagename" id="imagename" hidden>
+
+    <label class="select-image btn btn-secondary mt-2 mb-2 w-100" for="create-clients">
+      <i class="fa fa-photo fa-3x "></i>
+    </label>
+
+    <span class="display-image mt-2" id="img" style="display: none">
+        <img [src]="imageUrl" class="w-100">
+    </span>
+    <input class="form-control form-control-lg mt-2" type="text" name="clientsImageName" id="clients-image-name">
+
+    <textarea class="form-control form-control-lg mt-2" type="text" rows="5" placeholder="Client's Word"
+              name="clientComment" id="clientComment" ngModel #clientComment="ngModel"></textarea>
+    <input class="form-control form-control-lg mt-2" type="text" placeholder="Company" name="company" id="company"
+           ngModel #company="ngModel">
+
+    <button type="button" class="btn btn-info mt-2" style="margin-top: 0px"
+            (click)="clientsFormSubmit(name, clientComment, company);">Upload
+    </button>
+
+  </div>
+</form>

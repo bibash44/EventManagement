@@ -1,0 +1,22 @@
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+
+.imagerow{
+  width: 5%;
+}
+
+
+form{
+  margin-bottom: 5%;
+  box-shadow: 5px 15px 15px #d1d2ee;
+}

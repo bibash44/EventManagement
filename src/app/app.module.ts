@@ -45,9 +45,21 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { AboutUsPageComponent } from './about-us-page/about-us-page.component';
-
-
-
+import { AdminNavComponent } from './adminpage/admin-nav/admin-nav.component';
+import { AboutpageComponent } from './adminpage/aboutpage/aboutpage.component';
+import { AboutEditComponent } from './adminpage/aboutpage/formcomponent/about-edit/about-edit.component';
+import { AboutCreateComponent } from './adminpage/aboutpage/formcomponent/about-create/about-create.component';
+import { ClientsPageComponent } from './adminpage/clients-page/clients-page.component';
+import { ClientCreateComponent } from './adminpage/clients-page/formcomponent/client-create/client-create.component';
+import { ClientEditComponent } from './adminpage/clients-page/formcomponent/client-edit/client-edit.component';
+import { ContactPageComponent } from './adminpage/contact-page/contact-page.component';
+import { ContactCreateComponent } from './adminpage/contact-page/formcomponent/contact-create/contact-create.component';
+import { AdminPortfolioPageComponent } from './adminpage/admin-portfolio-page/admin-portfolio-page.component';
+import { ProtfolioCreateComponent } from './adminpage/admin-portfolio-page/formcomponent/protfolio-create/protfolio-create.component';
+import { ProtfolioEditComponent } from './adminpage/admin-portfolio-page/formcomponent/protfolio-edit/protfolio-edit.component';
+import { AdminServicePageComponent } from './adminpage/admin-service-page/admin-service-page.component';
+import { ServiceCreateComponent } from './adminpage/admin-service-page/formcomponent/service-create/service-create.component';
+import { ServiceEditComponent } from './adminpage/admin-service-page/formcomponent/service-edit/service-edit.component';
 // import { LightboxModule, CarouselModule, ModalsModule, WavesModule } from 'angular-bootstrap-md';
 
 
@@ -78,6 +90,21 @@ import { AboutUsPageComponent } from './about-us-page/about-us-page.component';
     ReviewSectionComponentComponent,
     ReviewFormComponent,
     AboutUsPageComponent,
+    AdminNavComponent,
+    AboutpageComponent,
+    AboutEditComponent,
+    AboutCreateComponent,
+    ClientsPageComponent,
+    ClientCreateComponent,
+    ClientEditComponent,
+    ContactPageComponent,
+    ContactCreateComponent,
+    AdminPortfolioPageComponent,
+    ProtfolioCreateComponent,
+    ProtfolioEditComponent,
+    AdminServicePageComponent,
+    ServiceCreateComponent,
+    ServiceEditComponent,
 
   ],
 

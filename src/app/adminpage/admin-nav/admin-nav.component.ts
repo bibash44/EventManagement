@@ -1,13 +1,14 @@
-import { Component, OnInit, Inject, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 import * as $ from 'jquery';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-nav-bar-header',
-  templateUrl: './nav-bar-header.component.html',
-  styleUrls: ['./nav-bar-header.component.css']
+  selector: 'app-admin-nav',
+  templateUrl: './admin-nav.component.html',
+  styleUrls: ['./admin-nav.component.css']
 })
-export class NavBarHeaderComponent implements OnInit {
+export class AdminNavComponent implements OnInit {
+
 
   activenavhome = '';
   activenavclient = '';
@@ -18,22 +19,12 @@ export class NavBarHeaderComponent implements OnInit {
   activenavabout = '';
 
 
-
   openNav() {
     $('#navbarSupportedContent').fadeToggle(500);
-    // $('#site-logo').fadeOut();
-  }
-
-
-  showSearchInput() {
-    $('#search-bar').fadeToggle(500);
-    $('#txt-nav-bar-search').focus();
-
 
   }
 
-  constructor(private routeDetails: ActivatedRoute) { }
-
+  constructor(private adminRouteDetails: ActivatedRoute) { }
 
 
   @HostListener('window:scroll', [])
@@ -66,18 +57,20 @@ export class NavBarHeaderComponent implements OnInit {
     }
   }
 
+
   ngOnInit() {
-    this.routeDetails
-      .data
-      .subscribe(data => {
-        this.activenavhome = data.activehome;
-        this.activenavclient = data.activeclient;
-        this.activenavcontact = data.activecontact;
-        this.activenavservice = data.activservice;
-        this.activenavportfolio = data.activeportfolio;
-        this.activenavreview = data.activepreview;
-        this.activenavabout = data.aboutactive;
-      });
+
+    this.adminRouteDetails
+    .data
+    .subscribe(data => {
+      this.activenavhome = data.activehome;
+      this.activenavclient = data.activeclient;
+      this.activenavcontact = data.activecontact;
+      this.activenavservice = data.activservice;
+      this.activenavportfolio = data.activeportfolio;
+      this.activenavreview = data.activepreview;
+      this.activenavabout = data.aboutactive;
+    });
   }
 
 }

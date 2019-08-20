@@ -1,0 +1,33 @@
+<form class="border border-light">
+    <div class="form-group p-2">
+      <div class="comment-validation alert alert-success p-3" role="alert" id="comment-validation"
+           style="display: none"></div>
+      <select class="form-control form-control-lg mt-2" name="occasiontype" id="occasiontype"
+              ngModel
+              #occasiontype="ngModel">
+        <option selected>Select Type</option>
+        <option>Wedding</option>
+        <option>Birthday</option>
+        <option>Party</option>
+      </select>
+      <input type="file" class="form-control-file mt-2" id="create-portfolio"
+             (change)="handleFileInput($event.target.files)" name="image" ngModel
+             #image="ngModel" hidden/>
+      <input class="form-control form-control-lg mt-2" type="text" name="imagename" id="imagename" hidden>
+
+
+      <label class="select-image btn btn-secondary mt-2 mb-2 w-100" for="create-portfolio"> <i
+        class="fa fa-photo fa-3x "></i>
+
+      </label>
+
+      <span class="display-image mt-2" id="img" style="display: none">
+        <img [src]="imageUrl" class="w-100">
+      </span>
+      <button type="button" class="btn btn-info mt-2" (click)="portfolioFormSubmit(occasiontype,image)">Upload
+      </button>
+
+
+    </div>
+  </form>
+

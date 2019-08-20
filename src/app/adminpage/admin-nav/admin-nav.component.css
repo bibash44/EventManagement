@@ -1,0 +1,77 @@
+.nav-container {
+  width: 100%;
+  z-index: 99999;
+  /* position: fixed; */
+  box-shadow: 5px 5px 25px black;
+  transition: 0.7s all;
+}
+
+nav {
+  background: rgba(0, 0, 0, 0.8);
+  font-family: Cambria;
+  transition: 0.7s all;
+}
+
+.navbar-brand{
+  font-size:1.5pc;
+}
+
+nav a {
+  color: white;
+}
+
+ul li {
+  color: white;
+  font-weight: bold;
+}
+
+ul li a {
+  text-decoration: none;
+}
+
+.nav-hover:hover {
+  border-bottom: 3px solid #c5af84;
+  /* border-radius: 5px; */
+}
+
+
+
+#search-bar {
+  box-shadow: 5px 5px 25px black;
+  display: none;
+  background: rgb(255, 255, 255);
+}
+
+#txt-nav-bar-search {
+  /* display: none; */
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  background: none;
+  width: 95%;
+  font-family: Cambria;
+}
+
+#txt-nav-bar-search::placeholder {
+  font-style: italic;
+}
+
+
+
+#nav-search:hover {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+#nav-search-icon {
+  color: black;
+  width: 5%;
+}
+
+.active-nav-bar{
+  border-bottom: 3px solid rgba(197, 175, 132, 1);
+  /* border-radius: 5px; */
+}
+
+#nav-services{
+  cursor: pointer;
+}

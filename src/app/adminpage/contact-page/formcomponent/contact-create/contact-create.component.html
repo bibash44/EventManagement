@@ -1,0 +1,23 @@
+<form class="border border-light m-2">
+  <div class="form-group p-2">
+
+
+    <input class="form-control form-control-lg mt-2" type="text" id="id" hidden>
+    <input class="form-control form-control-lg mt-2" type="text" placeholder="Email" name="email" id="email" ngModel
+           #email="ngModel">
+    <input class="form-control form-control-lg mt-2" type="text" placeholder="Phone number 1" name="phoneOne"
+           id="phoneOne" ngModel #phoneOne="ngModel">
+    <input class="form-control form-control-lg mt-2" type="text" placeholder="Phone number 2" name="phoneTwo"
+           id="phoneTwo" ngModel #phoneTwo="ngModel">
+    <input class="form-control form-control-lg mt-2" type="text" placeholder="Map Link" name="map" id="map" ngModel
+           #map="ngModel">
+    <input class="form-control form-control-lg mt-2" type="text" placeholder="Opening Hour" name="openingHour"
+           id="openingHour" ngModel #openingHour="ngModel">
+    <input class="form-control form-control-lg mt-2" type="text" placeholder="Address" name="address" id="address"
+           ngModel #address="ngModel">
+    <button type="button" class="btn btn-info mt-2" style="margin-top: 0px"
+            (click)="contactFormSubmit()">Update
+    </button>
+  </div>
+</form>
+
