@@ -1,0 +1,30 @@
+<form>
+  <div class="form-group">
+    <div class="comment-validation alert alert-success p-3 mt-3" role="alert" id="comment-validation"
+         style="display: none"></div>
+    <input type="file" class="form-control-file" id="create-slider"
+           (change)="handleFileInput($event.target.files)" name="image" ngModel
+           #image="ngModel" hidden/>
+
+    <label class="select-image btn btn-secondary mt-2 w-100" for="create-slider"> <i
+      class="fa fa-photo fa-3x "></i>
+    </label>
+    <input class="form-control form-control-lg mt-2" type="text" name="slidingImage" id="sliding-image" >
+
+    <input class="form-control form-control-lg mt-2" type="text" placeholder="Slider Title" name="title" id="sliding-title"
+           ngModel
+           #title="ngModel">
+    <input class="form-control form-control-sm mt-2" type="text" placeholder="Slider Sub-Title" name="sliding-subtitle"
+           id="subtitle"
+           ngModel
+           #subtitle="ngModel">
+
+    <span class="display-image" style="display: none" id="img">
+                  <img [src]="imageUrl" class="w-100">
+          </span>
+    <button type="button" class="btn btn-info mt-2" style="margin-top: 0px"
+            (click)="slidingImageFormSubmit()">Upload
+    </button>
+
+  </div>
+</form>

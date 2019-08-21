@@ -1,0 +1,29 @@
+<form>
+  <div class="form-group">
+    <div class="comment-validation alert alert-success p-3 mt-3" role="alert" id="comment-validation"
+         style="display: none"></div>
+    <input type="file" class="form-control-file mt-2" id="create-services"
+           (change)="handleFileInput($event.target.files)" name="image" ngModel
+           #image="ngModel" hidden/>
+
+    <input class="form-control form-control-lg mt-2" type="text" placeholder="Services Title" name="title" id="home-service-title"
+           ngModel
+           #title="ngModel">
+    <input class="form-control form-control-lg mt-2" type="text" name="homeServiceImage" id="home-service-image" hidden>
+
+    <label class="select-image btn btn-secondary mt-2 mb-2 w-100" for="create-services"> <i
+      class="fa fa-photo fa-3x "></i>
+
+    </label>
+
+    <span class="display-image" style="display: none" id="home-service-image-display">
+            <img [src]="imageUrl" class="w-100">
+          </span>
+    <button type="button" class="btn btn-info" style="margin-top: 0px" (click)="homeServicesFormSubmit()">
+      Upload
+    </button>
+
+
+  </div>
+</form>
+

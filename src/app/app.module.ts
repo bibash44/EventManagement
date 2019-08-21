@@ -60,6 +60,14 @@ import { ProtfolioEditComponent } from './adminpage/admin-portfolio-page/formcom
 import { AdminServicePageComponent } from './adminpage/admin-service-page/admin-service-page.component';
 import { ServiceCreateComponent } from './adminpage/admin-service-page/formcomponent/service-create/service-create.component';
 import { ServiceEditComponent } from './adminpage/admin-service-page/formcomponent/service-edit/service-edit.component';
+import { AdminHomepageComponent } from './admin-homepage/admin-homepage.component';
+import { ServicesDisplayEditComponent } from './admin-homepage/form-component/services/services-display-edit/services-display-edit.component';
+import { ServicesDisplayCreateComponent } from './admin-homepage/form-component/services/services-display-create/services-display-create.component';
+import { SlidingImageCreateComponent } from './admin-homepage/form-component/slidingimage/sliding-image-create/sliding-image-create.component';
+import { SlidingImageEditComponent } from './admin-homepage/form-component/slidingimage/sliding-image-edit/sliding-image-edit.component';
+import { SuccessStoryCreateComponent } from './admin-homepage/form-component/success-story/success-story-create/success-story-create.component';
+import { SuccessStoryEditComponent } from './admin-homepage/form-component/success-story/success-story-edit/success-story-edit.component';
+
 // import { LightboxModule, CarouselModule, ModalsModule, WavesModule } from 'angular-bootstrap-md';
 
 
@@ -105,6 +113,13 @@ import { ServiceEditComponent } from './adminpage/admin-service-page/formcompone
     AdminServicePageComponent,
     ServiceCreateComponent,
     ServiceEditComponent,
+    AdminHomepageComponent,
+    ServicesDisplayEditComponent,
+    ServicesDisplayCreateComponent,
+    SlidingImageCreateComponent,
+    SlidingImageEditComponent,
+    SuccessStoryCreateComponent,
+    SuccessStoryEditComponent,
 
   ],
 

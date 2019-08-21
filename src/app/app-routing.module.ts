@@ -1,3 +1,4 @@
+import { AdminHomepageComponent } from './admin-homepage/admin-homepage.component';
 import { AdminServicePageComponent } from './adminpage/admin-service-page/admin-service-page.component';
 import { AdminPortfolioPageComponent } from './adminpage/admin-portfolio-page/admin-portfolio-page.component';
 import { AboutpageComponent } from './adminpage/aboutpage/aboutpage.component';
@@ -13,7 +14,6 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { ServiceMainComponentComponent } from './services-page/service-main-component/service-main-component.component';
 import { AdminLoginPageComponent } from './admin-login-page/admin-login-page.component';
 import { ClientsPageComponent } from './adminpage/clients-page/clients-page.component';
-import { ContactCreateComponent } from './adminpage/contact-page/formcomponent/contact-create/contact-create.component';
 import { ContactPageComponent } from './adminpage/contact-page/contact-page.component';
 
 
@@ -62,13 +62,17 @@ const routes: Routes = [
 
 
 
-
-
-
   {
     path: 'admin',
 
     children: [
+
+      {
+        path: '',
+        component: AdminHomepageComponent,
+        data: { activehome: 'activehome' }
+      },
+
       {
         path: 'login',
         component: AdminLoginPageComponent
