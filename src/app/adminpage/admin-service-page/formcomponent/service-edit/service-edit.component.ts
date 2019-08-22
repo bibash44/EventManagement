@@ -1,8 +1,8 @@
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
-import {MatPaginator} from '@angular/material/paginator';
-import {MatSort} from '@angular/material/sort';
-import {MatTableDataSource} from '@angular/material/table';
-import {ServicesEditService} from './services-edit.service';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
+import { ServicesEditService } from './services-edit.service';
 import * as $ from 'jquery';
 
 
@@ -20,14 +20,14 @@ export class ServiceEditComponent implements OnInit, AfterViewInit {
   imagename = null;
   imageUrl: string;
 
-  constructor(private  serviceService: ServicesEditService) {
+  constructor(private serviceService: ServicesEditService) {
   }
 
   displayedColumns: string[] = ['type', 'title', 'image', 'description', 'actions'];
   dataSource = new MatTableDataSource(this.clients);
 
-  @ViewChild(MatSort, {static: true}) sort: MatSort;
-  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+  @ViewChild(MatSort, { static: true }) sort: MatSort;
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
@@ -54,24 +54,47 @@ export class ServiceEditComponent implements OnInit, AfterViewInit {
   }
 
   deleteById(id: any, image: any) {
-    // alert(image);
-    $.ajax({
-      type: 'DELETE',
-      url: this.baseurl + '/services/delete',
-      data: {
-        id,
-        image
-      },
-      success(data) {
-        alert('Image Deleted');
-        setTimeout(function () {
-          window.location.reload();
-        }, 2000);
-      },
-      error() {
 
-      }
-    });
+    var confirmDelete = confirm('Are you sure to delete ?');
+    console.log(confirmDelete);
+    if (confirmDelete) {
+      $.ajax({
+        type: 'DELETE',
+        url: this.baseurl + '/services/delete',
+        data: {
+          id,
+          image
+        },
+        success(data) {
+          $('#delete-comment-validation').removeClass('alert-danger');
+          $('#delete-comment-validation').addClass('alert-success').fadeIn(100);
+          $('#delete-comment-validation').text('Services deleted successfully');
+          $('#delete-comment-validation').fadeIn(100);
+
+          setTimeout(function () {
+            $('#delete-comment-validation').fadeOut(1000);
+          }, 2000);
+
+          setTimeout(function () {
+            window.location.reload();
+          }, 2000);
+        },
+        error() {
+          $('#delete-comment-validation').removeClass('alert-success');
+          $('#delete-comment-validation').addClass('alert-danger').fadeIn(100);
+          $('#delete-comment-validation').text('Failed to delete service something went wrong');
+          $('#delete-comment-validation').fadeIn(100);
+          setTimeout(function () {
+            $('#delete-comment-validation').fadeOut(1000);
+          }, 2000);
+        }
+      });
+    }
+    else {
+
+    }
+
+
   }
 
   populateForm(element) {
@@ -133,20 +156,35 @@ export class ServiceEditComponent implements OnInit, AfterViewInit {
     const updatetitleValue = $('#updatetitle').val();
     const packageDescriptionValue = $('#updatepackageDescription').val();
 
-    if (typeValue == 'Select Type') {
-      alert('Please select a package');
+    if (typeValue == 'Select Type' || typeValue == '') {
+      $('#updatetype').focus();
+      $('#update-comment-validation').removeClass('alert-success');
+      $('#update-comment-validation').addClass('alert-danger').fadeIn(100);
+      $('#update-comment-validation').text('Please select type');
+      $('#update-comment-validation').fadeIn(100);
+      setTimeout(function () {
+        $('#update-comment-validation').fadeOut(1000);
+      }, 2000);
 
     } else if (imageValue == '') {
-      alert('Please select an image***');
+      $('#updatetype').focus();
+      $('#update-comment-validation').removeClass('alert-success');
+      $('#update-comment-validation').addClass('alert-danger').fadeIn(100);
+      $('#update-comment-validation').text('Please select image');
+      $('#update-comment-validation').fadeIn(100);
+      setTimeout(function () {
+        $('#update-comment-validation').fadeOut(1000);
+      }, 2000);
+
 
     } else if (updatetitleValue == '') {
       $('#updatetitle').attr('placeholder', 'Please enter a title *');
       $('#updatetitle').focus();
-      $('#updatetitle').css({border: '2px solid red'});
+      $('#updatetitle').css({ border: '2px solid red' });
     } else if (packageDescriptionValue === '') {
       $('#updatepackageDescription').attr('placeholder', 'Please enter package description *');
       $('#updatepackageDescription').focus();
-      $('#updatepackageDescription').css({border: '2px solid red'});
+      $('#updatepackageDescription').css({ border: '2px solid red' });
     } else {
       const data = {
         id: idValue,

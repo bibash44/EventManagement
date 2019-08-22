@@ -58,14 +58,14 @@ export class ClientCreateComponent implements OnInit {
         data,
         success(res) {
           if (res) {
-
+            $('#clientName').focus();
             $('#comment-validation').removeClass('alert-danger');
             $('#comment-validation').addClass('alert-success').fadeIn(100);
             $('#comment-validation').text('Services successfully uploaded');
             $('#comment-validation').fadeIn(100);
 
             setTimeout(function () {
-              $('#comment-validation').focus();
+              $('#clientName').focus();
               $('#comment-validation').fadeOut(1000);
             }, 2000);
             setTimeout(function () {
@@ -75,7 +75,15 @@ export class ClientCreateComponent implements OnInit {
           }
         },
         error() {
-          alert('error');
+          $('#clientName').focus();
+          $('#comment-validation').removeClass('alert-success');
+          $('#comment-validation').addClass('alert-danger').fadeIn(100);
+          $('#comment-validation').text('Something went wrong, unable to upload');
+          $('#comment-validation').fadeIn(100);
+          setTimeout(function () {
+            $('#comment-validation').fadeOut(1000);
+          }, 2000);
+
         }
       });
 
@@ -115,6 +123,13 @@ export class ClientCreateComponent implements OnInit {
           $('#clients-image-name').val(data);
         },
         error() {
+          $('#comment-validation').removeClass('alert-success');
+          $('#comment-validation').addClass('alert-danger').fadeIn(100);
+          $('#comment-validation').text('Image upload failed');
+          $('#comment-validation').fadeIn(100);
+          setTimeout(function () {
+            $('#comment-validation').fadeOut(1000);
+          }, 2000);
 
         }
       });

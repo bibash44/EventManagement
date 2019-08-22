@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 
 @Component({
@@ -47,7 +47,7 @@ export class SlidingImageCreateComponent implements OnInit {
       $('#comment-validation').addClass('alert-danger').fadeIn(100);
       $('#comment-validation').text('Failed to upload, image size larger, please resize it');
       $('#comment-validation').fadeIn(100);
-      setTimeout(function() {
+      setTimeout(function () {
         $('#comment-validation').fadeOut(1000);
       }, 2000);
     } else {
@@ -69,7 +69,7 @@ export class SlidingImageCreateComponent implements OnInit {
           $('#comment-validation').addClass('alert-danger').fadeIn(100);
           $('#comment-validation').text('Failed to upload, something went wrong');
           $('#comment-validation').fadeIn(100);
-          setTimeout(function() {
+          setTimeout(function (){
             $('#comment-validation').fadeOut(1000);
           }, 2000);
 
@@ -84,16 +84,24 @@ export class SlidingImageCreateComponent implements OnInit {
     const subtitleValue = $('#subtitle').val();
 
     if (imageValue === '') {
-      alert('Please select an image*');
+      $('#sliding-title').focus();
+
+      $('#comment-validation').removeClass('alert-success');
+      $('#comment-validation').addClass('alert-danger').fadeIn(100);
+      $('#comment-validation').text('Please select an image');
+      $('#comment-validation').fadeIn(100);
+      setTimeout(function () {
+        $('#comment-validation').fadeOut(1000);
+      }, 2000);
 
     } else if (titleValue === '') {
-      $('#sliding-title').attr('placeholder', 'Please enter a Title *');
       $('#sliding-title').focus();
-      $('#email').css({border: '2px solid red'});
+      $('#sliding-title').attr('placeholder', 'Please enter a Title *');
+      $('#email').css({ border: '2px solid red' });
     } else if (subtitleValue === '') {
-      $('#subtitleValue').attr('placeholder', 'Please enter a SubTitle *');
       $('#subtitleValue').focus();
-      $('#subtitleValue').css({border: '2px solid red'});
+      $('#subtitleValue').attr('placeholder', 'Please enter a SubTitle *');
+      $('#subtitleValue').css({ border: '2px solid red' });
     } else {
       const data = {
         image: imageValue,
@@ -107,7 +115,20 @@ export class SlidingImageCreateComponent implements OnInit {
         data,
         success(res) {
           if (res) {
-            alert('success');
+
+            $('#sliding-title').focus();
+
+            $('#comment-validation').removeClass('alert-danger');
+            $('#comment-validation').addClass('alert-success').fadeIn(100);
+            $('#comment-validation').text('Sliding image details succesfully added');
+            $('#comment-validation').fadeIn(100);
+            setTimeout(function () {
+              $('#comment-validation').fadeOut(1000);
+            }, 2000);
+
+            setTimeout(function () {
+              window.location.reload();
+            }, 2000);
           }
         },
         error() {

@@ -1,13 +1,13 @@
 <ngb-carousel>
-    <ng-template ngbSlide *ngFor="let sliderimage of sliderimages">
+    <ng-template ngbSlide *ngFor="let sliderimage of sliderimages;  let i = index">
       <div class="picsum-img-wrapper animated fadeInLeft">
 
-        <img src="{{sliderimage.src}}">
+        <img src="http://localhost:1954/UPLOADS/images/sliding_image/{{sliderimage.image}}">
 
       </div>
       <div class="carousel-caption">
-        <h3>First slide label</h3>
-        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        <h3>{{sliderimage.slider_title}}  </h3>
+        <p>{{sliderimage.sub_title}}</p>
         <p>  </p>
       </div>
     </ng-template>

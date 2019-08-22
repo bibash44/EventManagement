@@ -51,6 +51,8 @@ export class ServicesDisplayEditComponent implements OnInit, AfterViewInit {
 
   deleteById(id: any, image: any) {
     // alert(image);
+    var ConfirmDelete= confirm('Are you sure you want to delete');
+    if(ConfirmDelete){
     $.ajax({
       type: 'DELETE',
       url: this.baseurl + '/services_home/delete',
@@ -59,15 +61,23 @@ export class ServicesDisplayEditComponent implements OnInit, AfterViewInit {
         image
       },
       success(data) {
-        alert('Image Deleted');
+        $('#service-display-comment-validation').removeClass('alert-danger');
+        $('#service-display-comment-validation').focus();
+        $('#service-display-comment-validation').addClass('alert-success').fadeIn(100);
+        $('#service-display-comment-validation').text('Service deleted successfully');
+        $('#service-display-comment-validation').fadeIn(100);
         setTimeout(function () {
           window.location.reload();
-        }, 2000);
+        }, 3000);
       },
       error() {
-
+        $('#service-display-comment-validation').removeClass('alert-success');
+        $('#service-display-comment-validation').addClass('alert-danger').fadeIn(100);
+        $('#service-display-comment-validation').text('Something went wrong.');
+        $('#service-display-comment-validation').fadeIn(100);
       }
     });
+  }
   }
 
 
@@ -92,12 +102,12 @@ export class ServicesDisplayEditComponent implements OnInit, AfterViewInit {
     const fileSize = fileDetails.size;
 
     if (fileSize > 10000000) {
-      $('#update-comment-validation').removeClass('alert-success');
-      $('#update-comment-validation').addClass('alert-danger').fadeIn(100);
-      $('#update-comment-validation').text('Failed to upload, image size larger, please resize it');
-      $('#update-comment-validation').fadeIn(100);
+      $('#service-display-comment-validation').removeClass('alert-success');
+      $('#service-display-comment-validation').addClass('alert-danger').fadeIn(100);
+      $('#service-display-comment-validation').text('Failed to upload, image size larger, please resize it');
+      $('#service-display-comment-validation').fadeIn(100);
       setTimeout(function () {
-        $('#update-comment-validation').fadeOut(1000);
+        $('#service-display-comment-validation').fadeOut(1000);
       }, 2000);
     } else {
       $.ajax({
@@ -142,14 +152,14 @@ export class ServicesDisplayEditComponent implements OnInit, AfterViewInit {
         data,
         success(res) {
           if (res) {
-            $('#update-comment-validation').removeClass('alert-danger');
-            $('#update-comment-validation').addClass('alert-success').fadeIn(100);
-            $('#update-comment-validation').text('Services successfully updated');
-            $('#update-comment-validation').fadeIn(100);
-            $('#update-comment-validation').focus();
+            $('#service-display-comment-validation').removeClass('alert-danger');
+            $('#service-display-comment-validation').addClass('alert-success').fadeIn(100);
+            $('#service-display-comment-validation').text('Services successfully updated');
+            $('#service-display-comment-validation').fadeIn(100);
+            $('#service-display-comment-validation').focus();
 
             setTimeout(function () {
-              $('#update-comment-validation').fadeOut(1000);
+              $('#service-display-comment-validation').fadeOut(1000);
             }, 2000);
 
 
@@ -159,14 +169,14 @@ export class ServicesDisplayEditComponent implements OnInit, AfterViewInit {
           }
         },
         error() {
-          $('#update-comment-validation').removeClass('alert-success');
-          $('#update-comment-validation').addClass('alert-danger').fadeIn(100);
-          $('#update-comment-validation').text('Something went wrong');
-          $('#update-comment-validation').fadeIn(100);
-          $('#update-comment-validation').focus();
+          $('#service-display-comment-validation').removeClass('alert-success');
+          $('#service-display-comment-validation').addClass('alert-danger').fadeIn(100);
+          $('#service-display-comment-validation').text('Something went wrong');
+          $('#service-display-comment-validation').fadeIn(100);
+          $('#service-display-comment-validation').focus();
 
           setTimeout(function () {
-            $('#update-comment-validation').fadeOut(1000);
+            $('#service-display-comment-validation').fadeOut(1000);
           }, 2000);
         }
       });

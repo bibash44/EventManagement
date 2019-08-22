@@ -1,6 +1,6 @@
-import {SlidingImageEditService} from './sliding-image-edit.service';
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
-import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
+import { SlidingImageEditService } from './sliding-image-edit.service';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 import * as $ from 'jquery';
 
 @Component({
@@ -17,14 +17,14 @@ export class SlidingImageEditComponent implements OnInit, AfterViewInit {
   imagename = null;
   imageUrl: string;
 
-  constructor(private  slidingImageEditService: SlidingImageEditService) {
+  constructor(private slidingImageEditService: SlidingImageEditService) {
   }
 
   displayedColumns: string[] = ['image', 'slider_title', 'sub_title', 'actions'];
   dataSource = new MatTableDataSource(this.servicesDisplay);
 
-  @ViewChild(MatSort, {static: true}) sort: MatSort;
-  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+  @ViewChild(MatSort, { static: true }) sort: MatSort;
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
@@ -52,24 +52,44 @@ export class SlidingImageEditComponent implements OnInit, AfterViewInit {
   }
 
   deleteById(id: any, image: any) {
-    // alert(image);
-    $.ajax({
-      type: 'DELETE',
-      url: this.baseurl + '/sliding_image/delete',
-      data: {
-        id,
-        image
-      },
-      success(data) {
-        alert('Image Deleted');
-        setTimeout(function () {
-          window.location.reload();
-        }, 2000);
-      },
-      error() {
+    var Confirmdelete = confirm('Are you sure to delete');
 
-      }
-    });
+    if (Confirmdelete) {
+      $.ajax({
+        type: 'DELETE',
+        url: this.baseurl + '/sliding_image/delete',
+        data: {
+          id,
+          image
+        },
+        success(data) {
+          $('#sliding-image-comment-validation').removeClass('alert-danger');
+          $('#sliding-image-comment-validation').addClass('alert-success').fadeIn(100);
+          $('#sliding-image-comment-validation').text('Sliding Image details deleted successfully');
+          $('#sliding-image-comment-validation').fadeIn(100);
+          setTimeout(function () {
+            $('#sliding-image-comment-validation').fadeOut(1000);
+          }, 2000);
+          setTimeout(function () {
+            window.location.reload();
+          }, 2000);
+        },
+        error() {
+          $('#sliding-image-comment-validation').addClass('alert-danger');
+          $('#sliding-image-comment-validation').removeClass('alert-success').fadeIn(100);
+          $('#sliding-image-comment-validation').text('Failed to upload , something went wrong');
+          $('#sliding-image-comment-validation').fadeIn(100);
+          setTimeout(function () {
+            $('#sliding-image-comment-validation').fadeOut(1000);
+          }, 2000);
+        }
+      });
+    }
+
+    else{
+      // Do nothing
+    }
+
   }
 
 
@@ -95,12 +115,12 @@ export class SlidingImageEditComponent implements OnInit, AfterViewInit {
     const fileSize = fileDetails.size;
 
     if (fileSize > 10000000) {
-      $('#update-comment-validation').removeClass('alert-success');
-      $('#update-comment-validation').addClass('alert-danger').fadeIn(100);
-      $('#update-comment-validation').text('Failed to upload, image size larger, please resize it');
-      $('#update-comment-validation').fadeIn(100);
+      $('#sliding-image-comment-validation').removeClass('alert-success');
+      $('#sliding-image-comment-validation').addClass('alert-danger').fadeIn(100);
+      $('#sliding-image-comment-validation').text('Failed to upload, image size larger, please resize it');
+      $('#sliding-image-comment-validation').fadeIn(100);
       setTimeout(function () {
-        $('#update-comment-validation').fadeOut(1000);
+        $('#sliding-image-comment-validation').fadeOut(1000);
       }, 2000);
     } else {
       $.ajax({
@@ -115,11 +135,11 @@ export class SlidingImageEditComponent implements OnInit, AfterViewInit {
           $('#update-sliding-image-name').val(data);
         },
         error() {
-          $('#update-comment-validation').removeClass('alert-success');
-          $('#update-comment-validation').addClass('alert-danger').fadeIn(100);
-          $('#update-comment-validation').text('Image Not Uploaded');
-          $('#update-comment-validation').fadeIn(100);
-          $('#update-comment-validation').focus();
+          $('#sliding-image-comment-validation').removeClass('alert-success');
+          $('#sliding-image-comment-validation').addClass('alert-danger').fadeIn(100);
+          $('#sliding-image-comment-validation').text('Image Not Uploaded');
+          $('#sliding-image-comment-validation').fadeIn(100);
+          $('#sliding-image-comment-validation').focus();
         }
       });
     }
@@ -152,14 +172,15 @@ export class SlidingImageEditComponent implements OnInit, AfterViewInit {
         data,
         success(res) {
           if (res) {
-            $('#update-comment-validation').removeClass('alert-danger');
-            $('#update-comment-validation').addClass('alert-success').fadeIn(100);
-            $('#update-comment-validation').text('Services successfully updated');
-            $('#update-comment-validation').fadeIn(100);
-            $('#update-comment-validation').focus();
+            $('#update-sliding-image-title').focus();
+            $('#sliding-image-comment-validation').removeClass('alert-danger');
+            $('#sliding-image-comment-validation').addClass('alert-success').fadeIn(100);
+            $('#sliding-image-comment-validation').text('Services successfully updated');
+            $('#sliding-image-comment-validation').fadeIn(100);
+
 
             setTimeout(function () {
-              $('#update-comment-validation').fadeOut(1000);
+              $('#sliding-image-comment-validation').fadeOut(1000);
             }, 2000);
 
 
@@ -169,14 +190,14 @@ export class SlidingImageEditComponent implements OnInit, AfterViewInit {
           }
         },
         error() {
-          $('#update-comment-validation').removeClass('alert-success');
-          $('#update-comment-validation').addClass('alert-danger').fadeIn(100);
-          $('#update-comment-validation').text('Something went wrong');
-          $('#update-comment-validation').fadeIn(100);
-          $('#update-comment-validation').focus();
+          $('#sliding-image-comment-validation').removeClass('alert-success');
+          $('#sliding-image-comment-validation').addClass('alert-danger').fadeIn(100);
+          $('#sliding-image-comment-validation').text('Something went wrong');
+          $('#sliding-image-comment-validation').fadeIn(100);
+          $('#sliding-image-comment-validation').focus();
 
           setTimeout(function () {
-            $('#update-comment-validation').fadeOut(1000);
+            $('#sliding-image-comment-validation').fadeOut(1000);
           }, 2000);
         }
       });
@@ -188,6 +209,4 @@ export class SlidingImageEditComponent implements OnInit, AfterViewInit {
     $('#createSlidingImageDisplayrow').fadeIn(500);
 
   }
-
-
 }

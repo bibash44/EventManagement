@@ -58,11 +58,31 @@ export class ContactCreateComponent implements OnInit {
         data,
         success(res) {
           if (res) {
-            alert('success');
+            $('#email').focus();
+            $('#comment-validation').removeClass('alert-danger');
+            $('#comment-validation').addClass('alert-success').fadeIn(100);
+            $('#comment-validation').text('Contact updated successfully');
+            $('#comment-validation').fadeIn(100);
+
+            setTimeout(function () {
+              $('#comment-validation').fadeOut(1000);
+            }, 2000);
+            setTimeout(function () {
+              window.location.reload();
+            }, 2000);
           }
         },
         error() {
-          alert('error');
+          $('#email').focus();
+          $('#comment-validation').removeClass('alert-success');
+          $('#comment-validation').addClass('alert-danger').fadeIn(100);
+          $('#comment-validation').text('Failed to update contact');
+          $('#comment-validation').fadeIn(100);
+
+          setTimeout(function () {
+            $('#comment-validation').fadeOut(1000);
+          }, 2000);
+
         }
       });
     }
@@ -74,17 +94,16 @@ export class ContactCreateComponent implements OnInit {
       type: 'GET',
       url: 'http://localhost:1954/contact/getContact',
       success(data) {
-        console.log(data);
 
-        for (const value of data) {
-          $('#id').val(value.id);
-          $('#email').val(value.email);
-          $('#phoneOne').val(value.phone_one);
-          $('#phoneTwo').val(value.phone_two);
-          $('#map').val(value.map);
-          $('#openingHour').val(value.opening_hour);
-          $('#address').val(value.address);
-        }
+
+          $('#id').val(data.id);
+          $('#email').val(data[0].email);
+          $('#phoneOne').val(data[0].phone_one);
+          $('#phoneTwo').val(data[0].phone_two);
+          $('#map').val(data[0].map);
+          $('#openingHour').val(data[0].opening_hour);
+          $('#address').val(data[0].address);
+
 
       },
       error() {
@@ -97,6 +116,7 @@ export class ContactCreateComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.populateForm();
   }
 
 }

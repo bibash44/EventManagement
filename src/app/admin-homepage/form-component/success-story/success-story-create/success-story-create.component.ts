@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 
 
@@ -30,11 +30,20 @@ export class SuccessStoryCreateComponent implements OnInit {
 
 
     if (imageValue === '') {
-      alert('Please select an image*');
-    } else if (titleValue === '') {
-      $('#success-story-title').attr('placeholder', 'Please enter a Title');
       $('#success-story-title').focus();
-      $('#success-story-title').css({border: '2px solid red'});
+      $('#success-story-comment-validation').removeClass('alert-success');
+      $('#success-story-comment-validation').addClass('alert-danger').fadeIn(100);
+      $('#success-story-comment-validation').text('Please select an image');
+      $('#success-story-comment-validation').fadeIn(100);
+
+      setTimeout(function () {
+        $('#success-story-comment-validation').fadeOut(100);
+      }, 3000);
+
+    } else if (titleValue === '') {
+      $('#success-story-title').focus();
+      $('#success-story-title').attr('placeholder', 'Please enter a Title');
+      $('#success-story-title').css({ border: '2px solid red' });
     } else {
       const data = {
         title: titleValue,
@@ -47,23 +56,21 @@ export class SuccessStoryCreateComponent implements OnInit {
         data,
         success(res) {
           if (res) {
-            setTimeout(function () {
-              $('#comment-validation').removeClass('alert-danger');
-              $('#comment-validation').addClass('alert-success').fadeIn(100);
-              $('#comment-validation').text('Services to the home screen added successfully');
-              $('#comment-validation').fadeIn(100);
-              $('#comment-validation').focus();
-            }, 3000);
+            $('#success-story-title').focus();
+            $('#success-story-comment-validation').removeClass('alert-danger');
+            $('#success-story-comment-validation').addClass('alert-success').fadeIn(100);
+            $('#success-story-comment-validation').text('success story to the home screen added successfully');
+            $('#success-story-comment-validation').fadeIn(100);
             setTimeout(function () {
               window.location.reload();
             }, 3000);
           }
         },
         error() {
-          $('#comment-validation').removeClass('alert-success');
-          $('#comment-validation').addClass('alert-danger').fadeIn(100);
-          $('#comment-validation').text('Something went wrong.');
-          $('#comment-validation').fadeIn(100);
+          $('#success-story-comment-validation').removeClass('alert-success');
+          $('#success-story-comment-validation').addClass('alert-danger').fadeIn(100);
+          $('#success-story-comment-validation').text('Something went wrong.');
+          $('#success-story-comment-validation').fadeIn(100);
         }
       });
     }
@@ -81,12 +88,12 @@ export class SuccessStoryCreateComponent implements OnInit {
     const fileSize = fileDetails.size;
 
     if (fileSize > 10000000) {
-      $('#comment-validation').removeClass('alert-success');
-      $('#comment-validation').addClass('alert-danger').fadeIn(100);
-      $('#comment-validation').text('Failed to upload, image size larger, please resize it');
-      $('#comment-validation').fadeIn(100);
+      $('#success-story-comment-validation').removeClass('alert-success');
+      $('#success-story-comment-validation').addClass('alert-danger').fadeIn(100);
+      $('#success-story-comment-validation').text('Failed to upload, image size larger, please resize it');
+      $('#success-story-comment-validation').fadeIn(100);
       setTimeout(function () {
-        $('#comment-validation').fadeOut(1000);
+        $('#success-story-comment-validation').fadeOut(1000);
       }, 2000);
     } else {
 

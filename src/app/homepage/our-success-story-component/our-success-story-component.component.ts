@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject, HostListener } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import * as $ from 'jquery';
+import { SuccessStoryService } from './success-story.service';
 
 @Component({
   selector: 'app-our-success-story-component',
@@ -10,27 +11,9 @@ import * as $ from 'jquery';
 export class OurSuccessStoryComponentComponent implements OnInit {
 
 
-  images = [
-    'assets/success-story-images/sample1.jpg',
+  images: any;
 
-    'assets/success-story-images/sample2.jpg',
-
-    'assets/success-story-images/sample3.jpg',
-
-    'assets/success-story-images/sample4.jpg',
-
-    'assets/success-story-images/sample5.jpg',
-
-    'assets/success-story-images/sample6.jpg',
-
-    'assets/success-story-images/sample5.jpg',
-
-    'assets/success-story-images/sample3.jpg',
-
-    'assets/success-story-images/sample2.jpg',
-  ];
-
-  constructor(@Inject(DOCUMENT) private document: Document) { }
+  constructor(private successStoryService: SuccessStoryService) { }
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
@@ -44,10 +27,17 @@ export class OurSuccessStoryComponentComponent implements OnInit {
   }
 
 
+  getSuccessStory() {
+    this.successStoryService.getSuccessStoryImages().subscribe(data => {
+      this.images = data;
+      console.log(this.images);
+    });
+  }
+
 
   ngOnInit() {
 
-
+    this.getSuccessStory();
   }
 
 }

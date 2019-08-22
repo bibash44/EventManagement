@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 
 @Component({
@@ -56,9 +56,10 @@ export class ProtfolioCreateComponent implements OnInit {
           $('#imagename').val(data);
         },
         error() {
+          $('#occasiontype').focus();
           $('#comment-validation').removeClass('alert-success');
           $('#comment-validation').addClass('alert-danger').fadeIn(100);
-          $('#comment-validation').text('Failed to upload, Something went wrong');
+          $('#comment-validation').text('Failed to upload image');
           $('#comment-validation').fadeIn(100);
           setTimeout(function () {
             $('#comment-validation').fadeOut(1000);
@@ -74,10 +75,20 @@ export class ProtfolioCreateComponent implements OnInit {
     const imageValue = image.value;
 
     if (occasiontypeValue === 'Select Type') {
-      alert('Please select a Type*');
+      $('#comment-validation').removeClass('alert-success');
+      $('#comment-validation').addClass('alert-danger').fadeIn(100);
+      $('#comment-validation').text('Please select a type');
+      $('#comment-validation').fadeIn(100);
 
     } else if (imageValue === '') {
-      alert('Please select an image*');
+      $('#occasiontype').focus();
+      $('#comment-validation').removeClass('alert-success');
+      $('#comment-validation').addClass('alert-danger').fadeIn(100);
+      $('#comment-validation').text('Please select an image');
+      $('#comment-validation').fadeIn(100);
+      setTimeout(function () {
+        $('#comment-validation').fadeOut(1000);
+      }, 2000);
 
     } else {
       const data = {
@@ -92,30 +103,27 @@ export class ProtfolioCreateComponent implements OnInit {
         data,
         success(res) {
           if (res) {
-
-            $('#create-portfolio').val(null);
-            $('#occasiontype').val(null);
-            $('#imagename').val(null);
-            $('#title').val(null);
-            $('#img').fadeOut(200);
-
-
+            $('#occasiontype').focus();
             $('#comment-validation').removeClass('alert-danger');
             $('#comment-validation').addClass('alert-success').fadeIn(100);
-            $('#comment-validation').text('Services successfully uploaded');
+            $('#comment-validation').text('Portfolio successfully uploaded');
             $('#comment-validation').fadeIn(100);
 
             setTimeout(function () {
               $('#comment-validation').fadeOut(1000);
             }, 2000);
+
+            setTimeout(function () {
+              window.location.reload();
+            }, 2000);
           }
         },
         error() {
+          $('#occasiontype').focus();
           $('#comment-validation').removeClass('alert-success');
           $('#comment-validation').addClass('alert-danger').fadeIn(100);
           $('#comment-validation').text('Something went wrong');
           $('#comment-validation').fadeIn(100);
-
           setTimeout(function () {
             $('#comment-validation').fadeOut(1000);
           }, 2000);

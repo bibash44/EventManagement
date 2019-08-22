@@ -11,10 +11,10 @@
             <h2 class="font-weight-bolder m-2 col-md-3"> Our Success Story</h2>
             <h2 class="font-weight-bolder m-2 col-md-3"> </h2>
           <div class="col-md-3 m-2 no-gutters" *ngFor="let photo of images" id="images-container">
-            <a href="{{photo}}" target="_blank">
-            <img src="{{photo}}" id="image">
+            <a href="http://localhost:1954/UPLOADS/images/success_story/{{photo.image}}" target="_blank">
+            <img src="http://localhost:1954/UPLOADS/images/success_story/{{photo.image}}" id="image">
             </a>
-            <span id="image-caption">Abc</span>
+            <span id="image-caption">{{photo.title}}</span>
           </div>
         </div>
       </div>

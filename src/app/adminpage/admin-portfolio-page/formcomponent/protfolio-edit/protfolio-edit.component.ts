@@ -1,6 +1,6 @@
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
-import {PortfolioEditService} from './portfolio-edit.service';
-import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { PortfolioEditService } from './portfolio-edit.service';
+import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 import * as $ from 'jquery';
 
 
@@ -18,14 +18,14 @@ export class ProtfolioEditComponent implements OnInit, AfterViewInit {
   imagename = null;
   imageUrl: string;
 
-  constructor(private  portfolioService: PortfolioEditService) {
+  constructor(private portfolioService: PortfolioEditService) {
   }
 
   displayedColumns: string[] = ['type', 'image', 'actions'];
   dataSource = new MatTableDataSource(this.clients);
 
-  @ViewChild(MatSort, {static: true}) sort: MatSort;
-  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+  @ViewChild(MatSort, { static: true }) sort: MatSort;
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
@@ -53,24 +53,45 @@ export class ProtfolioEditComponent implements OnInit, AfterViewInit {
   }
 
   deleteById(id: any, image: any) {
-    // alert(image);
-    $.ajax({
-      type: 'DELETE',
-      url: this.baseurl + '/portfolio/delete',
-      data: {
-        id,
-        image
-      },
-      success(data) {
-        alert('Image Deleted');
-        setTimeout(function () {
-          window.location.reload();
-        }, 2000);
-      },
-      error() {
 
-      }
-    });
+    var confirmDelete = confirm('Are you sure to delete ?');
+
+    if (confirmDelete) {
+      $.ajax({
+        type: 'DELETE',
+        url: this.baseurl + '/portfolio/delete',
+        data: {
+          id,
+          image
+        },
+        success(data) {
+          $('#update-comment-validation').addClass('alert-success');
+          $('#update-comment-validation').removeClass('alert-danger').fadeIn(100);
+          $('#update-comment-validation').text('Deleted successfully');
+          $('#update-comment-validation').fadeIn(100);
+          setTimeout(function () {
+            $('#update-comment-validation').fadeOut(1000);
+          }, 2000);
+
+
+          setTimeout(function () {
+            window.location.reload();
+          }, 2000);
+        },
+        error() {
+
+          $('#update-comment-validation').removeClass('alert-success');
+          $('#update-comment-validation').addClass('alert-danger').fadeIn(100);
+          $('#update-comment-validation').text('Failed to delete');
+          $('#update-comment-validation').fadeIn(100);
+          setTimeout(function () {
+            $('#update-comment-validation').fadeOut(1000);
+          }, 2000);
+
+        }
+      });
+
+    }
   }
 
 
@@ -134,7 +155,7 @@ export class ProtfolioEditComponent implements OnInit, AfterViewInit {
 
     } else if (imageValue == '') {
       alert('Please select an image***');
-    }else {
+    } else {
       const data = {
         id: idValue,
         type: typeValue,

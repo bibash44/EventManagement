@@ -1,3 +1,4 @@
+import { AdminReviewComponent } from './adminpage/admin-review/admin-review.component';
 import { AdminHomepageComponent } from './admin-homepage/admin-homepage.component';
 import { AdminServicePageComponent } from './adminpage/admin-service-page/admin-service-page.component';
 import { AdminPortfolioPageComponent } from './adminpage/admin-portfolio-page/admin-portfolio-page.component';
@@ -106,6 +107,12 @@ const routes: Routes = [
         path: 'services',
         component: AdminServicePageComponent,
         data: { activservice: 'activeservice' }
+      },
+
+      {
+        path: 'review',
+        component: AdminReviewComponent,
+        data: { activepreview: 'activepreview' }
       },
 
 

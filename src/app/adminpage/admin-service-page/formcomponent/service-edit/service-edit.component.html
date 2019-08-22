@@ -52,6 +52,9 @@
     <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
   </mat-form-field>
 
+  <div class="update-comment-validation alert alert-success p-3 mt-3" role="alert" id="delete-comment-validation"
+  style="display: none"></div>
+
   <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
 
     <ng-container matColumnDef="type">

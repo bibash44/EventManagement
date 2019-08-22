@@ -52,7 +52,9 @@ export class SuccessStoryEditComponent implements OnInit, AfterViewInit {
   }
 
   deleteById(id: any, image: any) {
-    // alert(image);
+    var Confirmdelete = confirm('Are you sure to delete');
+
+    if (Confirmdelete) {
     $.ajax({
       type: 'DELETE',
       url: this.baseurl + '/success_story/delete',
@@ -61,15 +63,33 @@ export class SuccessStoryEditComponent implements OnInit, AfterViewInit {
         image
       },
       success(data) {
-        alert('Image Deleted');
+        $('#success-story-title').focus();
+        $('#update-comment-validation').removeClass('alert-danger');
+        $('#update-comment-validation').addClass('alert-success').fadeIn(100);
+        $('#update-comment-validation').text('Success story deleted');
+        $('#update-comment-validation').fadeIn(100);
+        setTimeout(function () {
+          $('#update-comment-validation').fadeOut(1000);
+        }, 2000);
         setTimeout(function () {
           window.location.reload();
         }, 2000);
       },
       error() {
-
+        $('#success-story-title').focus();
+        $('#update-comment-validation').removeClass('alert-success');
+        $('#update-comment-validation').addClass('alert-danger').fadeIn(100);
+        $('#update-comment-validation').text('Something went wrong');
+        $('#update-comment-validation').fadeIn(100);
+        setTimeout(function () {
+          $('#update-comment-validation').fadeOut(1000);
+        }, 2000);
+        setTimeout(function () {
+          window.location.reload();
+        }, 2000);
       }
     });
+  } else{}
   }
 
 
@@ -120,7 +140,7 @@ export class SuccessStoryEditComponent implements OnInit, AfterViewInit {
     }
   }
 
-  servicesDisplayFormUpdate() {
+  successStoryFormUpdate() {
 
     const idValue = $('#update-success-story-id').val();
     const servicesDisplayTitle = $('#update-success-story-title').val();
@@ -144,28 +164,27 @@ export class SuccessStoryEditComponent implements OnInit, AfterViewInit {
         data,
         success(res) {
           if (res) {
+            $('#update-comment-validation').focus();
             $('#update-comment-validation').removeClass('alert-danger');
             $('#update-comment-validation').addClass('alert-success').fadeIn(100);
             $('#update-comment-validation').text('Success Story successfully updated');
             $('#update-comment-validation').fadeIn(100);
-            $('#update-comment-validation').focus();
 
             setTimeout(function () {
               $('#update-comment-validation').fadeOut(1000);
             }, 2000);
 
-
             setTimeout(function () {
               window.location.reload();
-            }, 2000);
+            }, 3000);
           }
         },
         error() {
+          $('#update-comment-validation').focus();
           $('#update-comment-validation').removeClass('alert-success');
           $('#update-comment-validation').addClass('alert-danger').fadeIn(100);
           $('#update-comment-validation').text('Something went wrong');
           $('#update-comment-validation').fadeIn(100);
-          $('#update-comment-validation').focus();
 
           setTimeout(function () {
             $('#update-comment-validation').fadeOut(1000);

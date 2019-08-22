@@ -67,6 +67,8 @@ import { SlidingImageCreateComponent } from './admin-homepage/form-component/sli
 import { SlidingImageEditComponent } from './admin-homepage/form-component/slidingimage/sliding-image-edit/sliding-image-edit.component';
 import { SuccessStoryCreateComponent } from './admin-homepage/form-component/success-story/success-story-create/success-story-create.component';
 import { SuccessStoryEditComponent } from './admin-homepage/form-component/success-story/success-story-edit/success-story-edit.component';
+import { AdminReviewComponent } from './adminpage/admin-review/admin-review.component';
+import { ReviewEditComponent } from './adminpage/admin-review/review-edit/review-edit.component';
 
 // import { LightboxModule, CarouselModule, ModalsModule, WavesModule } from 'angular-bootstrap-md';
 
@@ -120,6 +122,8 @@ import { SuccessStoryEditComponent } from './admin-homepage/form-component/succe
     SlidingImageEditComponent,
     SuccessStoryCreateComponent,
     SuccessStoryEditComponent,
+    AdminReviewComponent,
+    ReviewEditComponent,
 
   ],
 

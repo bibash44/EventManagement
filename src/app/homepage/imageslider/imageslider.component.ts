@@ -1,5 +1,7 @@
+import { ImagesliderService } from './imageslider.service';
 import { Component, OnInit } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
+
+
 
 @Component({
   selector: 'app-imageslider',
@@ -7,22 +9,20 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./imageslider.component.css']
 })
 export class ImagesliderComponent implements OnInit {
-  sliderimages = [
-    { src: 'assets/success-story-images/sample1.jpg' },
-
-    { src: 'assets/success-story-images/sample2.jpg' },
-
-    { src: 'assets/success-story-images/sample3.jpg' }
-  ];
+  sliderimages: any;
 
 
+  getSliderImages() {
+    this.imageSliderService.getSliderImages()
+      .subscribe(data => {
+        this.sliderimages = data;
+      });
+  }
 
-  constructor() { }
-
-
-
+  constructor(private imageSliderService: ImagesliderService) { }
 
   ngOnInit() {
+    this.getSliderImages();
 
 
   }

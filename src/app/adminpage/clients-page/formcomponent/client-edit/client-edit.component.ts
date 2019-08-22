@@ -51,7 +51,9 @@ export class ClientEditComponent implements OnInit, AfterViewInit {
   }
 
   deleteById(id: any, image: any) {
-    // alert(image);
+    var Confirmdelete = confirm('Are you sure to delete');
+
+    if (Confirmdelete) {
     $.ajax({
       type: 'DELETE',
       url: this.baseurl + '/clients/delete',
@@ -60,15 +62,31 @@ export class ClientEditComponent implements OnInit, AfterViewInit {
         image
       },
       success(data) {
-        alert('Image Deleted');
+        $('#client-comment-validation').removeClass('alert-danger');
+        $('#client-comment-validation').addClass('alert-success').fadeIn(100);
+        $('#client-comment-validation').text('Success story deleted');
+        $('#client-comment-validation').fadeIn(100);
+        setTimeout(function () {
+          $('#client-comment-validation').fadeOut(1000);
+        }, 2000);
         setTimeout(function () {
           window.location.reload();
         }, 2000);
       },
       error() {
-
+        $('#client-comment-validation').removeClass('alert-success');
+        $('#client-comment-validation').addClass('alert-danger').fadeIn(100);
+        $('#client-comment-validation').text('Something went wrong');
+        $('#client-comment-validation').fadeIn(100);
+        setTimeout(function () {
+          $('#client-comment-validation').fadeOut(1000);
+        }, 2000);
+        setTimeout(function () {
+          window.location.reload();
+        }, 2000);
       }
     });
+  }else{}
   }
 
 
@@ -97,12 +115,12 @@ export class ClientEditComponent implements OnInit, AfterViewInit {
     const fileSize = fileDetails.size;
 
     if (fileSize > 10000000) {
-      $('#update-comment-validation').removeClass('alert-success');
-      $('#update-comment-validation').addClass('alert-danger').fadeIn(100);
-      $('#update-comment-validation').text('Failed to upload, image size larger, please resize it');
-      $('#update-comment-validation').fadeIn(100);
+      $('#client-comment-validation').removeClass('alert-success');
+      $('#client-comment-validation').addClass('alert-danger').fadeIn(100);
+      $('#client-comment-validation').text('Failed to upload, image size larger, please resize it');
+      $('#client-comment-validation').fadeIn(100);
       setTimeout(function () {
-        $('#update-comment-validation').fadeOut(1000);
+        $('#client-comment-validation').fadeOut(1000);
       }, 2000);
     } else {
       $.ajax({
@@ -117,7 +135,13 @@ export class ClientEditComponent implements OnInit, AfterViewInit {
           $('#update-clients-image-name').val(data);
         },
         error() {
-
+          $('#client-comment-validation').removeClass('alert-success');
+          $('#client-comment-validation').addClass('alert-danger').fadeIn(100);
+          $('#client-comment-validation').text('Failed to upload image');
+          $('#client-comment-validation').fadeIn(100);
+          setTimeout(function () {
+            $('#client-comment-validation').fadeOut(1000);
+          }, 2000);
         }
       });
     }
@@ -155,14 +179,14 @@ export class ClientEditComponent implements OnInit, AfterViewInit {
         data,
         success(res) {
           if (res) {
-            $('#update-comment-validation').removeClass('alert-danger');
-            $('#update-comment-validation').addClass('alert-success').fadeIn(100);
-            $('#update-comment-validation').text('Services successfully uploaded');
-            $('#update-comment-validation').fadeIn(100);
-            $('#update-comment-validation').focus();
+            $('#client-comment-validation').focus();
+            $('#client-comment-validation').removeClass('alert-danger');
+            $('#client-comment-validation').addClass('alert-success').fadeIn(100);
+            $('#client-comment-validation').text('Services successfully uploaded');
+            $('#client-comment-validation').fadeIn(100);
 
             setTimeout(function () {
-              $('#update-comment-validation').fadeOut(1000);
+              $('#client-comment-validation').fadeOut(1000);
             }, 2000);
 
 
@@ -172,14 +196,14 @@ export class ClientEditComponent implements OnInit, AfterViewInit {
           }
         },
         error() {
-          $('#update-comment-validation').removeClass('alert-success');
-          $('#update-comment-validation').addClass('alert-danger').fadeIn(100);
-          $('#update-comment-validation').text('Something went wrong');
-          $('#update-comment-validation').fadeIn(100);
-          $('#update-comment-validation').focus();
+          $('#client-comment-validation').focus();
+          $('#client-comment-validation').removeClass('alert-success');
+          $('#client-comment-validation').addClass('alert-danger').fadeIn(100);
+          $('#client-comment-validation').text('Something went wrong');
+          $('#client-comment-validation').fadeIn(100);
 
           setTimeout(function () {
-            $('#update-comment-validation').fadeOut(1000);
+            $('#client-comment-validation').fadeOut(1000);
           }, 2000);
         }
       });

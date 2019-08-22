@@ -84,6 +84,7 @@ export class ServiceCreateComponent implements OnInit {
     const packageDescriptionValue = packageDescription.value;
 
     if (typeValue == 'Select Type' || typeValue == '') {
+      $('#title').focus();
       $('#comment-validation').addClass('alert-danger');
       $('#comment-validation').removeClass('alert-success').fadeIn(100);
       $('#comment-validation').text('Please select type');
@@ -95,6 +96,7 @@ export class ServiceCreateComponent implements OnInit {
 
 
     } else if (imageValue == '') {
+      $('#title').focus();
       $('#comment-validation').addClass('alert-danger');
       $('#comment-validation').removeClass('alert-success').fadeIn(100);
       $('#comment-validation').text('Please select image');
@@ -106,8 +108,8 @@ export class ServiceCreateComponent implements OnInit {
       }, 2000);
 
     } else if (titleValue == '') {
-      $('#title').attr('placeholder', 'Please enter a Title *');
       $('#title').focus();
+      $('#title').attr('placeholder', 'Please enter a Title *');
       $('#title').css({ border: '2px solid red' });
     } else if (packageDescriptionValue === '') {
       $('#packageDescription').attr('placeholder', 'Please enter package description *');
@@ -127,14 +129,7 @@ export class ServiceCreateComponent implements OnInit {
         data,
         success(res) {
           if (res) {
-
-            $('#create-services').val(null);
-            $('#title').val(null);
-            $('#type').val(null);
-            $('#imagename').val(null);
-            $('#packageDescription').val(null);
-            $('#img').fadeOut(200);
-
+            $('#title').focus();
             $('#comment-validation').removeClass('alert-danger');
             $('#comment-validation').addClass('alert-success').fadeIn(100);
             $('#comment-validation').text('Services successfully uploaded');
@@ -142,6 +137,10 @@ export class ServiceCreateComponent implements OnInit {
 
             setTimeout(function () {
               $('#comment-validation').fadeOut(1000);
+            }, 2000);
+
+            setTimeout(function () {
+              window.location.reload();
             }, 2000);
           }
         },
