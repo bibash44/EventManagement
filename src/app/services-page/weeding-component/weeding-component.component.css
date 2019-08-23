@@ -27,7 +27,13 @@ section {
   color: white;
 }
 
-#success-gallery #images {
+#success-gallery {
+  text-align: center;
+  padding-left: 10%;
+}
+
+
+#images {
   text-align: center;
 }
 

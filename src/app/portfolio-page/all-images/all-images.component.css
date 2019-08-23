@@ -22,7 +22,13 @@ border-radius: 5px;
   font-family: Cambria;
 }
 
-#success-gallery #images{
+#success-gallery {
+  text-align: center;
+  margin-left: 10%;
+}
+
+
+#images{
   text-align: center;
 }
 

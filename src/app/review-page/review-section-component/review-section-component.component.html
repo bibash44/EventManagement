@@ -6,24 +6,10 @@
 
     <div class="comments-details-container container-fluid m-0">
 
-      <div class="row">
-        <div class="col-sm">
-
-        </div>
-
-        <div class="col-sm">
-
-
-
-        </div>
-        <div class="col-sm">
-
-        </div>
-      </div>
 
       <div class="comment-details-content row animated" id="comment-details-content">
 
-        <button class="p-2 m-2" (click)=ShowPreviosSlides() id="show-previous-images"> <span
+        <button class="p-2" (click)=ShowPreviosSlides() id="show-previous-images"> <span
             style='font: size 50px;'>&#8882;</span> </button>
 
         <div class="col-sm-3 comment-details p-2 mt-5 mb-4 animated" id="f-comment-details">
@@ -50,7 +36,7 @@
           <span class="comment-date font-weight-bold"> {{comments[thirdImage].date}} </span>
         </div>
 
-        <button class="p-2 m-2" (click)=showNextSlide() id="show-next-images"> <span
+        <button class="p-2" (click)=showNextSlide() id="show-next-images"> <span
             style='font: size 50px;'>&#8883;</span> </button>
 
       </div>

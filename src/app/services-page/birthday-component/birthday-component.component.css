@@ -29,7 +29,12 @@ background: black;
   color: white;
 }
 
-#success-gallery #images{
+#success-gallery{
+  text-align: center;
+  margin-left: 10%;
+}
+
+#images{
   text-align: center;
 }
 

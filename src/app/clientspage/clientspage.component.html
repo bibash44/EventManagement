@@ -5,26 +5,17 @@
   <br>
   <br>
   <div class="clients-container container-fluid w-100">
-    <div class="clients-container-heading w-100 align-items-center col">
+    <div class="clients-container-heading w-100 align-items-center col no-gutters">
       <h2 style="color: white">What does our client say</h2>
     </div>
 
     <div class="clients-details-container container-fluid m-0">
 
-      <div class="row">
-        <div class="col-sm">
-        </div>
 
-        <div class="col-sm">
-        </div>
-        <div class="col-sm">
-
-        </div>
-      </div>
 
       <div class="client-details-content row animated" id="client-details-content">
 
-        <button class="p-2 m-2" (click)=ShowPreviosSlides() id="show-previous-images"> <span
+        <button class="p-2" (click)=ShowPreviosSlides() id="show-previous-images"> <span
             style='font: size 50px;'>&#8882;</span> </button>
 
         <div class="col-sm-3 client-details p-2 mt-5 mb-4 animated" id="f-client-details">
@@ -48,7 +39,7 @@
           <span class="client-company font-weight-bold"> {{clients[thirdImage].client_company}} </span>
         </div>
 
-        <button class="p-2 m-2" (click)=showNextSlide() id="show-next-images"> <span
+        <button class="p-2" (click)=showNextSlide() id="show-next-images"> <span
             style='font: size 50px;'>&#8883;</span> </button>
 
       </div>

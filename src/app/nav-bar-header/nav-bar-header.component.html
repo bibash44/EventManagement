@@ -1,6 +1,6 @@
 <div class="nav-container animated bounceInUp" id="nav-container">
   <nav class="navbar navbar-expand-lg navbar-dark p-4" id="main-nav-bar">
-    <a class="navbar-brand mr-5" href="/">
+    <a class="navbar-brand mr-5" [routerLink]="'/'">
       <!-- <img src="assets/images/logo2.png" id="site-logo"> -->
       <span id="brandfname">Best </span>
       <span id="brandmname">Event </span>
@@ -15,47 +15,47 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item mr-3">
-          <a href="/" id="nav-home" class="nav-hover">
+          <a [routerLink]="'/'" id="nav-home" class="nav-hover">
             <span *ngIf="activenavhome=='activehome'" class="active-nav-bar"> HOME </span>
             <span *ngIf="activenavhome==null" class="nav-hover"> HOME </span>
           </a>
         </li>
         <li class="nav-item mr-3">
-          <a href="clients" id="nav-client" class="nav-hover">
+          <a [routerLink]="'/clients'" id="nav-client" class="nav-hover">
             <span *ngIf="activenavclient=='activeclient'" class="active-nav-bar"> CLIENTS </span>
             <span *ngIf="activenavclient==null" class="nav-hover"> CLIENTS </span>
           </a>
         </li>
         <li class="nav-item mr-3">
-          <a href="services" id="nav-services"  class="nav-hover">
+          <a [routerLink]="'/services'" id="nav-services"  class="nav-hover">
               <span *ngIf="activenavservice=='activeservice'" class="active-nav-bar"> SERVICES </span>
               <span *ngIf="activenavservice==null" class="nav-hover"> SERVICES </span>
           </a>
         </li>
 
         <li class="nav-item mr-3">
-          <a href="portfolio" id="nav-portfolio" class="nav-hover">
+          <a [routerLink]="'/portfolio'" id="nav-portfolio" class="nav-hover">
             <span *ngIf="activenavportfolio=='activeportfolio'" class="active-nav-bar"> PORTFOLIO </span>
             <span *ngIf="activenavportfolio==null" class="nav-hover"> PORTFOLIO </span>
           </a>
         </li>
 
         <li class="nav-item mr-3">
-            <a href="review" id="nav-review" class="nav-hover">
+            <a [routerLink]="'/review'" id="nav-review" class="nav-hover">
               <span *ngIf="activenavreview=='activepreview'" class="active-nav-bar"> REVIEW </span>
               <span *ngIf="activenavreview==null" class="nav-hover"> REVIEW </span>
             </a>
           </li>
 
         <li class="nav-item mr-3">
-          <a href="contact" id="nav-contact" class="nav-hover">
+          <a [routerLink]="'/contact'" id="nav-contact" class="nav-hover">
             <span *ngIf="activenavcontact=='activecontact'" class="active-nav-bar"> CONTACT </span>
             <span *ngIf="activenavcontact==null" class="nav-hover"> CONTACT </span>
           </a>
         </li>
 
         <li class="nav-item mr-3">
-          <a href="about" id="nav-nav" class="nav-hover">
+          <a [routerLink]="'/about'" id="nav-nav" class="nav-hover">
             <span *ngIf="activenavabout=='aboutactive'" class="active-nav-bar"> ABOUT </span>
             <span *ngIf="activenavabout==null" class="nav-hover"> ABOUT </span>
           </a>
