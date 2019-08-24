@@ -13,10 +13,10 @@
           <h2 class="font-weight-bolder m-2 col-md-3" style="color: white"> Our Weeding Packages</h2>
           <h2 class="font-weight-bolder m-2 col-md-3"> </h2>
           <div class="col-md-3 m-2 no-gutters" *ngFor="let photo of images" id="images-container">
-            <a ngbTooltip="{{photo.package_detail}}">
-              <img src="{{photo.src}}" id="image">
+            <a ngbTooltip="{{photo.description}}">
+              <img src="http://localhost:1954/UPLOADS/images/services/{{photo.image}}" id="image">
             </a>
-            <span id="image-caption">{{photo.package_title}}</span>
+            <span id="image-caption">{{photo.title}}</span>
           </div>
         </div>
       </div>
