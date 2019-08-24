@@ -75,7 +75,7 @@ export class ReviewFormComponent implements OnInit {
         processData: false,
         data: formData,
         success: function (data) {
-         console.log(data)
+          console.log(data)
           $('#imagename').val(data.image);
         },
         error: function () {
@@ -153,6 +153,7 @@ export class ReviewFormComponent implements OnInit {
           }
 
           else if (success == true) {
+            $('#name').focus();
             $('#comment-validation').addClass('alert-success');
             $('#comment-validation').removeClass('alert-danger');
             $('#comment-validation').text('Comment recorded');

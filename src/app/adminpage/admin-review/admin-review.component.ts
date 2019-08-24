@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import * as $ from 'jquery';
 @Component({
   selector: 'app-admin-review',
   templateUrl: './admin-review.component.html',
@@ -13,11 +13,12 @@ export class AdminReviewComponent implements OnInit {
 
     let checkSession = localStorage.getItem('success_login');
     if (checkSession == 'session_verified') {
-      // valid login
+      $('#main-page-items').fadeIn(10);
+
     }
 
     else {
-      alert('Access Deninded, please login to verify');
+      alert('Access denied, please login to verify');
       window.location.href = 'admin/login';
     }
   }

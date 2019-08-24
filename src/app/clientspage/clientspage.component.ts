@@ -143,6 +143,7 @@ export class ClientspageComponent implements OnInit {
   constructor(private clientsPageService: ClientspageService) { }
 
   ngOnInit() {
+
     setInterval(() => {
       this.showNextSlide();
     }, 4000);

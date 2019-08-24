@@ -20,10 +20,10 @@ export class AdminNavComponent implements OnInit {
 
 
   logoutAdmin() {
-    var confirmLogout = confirm('Are you sure to logout');
+    var confirmLogout = confirm('Are you sure to logout ?');
     if (confirmLogout) {
       window.localStorage.setItem('success_login', '');
-      window.location.href = 'admin';
+      window.location.href = 'admin/login';
     }
     else {
       //do nothing

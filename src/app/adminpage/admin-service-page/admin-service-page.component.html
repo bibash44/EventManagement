@@ -1,28 +1,29 @@
-<app-admin-nav></app-admin-nav>
+<div id="main-page-items">
+  <app-admin-nav></app-admin-nav>
 
-<br>
-<br>
+  <br>
+  <br>
 
-<div class="container">
-  <div class="row" id="createservicerow">
-    <div class="col-2"></div>
-    <div class="col-8">
-      <label class="btn btn-primary mt-2 w-100">Create Service package</label>
-      <app-service-create></app-service-create>
+  <div class="container">
+    <div class="row" id="createservicerow">
+      <div class="col-2"></div>
+      <div class="col-8">
+        <label class="btn btn-primary mt-2 w-100">Create Service package</label>
+        <app-service-create></app-service-create>
+      </div>
+      <div class="col-2"></div>
+
     </div>
-    <div class="col-2"></div>
 
-  </div>
+    <div class="row">
+      <!--<div class="col-1"></div>-->
+      <div class="col-12">
+        <label class="btn btn-primary mt-2 w-100">Edit Service package</label>
+        <app-service-edit></app-service-edit>
+      </div>
+      <!--<div class="col-1"></div>-->
 
-  <div class="row">
-    <!--<div class="col-1"></div>-->
-    <div class="col-12">
-      <label class="btn btn-primary mt-2 w-100">Edit Service package</label>
-     <app-service-edit></app-service-edit>
     </div>
-    <!--<div class="col-1"></div>-->
-
   </div>
-
 
 </div>
