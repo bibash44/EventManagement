@@ -1,10 +1,13 @@
 <div class="nav-container animated bounceInUp" id="nav-container">
-  <nav class="navbar navbar-expand-lg navbar-dark p-4" id="main-nav-bar">
+  <nav class="navbar navbar-expand-lg navbar-dark p-2" id="main-nav-bar">
     <a class="navbar-brand mr-5" [routerLink]="'/admin'">
       <!-- <img src="assets/images/logo2.png" id="site-logo"> -->
-      <span id="brandfname">Best </span>
-      <span id="brandmname">Event </span>
-      <span id="brandlname">Management </span>
+
+      <img src="../../assets/images/logo2.png" class="img-fluid">
+      <span id="brandfname"> Best </span>
+      <span id="brandmname"> Event </span>
+      <span id="brandlname"> Management </span>
+
     </a>
     <button class="navbar-toggler" type="button" (click)="openNav()" data-toggle="collapse"
       data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -13,13 +16,15 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
+
+      <ul class="navbar-nav ml-auto text-center">
         <li class="nav-item mr-3">
           <a [routerLink]="'/admin'" id="nav-home" class="nav-hover">
             <span *ngIf="activenavhome=='activehome'" class="active-nav-bar"> HOME </span>
             <span *ngIf="activenavhome==null" class="nav-hover"> HOME </span>
           </a>
         </li>
+
         <li class="nav-item mr-3">
           <a [routerLink]="'/admin/clients'" id="nav-client" class="nav-hover">
             <span *ngIf="activenavclient=='activeclient'" class="active-nav-bar"> CLIENTS </span>
@@ -27,9 +32,9 @@
           </a>
         </li>
         <li class="nav-item mr-3">
-          <a [routerLink]="'/admin/services'" id="nav-services"  class="nav-hover">
-              <span *ngIf="activenavservice=='activeservice'" class="active-nav-bar"> SERVICES </span>
-              <span *ngIf="activenavservice==null" class="nav-hover"> SERVICES </span>
+          <a [routerLink]="'/admin/services'" id="nav-services" class="nav-hover">
+            <span *ngIf="activenavservice=='activeservice'" class="active-nav-bar"> SERVICES </span>
+            <span *ngIf="activenavservice==null" class="nav-hover"> SERVICES </span>
           </a>
         </li>
 
@@ -41,11 +46,11 @@
         </li>
 
         <li class="nav-item mr-3">
-            <a [routerLink]="'/admin/review'" id="nav-review" class="nav-hover">
-              <span *ngIf="activenavreview=='activepreview'" class="active-nav-bar"> REVIEW </span>
-              <span *ngIf="activenavreview==null" class="nav-hover"> REVIEW </span>
-            </a>
-          </li>
+          <a [routerLink]="'/admin/review'" id="nav-review" class="nav-hover">
+            <span *ngIf="activenavreview=='activepreview'" class="active-nav-bar"> REVIEW </span>
+            <span *ngIf="activenavreview==null" class="nav-hover"> REVIEW </span>
+          </a>
+        </li>
 
         <li class="nav-item mr-3">
           <a [routerLink]="'/admin/contact'" id="nav-contact" class="nav-hover">
@@ -58,6 +63,13 @@
           <a [routerLink]="'/admin/about'" id="nav-nav" class="nav-hover">
             <span *ngIf="activenavabout=='aboutactive'" class="active-nav-bar"> ABOUT </span>
             <span *ngIf="activenavabout==null" class="nav-hover"> ABOUT </span>
+          </a>
+        </li>
+
+        <li class="nav-item mr-3">
+          <a  id="nav-logout" (click)="logoutAdmin()" class="nav-hover">
+            <span> <i class="fa fa-power-off"> </i> </span>
+
           </a>
         </li>
 

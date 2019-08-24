@@ -1,10 +1,14 @@
 <div class="nav-container animated bounceInUp" id="nav-container">
-  <nav class="navbar navbar-expand-lg navbar-dark p-4" id="main-nav-bar">
-    <a class="navbar-brand mr-5" [routerLink]="'/'">
+  <nav class="navbar navbar-expand-lg navbar-dark p-2" id="main-nav-bar">
+    <a class="navbar-brand mr-auto text-center" [routerLink]="'/'">
       <!-- <img src="assets/images/logo2.png" id="site-logo"> -->
-      <span id="brandfname">Best </span>
-      <span id="brandmname">Event </span>
-      <span id="brandlname">Management </span>
+
+      <img src="../../assets/images/logo2.png" class="img-fluid">
+      <span id="brandfname"> Best </span>
+      <span id="brandmname"> Event </span>
+      <span id="brandlname"> Management </span>
+
+
     </a>
     <button class="navbar-toggler" type="button" (click)="openNav()" data-toggle="collapse"
       data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -13,7 +17,7 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav ml-auto text-center">
         <li class="nav-item mr-3">
           <a [routerLink]="'/'" id="nav-home" class="nav-hover">
             <span *ngIf="activenavhome=='activehome'" class="active-nav-bar"> HOME </span>

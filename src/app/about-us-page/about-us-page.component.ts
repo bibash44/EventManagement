@@ -1,4 +1,6 @@
+import { AboutsUsPageeService } from './abouts-us-pagee.service';
 import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-about-us-page',
@@ -7,24 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutUsPageComponent implements OnInit {
 
-  aboutPage = [
-    {
-      'title': 'this is good',
-      'content': 'this is good'
-    },
-    {
-      'title': 'this is good',
-      'content': 'this is good'
-    },
-    {
-      'title': 'this is good',
-      'content': 'this is good'
-    },
-  ]
+  aboutPage: any;
 
-  constructor() { }
+  getAboutDetails() {
+    this.aboutService.getAboutDetails().
+      subscribe(data => {
+        this.aboutPage = data;
+        console.log(this.aboutPage);
+      })
+  }
+
+  constructor(private aboutService: AboutsUsPageeService) { }
 
   ngOnInit() {
+    this.getAboutDetails();
   }
 
 }

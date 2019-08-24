@@ -44,7 +44,8 @@ export class AdminLoginPageComponent implements OnInit {
           }
         },
         error: function (err) {
-          console.log(err);
+          $('#email-validation').css({ 'color': 'red' });
+          $('#email-validation').text('Something went wrong please try again');
         }
       });
     }
@@ -83,9 +84,12 @@ export class AdminLoginPageComponent implements OnInit {
         },
         success: function (data) {
           if (data == true) {
-            $('#email-validation').css({ 'color': 'green' });
-            $('#email-validation').text('Success Login');
-            $('#password-validatioin').text('');
+            // $('#email-validation').css({ 'color': 'green' });
+            // $('#email-validation').text('Success Login');
+            // $('#password-validatioin').text('');
+
+            window.location.href = '/admin';
+            localStorage.setItem('success_login', 'session_verified');
           }
 
           else {
@@ -96,7 +100,8 @@ export class AdminLoginPageComponent implements OnInit {
           }
         },
         error: function (err) {
-          console.log(err);
+          $('#email-validation').css({ 'color': 'red' });
+          $('#email-validation').text('Something went wrong please try again');
         }
       })
     }

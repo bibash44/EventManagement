@@ -1,5 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import * as $ from 'jquery';
 
 @Component({
@@ -18,6 +18,17 @@ export class AdminNavComponent implements OnInit {
   activenavreview = '';
   activenavabout = '';
 
+
+  logoutAdmin() {
+    var confirmLogout = confirm('Are you sure to logout');
+    if (confirmLogout) {
+      window.localStorage.setItem('success_login', '');
+      window.location.href = 'admin';
+    }
+    else {
+      //do nothing
+    }
+  }
 
   openNav() {
     $('#navbarSupportedContent').fadeToggle(500);
@@ -61,16 +72,16 @@ export class AdminNavComponent implements OnInit {
   ngOnInit() {
 
     this.adminRouteDetails
-    .data
-    .subscribe(data => {
-      this.activenavhome = data.activehome;
-      this.activenavclient = data.activeclient;
-      this.activenavcontact = data.activecontact;
-      this.activenavservice = data.activservice;
-      this.activenavportfolio = data.activeportfolio;
-      this.activenavreview = data.activepreview;
-      this.activenavabout = data.aboutactive;
-    });
+      .data
+      .subscribe(data => {
+        this.activenavhome = data.activehome;
+        this.activenavclient = data.activeclient;
+        this.activenavcontact = data.activecontact;
+        this.activenavservice = data.activservice;
+        this.activenavportfolio = data.activeportfolio;
+        this.activenavreview = data.activepreview;
+        this.activenavabout = data.aboutactive;
+      });
   }
 
 }
