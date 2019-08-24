@@ -51,8 +51,8 @@ export class AdminNavComponent implements OnInit {
       $('#nav-container').addClass('slideInDown');
       $('#nav-container').removeClass('slideInUp');
 
-      $('#main-nav-bar').removeClass('p-4');
-      $('#main-nav-bar').addClass('p-3');
+      $('#main-nav-bar').removeClass('p-2');
+      $('#main-nav-bar').addClass('p-1');
     }
 
     // tslint:disable-next-line: one-line
@@ -63,8 +63,8 @@ export class AdminNavComponent implements OnInit {
       $('#nav-container').removeClass('slideInDown');
       $('#nav-container').addClass('slideInUp');
 
-      $('#main-nav-bar').removeClass('p-3');
-      $('#main-nav-bar').addClass('p-4');
+      $('#main-nav-bar').removeClass('p-1');
+      $('#main-nav-bar').addClass('p-2');
     }
   }
 

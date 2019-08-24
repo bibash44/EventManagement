@@ -17,6 +17,8 @@ export class AdminServicePageComponent implements OnInit {
     }
 
     else {
+
+      $('#main-page-items').hide();
       alert('Access denied, please login to verify');
       window.location.href = 'admin/login';
     }
