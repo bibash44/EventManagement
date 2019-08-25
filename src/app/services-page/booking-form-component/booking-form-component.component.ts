@@ -13,8 +13,9 @@ export class BookingFormComponentComponent implements OnInit {
 
   name = '';
   phone_number = '';
-  emai = '';
+  email = '';
   prefered_location = '';
+  base_url = 'http://localhost:1954/';
 
 
 
@@ -64,8 +65,59 @@ export class BookingFormComponentComponent implements OnInit {
 
       this.name = nameValue;
       this.phone_number = phone_numberValue;
-      this.emai = emailValue;
+      this.email = emailValue;
       this.prefered_location = prefered_locationValue;
+
+      $.ajax({
+        url: this.base_url + 'booking',
+        type: 'POST',
+        data: {
+          name: this.name,
+          phone_number: this.phone_number,
+          email: this.email,
+          prefered_location: this.prefered_location
+        },
+        success: function (data) {
+
+          var success = data.success;
+
+          if (success) {
+            $('#comment-validation').removeClass('alert-danger');
+            $('#comment-validation').addClass('alert-success');
+            $('#comment-validation').text('Booking made successfully');
+            $('#comment-validation').fadeIn(1000);
+
+            $('#name').val('');
+            $('#email').val('');
+            $('#prefered_location').val('');
+            $('#phone_number').val('');
+
+            setTimeout(function () {
+              $('#comment-validation').fadeOut(1000);
+            }, 2000);
+          }
+
+          else {
+            $('#comment-validation').removeClass('alert-success');
+            $('#comment-validation').addClass('alert-danger');
+            $('#comment-validation').text('Something went wrong please try again');
+            $('#comment-validation').fadeIn(1000);
+
+            setTimeout(function () {
+              $('#comment-validation').fadeOut(1000);
+            }, 2000);
+          }
+        }, error() {
+          $('#comment-validation').removeClass('alert-success');
+          $('#comment-validation').addClass('alert-danger');
+          $('#comment-validation').text('Something went wrong please try again');
+          $('#comment-validation').fadeIn(1000);
+
+          setTimeout(function () {
+            $('#comment-validation').fadeOut(1000);
+          }, 2000);
+        }
+      })
     }
   }
 
