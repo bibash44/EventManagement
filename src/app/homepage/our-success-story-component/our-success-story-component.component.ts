@@ -19,8 +19,6 @@ export class OurSuccessStoryComponentComponent implements OnInit {
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-
-    console.log(window.scrollY);
     var scroll = window.scrollY;
 
     if (scroll > 500) {
