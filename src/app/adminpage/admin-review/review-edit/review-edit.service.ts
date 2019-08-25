@@ -7,7 +7,7 @@ import {catchError, tap} from 'rxjs/operators';
 })
 
 export class ReviewEditService {
-  private url = 'http://eventmandu.com/review';
+  private url = 'https://eventmandu.com/review';
 
   constructor(private http: HttpClient) {
   }

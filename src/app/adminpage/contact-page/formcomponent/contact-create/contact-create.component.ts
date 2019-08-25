@@ -54,7 +54,7 @@ export class ContactCreateComponent implements OnInit {
 
       $.ajax({
         type: 'PUT',
-        url: 'http://eventmandu.com/contact/update/contact',
+        url: 'https://eventmandu.com/contact/update/contact',
         data,
         success(res) {
           if (res) {
@@ -92,7 +92,7 @@ export class ContactCreateComponent implements OnInit {
 
     $.ajax({
       type: 'GET',
-      url: 'http://localhost:1954/contact/getContact',
+      url: 'https://localhost:1954/contact/getContact',
       success(data) {
 
 

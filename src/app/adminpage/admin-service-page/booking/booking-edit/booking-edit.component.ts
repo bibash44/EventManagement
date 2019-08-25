@@ -11,7 +11,7 @@ import * as $ from 'jquery';
 export class BookingEditComponent implements OnInit {
 
   private booking;
-  baseurl = 'http://eventmandu.com';
+  baseurl = 'https://eventmandu.com';
   fileToUpload: File = null;
   imagename = null;
   imageUrl: string;

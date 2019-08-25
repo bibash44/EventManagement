@@ -11,7 +11,7 @@ export class ServiceCreateComponent implements OnInit {
   imageUrl: string;
   fileToUpload: File = null;
   imagename = null;
-  baseurl = 'http://eventmandu.com';
+  baseurl = 'https://eventmandu.com';
 
   handleFileInput(file: FileList) {
     this.fileToUpload = file.item(0);

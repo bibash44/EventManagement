@@ -15,7 +15,7 @@ export class BookingFormComponentComponent implements OnInit {
   phone_number = '';
   email = '';
   prefered_location = '';
-  base_url = 'http://eventmandu.com/';
+  base_url = 'https://eventmandu.com/';
 
 
 

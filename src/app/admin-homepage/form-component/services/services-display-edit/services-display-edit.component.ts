@@ -10,7 +10,7 @@ import {ServicesDisplayEditService} from './services-display-edit.service';
 export class ServicesDisplayEditComponent implements OnInit, AfterViewInit {
 
   private servicesDisplay;
-  baseurl = 'http://eventmandu.com';
+  baseurl = 'https://eventmandu.com';
   fileToUpload: File = null;
   imagename = null;
   imageUrl: string;

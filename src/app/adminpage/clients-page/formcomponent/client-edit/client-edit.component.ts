@@ -13,7 +13,7 @@ import * as $ from 'jquery';
 export class ClientEditComponent implements OnInit, AfterViewInit {
 
   private clients;
-  baseurl = 'http://eventmandu.com';
+  baseurl = 'https://eventmandu.com';
   fileToUpload: File = null;
   imagename = null;
   imageUrl: string;

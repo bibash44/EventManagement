@@ -11,7 +11,7 @@
           <h2 class="font-weight-bolder m-2 col-md-3"> </h2>
           <div class="col-md-3 m-2 no-gutters" *ngFor="let photo of images" id="images-container">
             <a ngbTooltip="{{photo.description}}">
-                <img [style.background]="'url(http://eventmandu.com/UPLOADS/images/services/' + photo.image + ')'"
+                <img [style.background]="'url(https://eventmandu.com/UPLOADS/images/services/' + photo.image + ')'"
                 id="image" [style.backgroundSize]="'cover'" [style.backgroundRepeat]="'no-repeat'">
             </a>
             <span id="image-caption">{{photo.title}}</span>

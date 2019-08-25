@@ -37,7 +37,7 @@ export class AboutCreateComponent implements OnInit {
 
       $.ajax({
         type: 'POST',
-        url: 'http://eventmandu.com/aboutus/addAboutUs',
+        url: 'https://eventmandu.com/aboutus/addAboutUs',
         data,
         success(res) {
           if (res) {

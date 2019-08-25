@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 })
 export class ContactuspageService {
 
-  base_url = 'http://eventmandu.com/';
+  base_url = 'https://eventmandu.com/';
 
   getContactDetails() {
     return this.http.get(this.base_url + 'contact/getContact');

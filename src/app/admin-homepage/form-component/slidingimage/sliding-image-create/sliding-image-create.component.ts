@@ -10,7 +10,7 @@ export class SlidingImageCreateComponent implements OnInit {
 
   imageUrl: string;
   fileToUpload: File = null;
-  baseurl = 'http://eventmandu.com';
+  baseurl = 'https://eventmandu.com';
 
   handleFileInput(file: FileList) {
     this.fileToUpload = file.item(0);

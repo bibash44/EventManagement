@@ -11,7 +11,7 @@ import {ReviewEditService} from './review-edit.service';
 export class ReviewEditComponent implements OnInit, AfterViewInit {
 
   private review;
-  baseurl = 'http://eventmandu.com';
+  baseurl = 'https://eventmandu.com';
   fileToUpload: File = null;
   imagename = null;
   imageUrl: string;

@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SuccessStoryService {
 
-  base_url: string = 'http://eventmandu.com/';
+  base_url: string = 'https://eventmandu.com/';
 
   constructor(private http: HttpClient) { }
 

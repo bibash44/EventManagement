@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class BirthdayServiceService {
 
-  base_url = 'http://eventmandu.com/';
+  base_url = 'https://eventmandu.com/';
   type = 'Birthday';
 
   getBirthdayServices() {
