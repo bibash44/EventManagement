@@ -11,7 +11,7 @@ export class SuccessStoryCreateComponent implements OnInit {
 
   imageUrl: string;
   fileToUpload: File = null;
-  baseurl = 'http://localhost:1954';
+  baseurl = 'http://eventmandu.com';
 
   handleFileInput(file: FileList) {
     this.fileToUpload = file.item(0);

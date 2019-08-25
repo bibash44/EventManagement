@@ -7,7 +7,7 @@ import {catchError, tap} from 'rxjs/operators';
 })
 
 export class ClientsEditService {
-  private url = 'http://localhost:1954/clients/getClients';
+  private url = 'http://eventmandu.com/clients/getClients';
 
   constructor(private http: HttpClient) {
   }

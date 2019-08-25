@@ -8,7 +8,7 @@ import * as $ from 'jquery';
 })
 export class AdminLoginPageComponent implements OnInit {
 
-  base_url: string = 'http://localhost:1954/';
+  base_url: string = 'http://eventmandu.com/';
   getPassword(email) {
     let emailLogin = email.value;
     if (emailLogin == '') {

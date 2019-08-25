@@ -11,7 +11,7 @@ import {AboutUsEditService} from './about-edit.service';
 export class AboutEditComponent implements OnInit {
 
   private clients;
-  baseurl = 'http://localhost:1954';
+  baseurl = 'http://eventmandu.com';
 
   constructor(private  aboutusService: AboutUsEditService) { }
 

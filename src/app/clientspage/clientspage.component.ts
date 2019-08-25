@@ -19,56 +19,6 @@ export class ClientspageComponent implements OnInit {
 
   clients: any;
 
-  // clients = [
-  //   {
-  //     image: 'assets/clients/c1.jpg',
-  //     client_saying: 'k xa vai, sab thik thak hola ni dherai din vo naveteko',
-  //     client_name: 'Dinesh Gupta',
-  //     client_company: 'Classic tech'
-  //   },
-
-  //   {
-  //     image: 'assets/clients/client2.jpg',
-  //     client_saying: 'ah dai sabei thekai xa ani hajur ko vanu hos',
-  //     client_name: 'Dinesh Gupta',
-  //     client_company: 'Classic tech'
-  //   },
-
-  //   {
-  //     image: 'assets/clients/c3.jpg',
-  //     client_saying: 'a vai mero ni sab halchal tah thik xa baru kata gara aaish tah van na',
-  //     client_name: 'Dinesh Gupta',
-  //     client_company: 'Classic tech'
-  //   },
-
-  //   {
-  //     image: 'assets/clients/c4.jpg',
-  //     client_saying: 'a dai yeso ghumera ako ni',
-  //     client_name: 'Dinesh Gupta',
-  //     client_company: 'Classic tech'
-  //   },
-
-  //   {
-  //     image: 'assets/clients/c5.jpg',
-  //     client_saying: 'ok xa tah ani ba gardainas tah',
-  //     client_name: 'Dinesh Gupta',
-  //     client_company: 'Classic tech'
-  //   },
-
-  //   {
-  //     image: 'assets/clients/c6.jpg',
-  //     client_saying: 'kaha dai haruko navai vai lay garnu',
-  //     client_name: 'Dinesh Gupta',
-  //     client_company: 'Classic tech'
-  //   },
-
-  //   {
-  //     image: 'assets/clients/c1.jpg',
-  //     client_saying: 'kaha mula dai haruko chora janmi sako thyat',
-  //     client_name: 'Dinesh Gupta',
-  //     client_company: 'Classic tech'
-  //   }
-  // ];
 
 
   showNextSlide() {

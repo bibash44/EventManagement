@@ -7,7 +7,7 @@ import {catchError, tap} from 'rxjs/operators';
 })
 
 export class SuccessStoryEditService {
-  private url = 'http://localhost:1954/success_story/getSuccessStory';
+  private url = 'http://eventmandu.com/success_story/getSuccessStory';
 
   constructor(private http: HttpClient) {
   }

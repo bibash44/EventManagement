@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ReviewSectionService {
 
-  base_url: string = 'http://localhost:1954/';
+  base_url: string = 'http://eventmandu.com/';
 
   constructor(private http: HttpClient) { }
 

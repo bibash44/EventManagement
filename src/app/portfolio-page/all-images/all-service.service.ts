@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 })
 export class AllServiceService {
 
-  base_url = 'http://localhost:1954/';
+  base_url = 'http://eventmandu.com/';
 
 
   getAllImages() {

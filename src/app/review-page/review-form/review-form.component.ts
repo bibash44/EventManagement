@@ -12,7 +12,7 @@ export class ReviewFormComponent implements OnInit {
   comment = '';
   imagename = '';
   // tslint:disable-next-line: no-inferrable-types
-  base_url: string = 'http://localhost:1954/';
+  base_url: string = 'http://eventmandu.com/';
 
 
   public imagePath;

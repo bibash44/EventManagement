@@ -15,7 +15,7 @@ export class ServiceEditComponent implements OnInit, AfterViewInit {
 
 
   private clients;
-  baseurl = 'http://localhost:1954';
+  baseurl = 'http://eventmandu.com';
   fileToUpload: File = null;
   imagename = null;
   imageUrl: string;

@@ -54,7 +54,7 @@ export class ContactCreateComponent implements OnInit {
 
       $.ajax({
         type: 'PUT',
-        url: 'http://localhost:1954/contact/update/contact',
+        url: 'http://eventmandu.com/contact/update/contact',
         data,
         success(res) {
           if (res) {

@@ -12,7 +12,7 @@ export class ClientCreateComponent implements OnInit {
   imageUrl: string;
   imageSize: string;
   fileToUpload: File = null;
-  baseurl = 'http://localhost:1954';
+  baseurl = 'http://eventmandu.com';
 
   handleFileInput(file: FileList) {
     this.fileToUpload = file.item(0);

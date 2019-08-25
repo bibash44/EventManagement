@@ -7,7 +7,7 @@ import {catchError, tap} from 'rxjs/operators';
 })
 
 export class SlidingImageEditService {
-  private url = 'http://localhost:1954/sliding_image/getImageSlider';
+  private url = 'http://eventmandu.com/sliding_image/getImageSlider';
 
   constructor(private http: HttpClient) {
   }

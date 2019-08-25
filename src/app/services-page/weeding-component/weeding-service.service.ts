@@ -8,7 +8,7 @@ import { Injectable } from '@angular/core';
 export class WeedingServiceService {
 
 
-  base_url = 'http://localhost:1954/';
+  base_url = 'http://eventmandu.com/';
   type = 'Wedding';
 
   getWeedingServices() {

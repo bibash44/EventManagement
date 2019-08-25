@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 })
 export class AboutsUsPageeService {
 
-  base_url = 'http://localhost:1954/';
+  base_url = 'http://eventmandu.com';
 
 
   getAboutDetails() {

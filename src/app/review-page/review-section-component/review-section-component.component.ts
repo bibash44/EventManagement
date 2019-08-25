@@ -12,7 +12,7 @@ export class ReviewSectionComponentComponent implements OnInit {
 
 
   comments: any;
-  base_url: string = 'http://localhost:1954/';
+  base_url: string = 'http://eventmandu.com/';
 
 
 

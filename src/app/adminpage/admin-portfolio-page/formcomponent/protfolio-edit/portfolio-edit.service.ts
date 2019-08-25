@@ -7,7 +7,7 @@ import {catchError, map, tap} from 'rxjs/operators';
 })
 
 export class PortfolioEditService {
-  private url = 'http://localhost:1954/portfolio/getPortfolio';
+  private url = 'http://eventmandu.com/portfolio/getPortfolio';
 
   constructor(private http: HttpClient) {
   }

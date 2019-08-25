@@ -7,33 +7,7 @@ import * as $ from 'jquery';
   styleUrls: ['./services-page.component.css']
 })
 
-// @Component({
-//   selector:'app-services-page',
-//   templateUrl:'./services-page.component.html',
-//   styleUrls:[]
-// })
 export class ServeicesPageComponent implements OnInit {
-
-  images = [
-    'assets/success-story-images/sample1.jpg',
-
-    'assets/success-story-images/sample2.jpg',
-
-    'assets/success-story-images/sample3.jpg',
-
-    'assets/success-story-images/sample4.jpg',
-
-    'assets/success-story-images/sample5.jpg',
-
-    'assets/success-story-images/sample6.jpg',
-
-    'assets/success-story-images/sample5.jpg',
-
-    'assets/success-story-images/sample3.jpg',
-
-    'assets/success-story-images/sample2.jpg',
-  ];
-
 
 
   constructor() { }

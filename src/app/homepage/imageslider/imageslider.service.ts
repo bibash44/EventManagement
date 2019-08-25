@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ImagesliderService {
 
-  base_url: string = 'http://localhost:1954/';
+  base_url: string = 'http://eventmandu.com/';
 
   constructor(private http: HttpClient) { }
 
