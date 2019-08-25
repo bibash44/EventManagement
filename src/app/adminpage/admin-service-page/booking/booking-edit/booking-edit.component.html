@@ -1,0 +1,45 @@
+<div class="update-comment-validation alert alert-success p-3 mt-3" role="alert" id="booking-comment-validation"
+     style="display: none"></div>
+<mat-form-field class="w-100">
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+</mat-form-field>
+
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8" class="w-100">
+
+  <ng-container matColumnDef="username">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Username</th>
+    <td mat-cell *matCellDef="let element"> {{element.username}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="useremail">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+    <td mat-cell *matCellDef="let element"> {{element.useremail}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="userphone">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Phone no.</th>
+    <td mat-cell *matCellDef="let element"> {{element.userphone}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="prefered_location">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Preferred Location</th>
+    <td mat-cell *matCellDef="let element" style="width: 25%">{{element.prefered_location}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="booked_time">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Booked Time</th>
+    <td mat-cell *matCellDef="let element" style="width: 25%">{{element.booked_time}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Actions</th>
+    <td mat-cell *matCellDef="let element">
+      <button class="btn btn-danger" (click)="deleteById(element.id,element.image)"><i
+        class="fa fa-trash"></i>
+      </button>
+    </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<mat-paginator [pageSizeOptions]="[5, 10, 20, 50, 100, 200]" showFirstLastButtons></mat-paginator>

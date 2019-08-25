@@ -69,6 +69,8 @@ import { SuccessStoryCreateComponent } from './admin-homepage/form-component/suc
 import { SuccessStoryEditComponent } from './admin-homepage/form-component/success-story/success-story-edit/success-story-edit.component';
 import { AdminReviewComponent } from './adminpage/admin-review/admin-review.component';
 import { ReviewEditComponent } from './adminpage/admin-review/review-edit/review-edit.component';
+import { BookingComponent } from './adminpage/admin-service-page/booking/booking.component';
+import { BookingEditComponent } from './adminpage/admin-service-page/booking/booking-edit/booking-edit.component';
 
 // import { LightboxModule, CarouselModule, ModalsModule, WavesModule } from 'angular-bootstrap-md';
 
@@ -124,6 +126,8 @@ import { ReviewEditComponent } from './adminpage/admin-review/review-edit/review
     SuccessStoryEditComponent,
     AdminReviewComponent,
     ReviewEditComponent,
+    BookingComponent,
+    BookingEditComponent,
 
   ],
 
