@@ -9,7 +9,7 @@ export class WeedingServiceService {
 
 
   base_url = 'http://localhost:1954/';
-  type = 'Weeding';
+  type = 'Wedding';
 
   getWeedingServices() {
     return this.http.get(this.base_url + 'services/get_services_type/' + this.type);

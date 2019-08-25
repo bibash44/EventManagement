@@ -6,27 +6,37 @@
     <div id="services" class="animated mr-0">
       <div class="container-fluid">
         <div class="row no-gutters m-0 p-0 mr-0" id="gallery-row">
-          <h2 class="font-weight-bolder m-2 col-md-3"> </h2>
-          <h2 class="font-weight-bolder m-2 col-md-3"> Our Services </h2>
-          <h2 class="font-weight-bolder m-2 col-md-3"> </h2>
+          <h2 class="font-weight-bolder m-3 col-md-3"> </h2>
+          <h2 class="font-weight-bolder m-4 col-md-4"> Our Services </h2>
+          <h2 class="font-weight-bolder m-3 col-md-3"> </h2>
 
-          <div class="col-md-3 m-2 no-gutters" id="images-container">
-            <a href="services"   placement="top" ngbTooltip="Click to know more about weeding">
+          <div class="col-md-3 m-5 no-gutters" id="images-container">
+            <a [routerLink]="'/services'"   placement="top" ngbTooltip="Click to know more about weeding">
+
+
               <img src="assets/success-story-images/sample1.jpg" id="image">
+
             </a>
-            <span id="image-caption">Weeding</span>
+            <span id="image-caption">Wedding</span>
           </div>
 
-          <div class="col-md-3 m-2 no-gutters" id="images-container">
-            <a href="services" target="_blank"  placement="top" ngbTooltip="Click more to know about party">
+          <div class="col-md-3 m-5 no-gutters" id="images-container">
+            <a [routerLink]="'/services'"  target="_blank"  placement="top" ngbTooltip="Click more to know about party">
+
+
               <img src="assets/success-story-images/sample2.jpg" id="image">
+
             </a>
             <span id="image-caption" class="p-3">Party</span>
           </div>
 
-          <div class="col-md-3 m-2 no-gutters" id="images-container">
-            <a href="services" target="_blank"   placement="top" ngbTooltip="Click more to know about birthday">
+          <div class="col-md-3 m-5 no-gutters" id="images-container">
+            <a [routerLink]="'/services'"  target="_blank"   placement="top" ngbTooltip="Click more to know about birthday">
+
+
+
               <img src="assets/success-story-images/sample3.jpg" id="image">
+
             </a>
             <span id="image-caption" class="p-3">Birthday</span>
           </div>

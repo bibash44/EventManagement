@@ -8,7 +8,6 @@ section{
   height: 200px;
   width: 100%;
   float: left;
-
   /* background-image: url('../../../assets/success-story-images/sample1.jpg') */
 }
 
@@ -21,7 +20,9 @@ background: black;
 #image:hover{
   opacity: 0.8;
   cursor: pointer;
+
 }
+
 
 #image-caption{
   font-weight: bold;

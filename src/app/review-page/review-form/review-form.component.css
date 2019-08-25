@@ -1,42 +1,47 @@
-.comment-form{
+.comment-form {
   text-align: center;
   font-family: Cambria;
   box-shadow: 5px 5px 15px black;
   border-radius: 5px;
-  background: white;
+  background: #FAFAFA;
 }
 
-.comment-form input{
+.comment-form input {
   width: 90%;
   outline: none;
   border: none;
   border-bottom: 2px solid black;
+  background: none;
   /* border-radius: 5px; */
 }
 
-.comment-validation{
+.comment-validation {
   /* color: white; */
   font-size: 2vh;
 }
 
-.comment-form input:focus{
-  border-bottom: 2px solid  rgba(0, 105, 217,0.5);
+.comment-form input:focus {
+  border-bottom: 2px solid rgba(255, 255, 255);
 }
 
+.comment-form input::placeholder {
+  color: rgb(168, 162, 162);
+}
 
+.comment-input-icons {
+  color:rgb(82, 78, 78);
+}
 
-.form-comment-heading{
+.form-comment-heading {
   color: white;
-  font-size: 2.5vh;
-  background: rgba(114,115,116,0.8);
+  font-size: 3vh;
   border-radius: 5px;
 }
 
-.input-icons{
+.input-icons {
   font-size: 2.5vh;
-
 }
 
-.red-bottom-border{
+.red-bottom-border {
   border-bottom: 2px solid red;
 }

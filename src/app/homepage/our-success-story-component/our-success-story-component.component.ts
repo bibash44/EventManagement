@@ -2,6 +2,7 @@ import { Component, OnInit, Inject, HostListener } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import * as $ from 'jquery';
 import { SuccessStoryService } from './success-story.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-our-success-story-component',
@@ -12,8 +13,9 @@ export class OurSuccessStoryComponentComponent implements OnInit {
 
 
   images: any;
+  imagesUrl: any;
 
-  constructor(private successStoryService: SuccessStoryService) { }
+  constructor(private successStoryService: SuccessStoryService, private sanitizer: DomSanitizer) { }
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
@@ -30,8 +32,9 @@ export class OurSuccessStoryComponentComponent implements OnInit {
   getSuccessStory() {
     this.successStoryService.getSuccessStoryImages().subscribe(data => {
       this.images = data;
-      console.log(this.images);
     });
+
+
   }
 
 

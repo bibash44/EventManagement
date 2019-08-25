@@ -20,6 +20,10 @@ section {
   opacity: 0.8;
   cursor: pointer;
 }
+#image{
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
 #image-caption {
   font-weight: bold;

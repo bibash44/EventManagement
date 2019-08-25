@@ -8,7 +8,7 @@ import { Injectable } from '@angular/core';
 export class WeedingServiceService {
 
   base_url = 'http://localhost:1954/';
-  type = 'Weeding';
+  type = 'Wedding';
 
   getWeedingImages() {
     return this.http.get(this.base_url + 'portfolio/get_portfolio_type/' + this.type);

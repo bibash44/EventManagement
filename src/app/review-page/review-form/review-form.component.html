@@ -1,27 +1,30 @@
-<div class="comment-form container-fluid p-3 mb-5">
-  <div class="form-comment-heading p-3">Make comment </div>
+
+ <div class="form-comment-heading p-3 text-center">Make your review </div>
+
+<div class="comment-form container-fluid p-5 mb-5">
 
   <div class="comment-validation alert alert-success p-3 mt-3" role="alert" id="comment-validation"
     style="display: none"> </div>
 
 
-  <div class="input-name m-3">
-    <i class="fa fa-user"></i>
+  <div class="input-name m-4">
+    <i class="fa fa-user comment-input-icons"></i>
     <input class="p-2 w-75" placeholder="Enter your name *" type="text" name="name" id="name" ngModel #name="ngModel">
   </div>
 
 
-  <div class="input-comment m-3">
-    <i class="fa fa-comment"></i>
-    <input class="p-2 w-75" placeholder="comment *" type="text" name="comment" id="comment" ngModel #comment="ngModel">
+  <div class="input-comment m-4">
+    <i class="fa fa-comment comment-input-icons"></i>
+    <input class="p-2 w-75" placeholder="Comment *" type="text" name="comment" id="comment" ngModel #comment="ngModel">
   </div>
 
-  <div class="input-comment m-3">
-    <i class="fa fa-image"></i>
+  <div class="input-comment m-4">
+    <i class="fa fa-image comment-input-icons"></i>
 
     <!-- <input class="p-2 w-75" type="file" name="image" id="image" ngModel #image="ngModel"> -->
 
-    <input class="p-2 w-75"  #file type="file" accept='image/*' (change)="preview(file.files)" name="image" id="image"> <br> <br>
+    <input class="p-2 w-75" #file type="file" accept='image/*' (change)="preview(file.files)" name="image" id="image">
+    <br> <br>
     <img [src]="imgURL" height="200" *ngIf="imgURL" id="display-image" class="img-fluid img-thumbnail">
 
 
