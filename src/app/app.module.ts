@@ -71,6 +71,8 @@ import { AdminReviewComponent } from './adminpage/admin-review/admin-review.comp
 import { ReviewEditComponent } from './adminpage/admin-review/review-edit/review-edit.component';
 import { BookingComponent } from './adminpage/admin-service-page/booking/booking.component';
 import { BookingEditComponent } from './adminpage/admin-service-page/booking/booking-edit/booking-edit.component';
+import { ClientsreviewComponent } from './clientspage/clientsreview/clientsreview.component';
+import { ContactdetailsComponent } from './contactuspage/contactdetails/contactdetails.component';
 
 // import { LightboxModule, CarouselModule, ModalsModule, WavesModule } from 'angular-bootstrap-md';
 
@@ -128,6 +130,8 @@ import { BookingEditComponent } from './adminpage/admin-service-page/booking/boo
     ReviewEditComponent,
     BookingComponent,
     BookingEditComponent,
+    ClientsreviewComponent,
+    ContactdetailsComponent,
 
   ],
 

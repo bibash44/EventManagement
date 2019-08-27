@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ContactuspageService } from './contactuspage.service';
+import { ContactuspageService } from './contactdetails/contactuspage.service';
 
 
 
@@ -10,21 +10,13 @@ import { ContactuspageService } from './contactuspage.service';
 })
 export class ContactuspageComponent implements OnInit {
 
-  contact: any;
 
-  getContactDetails() {
-    this.contactPage.getContactDetails().subscribe(data => {
-      this.contact = data[0];
-      console.log(this.contact);
-    });
 
-  }
-
-  constructor(private contactPage: ContactuspageService) { }
+  constructor() { }
 
   ngOnInit() {
 
-    this.getContactDetails();
+
   }
 
 }

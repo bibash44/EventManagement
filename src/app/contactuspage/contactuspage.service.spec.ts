@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ContactuspageService } from './contactuspage.service';
+import { ContactuspageService } from './contactdetails/contactuspage.service';
 
 describe('ContactuspageService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

@@ -12,7 +12,7 @@ export class SlidingImageEditComponent implements OnInit, AfterViewInit {
 
 
   private servicesDisplay;
-  baseurl = 'http://localhost:1954';
+  baseurl = 'https://localhost:1954';
   fileToUpload: File = null;
   imagename = null;
   imageUrl: string;
@@ -77,7 +77,7 @@ export class SlidingImageEditComponent implements OnInit, AfterViewInit {
         error() {
           $('#sliding-image-comment-validation').addClass('alert-danger');
           $('#sliding-image-comment-validation').removeClass('alert-success').fadeIn(100);
-          $('#sliding-image-comment-validation').text('Failed to upload , something went wrong');
+          $('#sliding-image-comment-validation').text('Failed to delete , something went wrong');
           $('#sliding-image-comment-validation').fadeIn(100);
           setTimeout(function () {
             $('#sliding-image-comment-validation').fadeOut(1000);

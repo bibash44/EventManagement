@@ -12,7 +12,7 @@ export class SuccessStoryEditComponent implements OnInit, AfterViewInit {
 
 
   private servicesDisplay;
-  baseurl = 'http://localhost:1954';
+  baseurl = 'https://localhost:1954';
   fileToUpload: File = null;
   imagename = null;
   imageUrl: string;
