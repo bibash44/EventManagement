@@ -1,8 +1,8 @@
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
-import {MatPaginator} from '@angular/material/paginator';
-import {MatSort} from '@angular/material/sort';
-import {MatTableDataSource} from '@angular/material/table';
-import {ClientsEditService} from './clients-edit.service';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
+import { ClientsEditService } from './clients-edit.service';
 import * as $ from 'jquery';
 
 @Component({
@@ -13,20 +13,21 @@ import * as $ from 'jquery';
 export class ClientEditComponent implements OnInit, AfterViewInit {
 
   private clients;
-  baseurl = 'https://eventmandu.com';
+  // baseurl = 'https://eventmandu.com';
+  baseurl = 'http://localhost/1954';
   fileToUpload: File = null;
   imagename = null;
   imageUrl: string;
 
   // tslint:disable-next-line: no-unused-expression
-  constructor(private  clientsService: ClientsEditService) { }
+  constructor(private clientsService: ClientsEditService) { }
 
 
   displayedColumns: string[] = ['client_name', 'image', 'comment', 'company', 'actions'];
   dataSource = new MatTableDataSource(this.clients);
 
-  @ViewChild(MatSort, {static: true}) sort: MatSort;
-  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+  @ViewChild(MatSort, { static: true }) sort: MatSort;
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
@@ -54,39 +55,39 @@ export class ClientEditComponent implements OnInit, AfterViewInit {
     var Confirmdelete = confirm('Are you sure to delete');
 
     if (Confirmdelete) {
-    $.ajax({
-      type: 'DELETE',
-      url: this.baseurl + '/clients/delete',
-      data: {
-        id,
-        image
-      },
-      success(data) {
-        $('#client-comment-validation').removeClass('alert-danger');
-        $('#client-comment-validation').addClass('alert-success').fadeIn(100);
-        $('#client-comment-validation').text('Success story deleted');
-        $('#client-comment-validation').fadeIn(100);
-        setTimeout(function () {
-          $('#client-comment-validation').fadeOut(1000);
-        }, 2000);
-        setTimeout(function () {
-          window.location.reload();
-        }, 2000);
-      },
-      error() {
-        $('#client-comment-validation').removeClass('alert-success');
-        $('#client-comment-validation').addClass('alert-danger').fadeIn(100);
-        $('#client-comment-validation').text('Something went wrong');
-        $('#client-comment-validation').fadeIn(100);
-        setTimeout(function () {
-          $('#client-comment-validation').fadeOut(1000);
-        }, 2000);
-        setTimeout(function () {
-          window.location.reload();
-        }, 2000);
-      }
-    });
-  }else{}
+      $.ajax({
+        type: 'DELETE',
+        url: this.baseurl + '/clients/delete',
+        data: {
+          id,
+          image
+        },
+        success(data) {
+          $('#client-comment-validation').removeClass('alert-danger');
+          $('#client-comment-validation').addClass('alert-success').fadeIn(100);
+          $('#client-comment-validation').text('Success story deleted');
+          $('#client-comment-validation').fadeIn(100);
+          setTimeout(function () {
+            $('#client-comment-validation').fadeOut(1000);
+          }, 2000);
+          setTimeout(function () {
+            window.location.reload();
+          }, 2000);
+        },
+        error() {
+          $('#client-comment-validation').removeClass('alert-success');
+          $('#client-comment-validation').addClass('alert-danger').fadeIn(100);
+          $('#client-comment-validation').text('Something went wrong');
+          $('#client-comment-validation').fadeIn(100);
+          setTimeout(function () {
+            $('#client-comment-validation').fadeOut(1000);
+          }, 2000);
+          setTimeout(function () {
+            window.location.reload();
+          }, 2000);
+        }
+      });
+    } else { }
   }
 
 
@@ -131,7 +132,7 @@ export class ClientEditComponent implements OnInit, AfterViewInit {
         processData: false,
         data: formData,
         success(data) {
-          console.log(data)
+          console.log('client update image ' + data);
           $('#update-clients-image-name').val(data);
         },
         error() {
@@ -155,15 +156,37 @@ export class ClientEditComponent implements OnInit, AfterViewInit {
     const commentValue = $('#update-clients-comment').val();
     const companyValue = $('#update-clients-company').val();
 
-    if (nameValue == 'Select Type') {
-      alert('Please enter client name');
+    if (nameValue == '' || nameValue == 'Select Type') {
+      $('#update-clients-name').focus();
+      $('#client-comment-validation').removeClass('alert-success');
+      $('#client-comment-validation').addClass('alert-danger').fadeIn(100);
+      $('#client-comment-validation').text('Please select type');
+      $('#client-comment-validation').fadeIn(100);
+
+      setTimeout(function () {
+        $('#client-comment-validation').fadeOut(1000);
+      }, 2000);
 
     } else if (imageValue == '') {
-      alert('Please select an image***');
-    } else if (commentValue == '') {
-      alert('Please enter client comment');
-    } else if (companyValue == '') {
-      alert('Please enter clients company');
+      $('#update-clients-name').focus();
+      $('#client-comment-validation').removeClass('alert-success');
+      $('#client-comment-validation').addClass('alert-danger').fadeIn(100);
+      $('#client-comment-validation').text('Please select image');
+      $('#client-comment-validation').fadeIn(100);
+
+      setTimeout(function () {
+        $('#client-comment-validation').fadeOut(1000);
+      }, 2000);
+    }
+    else if (commentValue == '') {
+      $('#update-clients-comment').focus();
+      $('#update-clients-comment').attr('placeholder', 'Please write client comment');
+      $('#update-clients-comment').css({ border: '2px solid red' });;
+
+    }
+    else if (companyValue == '') {
+      $('#update-clients-company').focus();
+      $('#update-clients-company').css({ border: '2px solid red' });;
     } else {
       const data = {
         id: idValue,

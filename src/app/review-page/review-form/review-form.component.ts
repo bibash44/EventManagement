@@ -14,7 +14,6 @@ export class ReviewFormComponent implements OnInit {
   // tslint:disable-next-line: no-inferrable-types
   base_url: string = 'https://eventmandu.com/';
 
-
   public imagePath;
   imgURL: any;
   public message: string;
@@ -69,7 +68,7 @@ export class ReviewFormComponent implements OnInit {
 
       $.ajax({
         type: 'POST',
-        url: this.base_url + 'review//upload/image',
+        url: this.base_url + 'review/upload/image',
         contentType: false,
         cache: false,
         processData: false,
@@ -87,8 +86,6 @@ export class ReviewFormComponent implements OnInit {
       });
     }
   }
-
-
 
 
   commentFormSubmit(name, comment) {

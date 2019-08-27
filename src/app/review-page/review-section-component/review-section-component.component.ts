@@ -12,9 +12,7 @@ export class ReviewSectionComponentComponent implements OnInit {
 
 
   comments: any;
-  base_url: string = 'http://eventmandu.com/';
-
-
+  base_url: string = 'https://eventmandu.com/';
 
   constructor(private reviewService: ReviewSectionService) { }
 
