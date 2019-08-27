@@ -47,7 +47,6 @@ export class NavBarHeaderComponent implements OnInit {
 
       $('#nav-container').addClass('animated');
       $('#nav-container').addClass('slideInDown');
-      $('#nav-container').removeClass('slideInUp');
 
       $('#main-nav-bar').removeClass('p-2');
       $('#main-nav-bar').addClass('p-1');
@@ -59,7 +58,6 @@ export class NavBarHeaderComponent implements OnInit {
 
       $('#nav-container').removeClass('animated');
       $('#nav-container').removeClass('slideInDown');
-      $('#nav-container').addClass('slideInUp');
 
       $('#main-nav-bar').removeClass('p-2');
       $('#main-nav-bar').addClass('p-1');

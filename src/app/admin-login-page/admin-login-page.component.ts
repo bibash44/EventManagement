@@ -9,47 +9,47 @@ import * as $ from 'jquery';
 export class AdminLoginPageComponent implements OnInit {
 
   base_url: string = 'https://eventmandu.com/';
-  getPassword(email) {
-    let emailLogin = email.value;
-    if (emailLogin == '') {
-      $('#email-validation').css({ 'color': 'red' });
-      $('#email-validation').text('Please enter your email *');
-      $('#email').focus();
+  // getPassword(email) {
+  //   let emailLogin = email.value;
+  //   if (emailLogin == '') {
+  //     $('#email-validation').css({ 'color': 'red' });
+  //     $('#email-validation').text('Please enter your email *');
+  //     $('#email').focus();
 
-    } else if (!emailLogin.match('[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$')) {
-      $('#email-validation').css({ 'color': 'red' });
-      $('#email-validation').text('Please enter valid email *');
-      $('#email').val('')
-      $('#email').focus();
-    }
+  //   } else if (!emailLogin.match('[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$')) {
+  //     $('#email-validation').css({ 'color': 'red' });
+  //     $('#email-validation').text('Please enter valid email *');
+  //     $('#email').val('')
+  //     $('#email').focus();
+  //   }
 
-    else {
-      $.ajax({
-        url: this.base_url + 'checkemail',
-        type: 'POST',
-        data: {
-          email: emailLogin
-        },
-        success: function (data) {
-          if (data == true) {
-            $('#email-validation').css({ 'color': 'green' });
-            $('#email-validation').text('New Password Requested, check your email and login');
-          }
+  //   else {
+  //     $.ajax({
+  //       url: this.base_url + 'checkemail',
+  //       type: 'POST',
+  //       data: {
+  //         email: emailLogin
+  //       },
+  //       success: function (data) {
+  //         if (data == true) {
+  //           $('#email-validation').css({ 'color': 'green' });
+  //           $('#email-validation').text('New Password Requested, check your email and login');
+  //         }
 
-          else {
-            $('#email-validation').css({ 'color': 'red' });
-            $('#email-validation').text('Invalid username');
-            $('#email').val('');
-            $('#email').focus();
-          }
-        },
-        error: function (err) {
-          $('#email-validation').css({ 'color': 'red' });
-          $('#email-validation').text('Something went wrong please try again');
-        }
-      });
-    }
-  }
+  //         else {
+  //           $('#email-validation').css({ 'color': 'red' });
+  //           $('#email-validation').text('Invalid username');
+  //           $('#email').val('');
+  //           $('#email').focus();
+  //         }
+  //       },
+  //       error: function (err) {
+  //         $('#email-validation').css({ 'color': 'red' });
+  //         $('#email-validation').text('Something went wrong please try again');
+  //       }
+  //     });
+  //   }
+  // }
 
 
   adminLogin(email, password) {

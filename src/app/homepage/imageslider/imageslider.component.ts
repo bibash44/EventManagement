@@ -9,14 +9,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./imageslider.component.css']
 })
 export class ImagesliderComponent implements OnInit {
-  sliderimages: any;
 
+  sliderimages: any;
 
   getSliderImages() {
     this.imageSliderService.getSliderImages()
       .subscribe(data => {
         this.sliderimages = data;
-        // console.log("slider images "+this.sliderimages)
       });
   }
 
