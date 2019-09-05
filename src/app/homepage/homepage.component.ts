@@ -1,6 +1,8 @@
 import { Component, OnInit, Inject, HostListener } from '@angular/core';
 import * as $ from 'jquery';
 import { DOCUMENT } from '@angular/common';
+import { AppServiceService } from '../app-service.service';
+
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
@@ -8,7 +10,7 @@ import { DOCUMENT } from '@angular/common';
 })
 export class HomepageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private BASE_URL: AppServiceService) { }
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
@@ -23,6 +25,7 @@ export class HomepageComponent implements OnInit {
 
 
   ngOnInit() {
+
 
 
   }

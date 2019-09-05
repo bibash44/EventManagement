@@ -1,5 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import { AppServiceService } from './../../../../app-service.service';
+import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
+
 
 @Component({
   selector: 'app-services-display-create',
@@ -10,7 +12,8 @@ export class ServicesDisplayCreateComponent implements OnInit {
 
   imageUrl: string;
   fileToUpload: File = null;
-  baseurl = 'https://eventmandu.com';
+  // baseurl = 'https://eventmandu.com';
+  baseurl = this.BASE_URL.publishBaseUrl();
 
   handleFileInput(file: FileList) {
     this.fileToUpload = file.item(0);
@@ -33,7 +36,7 @@ export class ServicesDisplayCreateComponent implements OnInit {
     } else if (titleValue === '') {
       $('#title').attr('placeholder', 'Please enter a Title *');
       $('#title').focus();
-      $('#title').css({border: '2px solid red'});
+      $('#title').css({ border: '2px solid red' });
     } else {
       const data = {
         services_title: titleValue,
@@ -84,7 +87,7 @@ export class ServicesDisplayCreateComponent implements OnInit {
       $('#comment-validation').addClass('alert-danger').fadeIn(100);
       $('#comment-validation').text('Failed to upload, image size larger, please resize it');
       $('#comment-validation').fadeIn(100);
-      setTimeout(function() {
+      setTimeout(function () {
         $('#comment-validation').fadeOut(1000);
       }, 2000);
     } else {
@@ -105,7 +108,7 @@ export class ServicesDisplayCreateComponent implements OnInit {
           $('#comment-validation').addClass('alert-danger').fadeIn(100);
           $('#comment-validation').text('Failed to upload, something went wrong');
           $('#comment-validation').fadeIn(100);
-          setTimeout(function() {
+          setTimeout(function () {
             $('#comment-validation').fadeOut(1000);
           }, 2000);
         }
@@ -114,7 +117,7 @@ export class ServicesDisplayCreateComponent implements OnInit {
   }
 
 
-  constructor() {
+  constructor(private BASE_URL: AppServiceService) {
   }
 
   ngOnInit() {

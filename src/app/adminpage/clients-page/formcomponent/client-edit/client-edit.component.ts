@@ -13,8 +13,8 @@ import * as $ from 'jquery';
 export class ClientEditComponent implements OnInit, AfterViewInit {
 
   private clients;
-  // baseurl = 'https://eventmandu.com';
-  baseurl = 'http://localhost/1954';
+  baseurl = 'https://eventmandu.com';
+  // baseurl = 'http://localhost:1954';
   fileToUpload: File = null;
   imagename = null;
   imageUrl: string;
@@ -132,7 +132,7 @@ export class ClientEditComponent implements OnInit, AfterViewInit {
         processData: false,
         data: formData,
         success(data) {
-          console.log('client update image ' + data);
+
           $('#update-clients-image-name').val(data);
         },
         error() {

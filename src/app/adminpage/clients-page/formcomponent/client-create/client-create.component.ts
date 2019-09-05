@@ -13,6 +13,7 @@ export class ClientCreateComponent implements OnInit {
   imageSize: string;
   fileToUpload: File = null;
   baseurl = 'https://eventmandu.com';
+  // baseurl = 'http://localhost:1954';
 
   handleFileInput(file: FileList) {
     this.fileToUpload = file.item(0);
@@ -92,7 +93,6 @@ export class ClientCreateComponent implements OnInit {
   }
 
   uploadImageToServer(imageUploadSelector) {
-    console.log(imageUploadSelector);
     const formData = new FormData();
     const files = imageUploadSelector.get(0).files;
     if (files.length > 0) {
@@ -120,9 +120,11 @@ export class ClientCreateComponent implements OnInit {
         processData: false,
         data: formData,
         success(data) {
+          console.log('client image'+data)
           $('#clients-image-name').val(data);
         },
-        error() {
+        error(error) {
+          console.log(error)
           $('#comment-validation').removeClass('alert-success');
           $('#comment-validation').addClass('alert-danger').fadeIn(100);
           $('#comment-validation').text('Image upload failed');

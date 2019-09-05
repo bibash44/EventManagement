@@ -1,7 +1,9 @@
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
-import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
+import { AppServiceService } from './../../../../app-service.service';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 import * as $ from 'jquery';
-import {ServicesDisplayEditService} from './services-display-edit.service';
+import { ServicesDisplayEditService } from './services-display-edit.service';
+
 @Component({
   selector: 'app-services-display-edit',
   templateUrl: './services-display-edit.component.html',
@@ -10,19 +12,19 @@ import {ServicesDisplayEditService} from './services-display-edit.service';
 export class ServicesDisplayEditComponent implements OnInit, AfterViewInit {
 
   private servicesDisplay;
-  baseurl = 'https://eventmandu.com';
+  baseurl = this.BASE_URL.publishBaseUrl();
   fileToUpload: File = null;
   imagename = null;
   imageUrl: string;
 
-  constructor(private  servicesDisplayService: ServicesDisplayEditService) {
+  constructor(private servicesDisplayService: ServicesDisplayEditService, private BASE_URL: AppServiceService) {
   }
 
   displayedColumns: string[] = ['services_title', 'image', 'actions'];
   dataSource = new MatTableDataSource(this.servicesDisplay);
 
-  @ViewChild(MatSort, {static: true}) sort: MatSort;
-  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+  @ViewChild(MatSort, { static: true }) sort: MatSort;
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
@@ -51,33 +53,33 @@ export class ServicesDisplayEditComponent implements OnInit, AfterViewInit {
 
   deleteById(id: any, image: any) {
     // alert(image);
-    var ConfirmDelete= confirm('Are you sure you want to delete');
-    if(ConfirmDelete){
-    $.ajax({
-      type: 'DELETE',
-      url: this.baseurl + '/services_home/delete',
-      data: {
-        id,
-        image
-      },
-      success(data) {
-        $('#service-display-comment-validation').removeClass('alert-danger');
-        $('#service-display-comment-validation').focus();
-        $('#service-display-comment-validation').addClass('alert-success').fadeIn(100);
-        $('#service-display-comment-validation').text('Service deleted successfully');
-        $('#service-display-comment-validation').fadeIn(100);
-        setTimeout(function () {
-          window.location.reload();
-        }, 3000);
-      },
-      error() {
-        $('#service-display-comment-validation').removeClass('alert-success');
-        $('#service-display-comment-validation').addClass('alert-danger').fadeIn(100);
-        $('#service-display-comment-validation').text('Something went wrong.');
-        $('#service-display-comment-validation').fadeIn(100);
-      }
-    });
-  }
+    var ConfirmDelete = confirm('Are you sure you want to delete');
+    if (ConfirmDelete) {
+      $.ajax({
+        type: 'DELETE',
+        url: this.baseurl + 'services_home/delete',
+        data: {
+          id,
+          image
+        },
+        success(data) {
+          $('#service-display-comment-validation').removeClass('alert-danger');
+          $('#service-display-comment-validation').focus();
+          $('#service-display-comment-validation').addClass('alert-success').fadeIn(100);
+          $('#service-display-comment-validation').text('Service deleted successfully');
+          $('#service-display-comment-validation').fadeIn(100);
+          setTimeout(function () {
+            window.location.reload();
+          }, 3000);
+        },
+        error() {
+          $('#service-display-comment-validation').removeClass('alert-success');
+          $('#service-display-comment-validation').addClass('alert-danger').fadeIn(100);
+          $('#service-display-comment-validation').text('Something went wrong.');
+          $('#service-display-comment-validation').fadeIn(100);
+        }
+      });
+    }
   }
 
 
@@ -112,7 +114,7 @@ export class ServicesDisplayEditComponent implements OnInit, AfterViewInit {
     } else {
       $.ajax({
         type: 'POST',
-        url: this.baseurl + '/services_home/upload/image',
+        url: this.baseurl + 'services_home/upload/image',
         contentType: false,
         cache: false,
         processData: false,
@@ -148,7 +150,7 @@ export class ServicesDisplayEditComponent implements OnInit, AfterViewInit {
 
       $.ajax({
         type: 'put',
-        url: this.baseurl + '/services_home/update/services_home',
+        url: this.baseurl + 'services_home/update/services_home',
         data,
         success(res) {
           if (res) {
