@@ -23,7 +23,31 @@ export class AllImagesComponent implements OnInit {
   constructor(private allServices: AllServiceService) { }
 
   ngOnInit() {
-    this.allImages();
+    // this.allImages();
+    this.images = [
+      {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+      },
+      {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+      },
+      {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+      },
+      {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+      },
+
+      {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+      },
+
+    ];
   }
 
 }

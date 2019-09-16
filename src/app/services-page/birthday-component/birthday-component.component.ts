@@ -14,7 +14,6 @@ export class BirthdayComponentComponent implements OnInit {
   getbirthdayServices() {
     this.birthdayServices.getBirthdayServices().subscribe(data => {
       this.images = data;
-      console.log(this.images);
     });
 
   }
@@ -23,7 +22,50 @@ export class BirthdayComponentComponent implements OnInit {
   constructor(private birthdayServices: BirthdayServiceService) { }
 
   ngOnInit() {
-    this.getbirthdayServices();
+    this.images = [
+      {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+        description: ' Description of the image'
+      },
+      {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+        description: ' Description of the image'
+      },
+      {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+        description: ' Description of the image'
+      },
+      {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+        description: ' Description of the image'
+      },
+      {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+        description: ' Description of the image'
+      },
+      {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+        description: ' Description of the image'
+      },
+      {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+        description: ' Description of the image'
+      },
+      {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+        description: ' Description of the image'
+      },
+
+    ];
+    // this.getbirthdayServices();
   }
 
 }

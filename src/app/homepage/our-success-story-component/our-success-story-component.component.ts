@@ -38,7 +38,65 @@ export class OurSuccessStoryComponentComponent implements OnInit {
 
   ngOnInit() {
 
-    this.getSuccessStory();
+    this.images = [
+      {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+      },
+      {
+        image: 'assets/images/birthday_homepage.jpg',
+        title: 'Birthday wedding at home',
+      },
+      {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+      },
+      {
+        image: 'assets/images/party_homepage.jpg',
+        title: 'Birthday wedding at home',
+      },
+      {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+      },
+      {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+      },
+
+      {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+      },
+
+      {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+      },
+
+      {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+      },
+      {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+      },
+      {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+      }
+      , {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+      }
+      , {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+      }
+
+    ];
+    // this.getSuccessStory();
   }
 
 }

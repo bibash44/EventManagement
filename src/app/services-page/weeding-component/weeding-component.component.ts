@@ -15,7 +15,6 @@ export class WeedingComponentComponent implements OnInit {
 
     this.weedingServices.getWeedingServices()
       .subscribe(data => this.images = data);
-    console.log(this.images);
 
   }
 
@@ -23,7 +22,51 @@ export class WeedingComponentComponent implements OnInit {
 
   ngOnInit() {
 
-    this.getweedingServices();
+    // this.getweedingServices();
+
+    this.images = [
+      {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+        description: ' Description of the image'
+      },
+      {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+        description: ' Description of the image'
+      },
+      {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+        description: ' Description of the image'
+      },
+      {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+        description: ' Description of the image'
+      },
+      {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+        description: ' Description of the image'
+      },
+      {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+        description: ' Description of the image'
+      },
+      {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+        description: ' Description of the image'
+      },
+      {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+        description: ' Description of the image'
+      },
+
+    ];
   }
 
 }

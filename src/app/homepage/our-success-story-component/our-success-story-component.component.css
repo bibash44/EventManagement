@@ -4,11 +4,10 @@ section{
   color: white;
 }
 
-#success-gallery img{
+#images-container img{
   height: 200px;
   width: 100%;
   float: left;
-  /* background-image: url('../../../assets/success-story-images/sample1.jpg') */
 }
 
 #images-container{
@@ -20,7 +19,6 @@ background: black;
 #image:hover{
   opacity: 0.8;
   cursor: pointer;
-
 }
 
 
@@ -39,3 +37,17 @@ background: black;
 }
 
 
+.success-story-heading {
+  font-size: 3vh;
+}
+
+.images-container{
+  margin-left: 2.5%;
+}
+
+@media only screen and (max-width: 560px) {
+  .i-container img {
+    margin-left: 0%;
+    /* background-image: url('../../../assets/success-story-images/sample1.jpg') */
+  }
+}

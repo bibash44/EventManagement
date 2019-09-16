@@ -1,19 +1,19 @@
 section {
   background-image: url('../../../assets/images/weeding_background.jpg');
   background-size: cover;
+  color: white;
 }
 
-#success-gallery img{
+#images-container img{
   height: 200px;
   width: 100%;
   float: left;
-
-  /* background-image: url('../../../assets/success-story-images/sample1.jpg') */
 }
 
 #images-container{
 box-shadow: 5px 5px 10px black;
 border-radius: 5px;
+background: black;
 }
 
 #image:hover{
@@ -21,18 +21,14 @@ border-radius: 5px;
   cursor: pointer;
 }
 
+
 #image-caption{
   font-weight: bold;
   font-family: Cambria;
+
 }
 
-#success-gallery {
-  text-align: center;
-  margin-left: 10%;
-}
-
-
-#images{
+#success-gallery #images{
   text-align: center;
 }
 
@@ -41,3 +37,17 @@ border-radius: 5px;
 }
 
 
+.success-story-heading {
+  font-size: 3vh;
+}
+
+.images-container{
+  margin-left: 2.5%;
+}
+
+@media only screen and (max-width: 560px) {
+  .i-container img {
+    margin-left: 0%;
+    /* background-image: url('../../../assets/success-story-images/sample1.jpg') */
+  }
+}

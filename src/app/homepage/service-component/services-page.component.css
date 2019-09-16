@@ -1,45 +1,63 @@
-section{
+section {
   /* background-image: url('../../../assets/images/weeding.jpg'); */
   background-image: url('../../../assets/images/weeding2.jpg');
   background-size: cover;
   color: white;
 }
 
-
-#services{
+#services {
   margin-left: 10%;
 }
 
-#services img{
-  height: 300px;
+#services img {
+  height: 400px;
   width: 100%;
   float: left;
-
-  /* background-image: url('../../../assets/success-story-images/sample1.jpg') */
 }
 
-#images-container{
-box-shadow: 5px 5px 10px black;
-border-radius: 5px;
-background: black;
+@media only screen and (max-width: 560px) {
+  #services img {
+    height: 300px;
+    width: 100%;
+    float: left;
+  }
 }
 
-#image:hover{
+.services-title{
+  color: white;
+  font-weight: 2vh;
+  font-weight: bold;
+}
+
+#images-container {
+  box-shadow: 5px 5px 10px black;
+  border-radius: 5px;
+  background: black;
+}
+
+#images-container a p {
+  color: white;
+  text-decoration: none;
+}
+
+#image:hover {
   opacity: 0.8;
   cursor: pointer;
-
 }
 
-
-#image-caption{
+#image-caption {
   font-weight: bold;
   font-family: Cambria;
 }
 
-#services #images{
+#services #images {
   text-align: center;
 }
 
-.row h1{
+.row h1 {
   text-align: center;
+}
+
+.service-heading {
+  font-size: 3vh;
 }

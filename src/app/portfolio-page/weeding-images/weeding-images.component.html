@@ -1,32 +1,23 @@
-
-
-
 <section id="gallery" class="text-center py-5">
 
-  <!-- Container -->
   <div class="container-fluid">
 
-    <div id="success-gallery" class="animated mr-0">
-      <div class="container">
-        <div class="row no-gutters m-0 p-0 mr-0" id="gallery-row">
-          <h2 class="font-weight-bolder m-2 col-md-3"> </h2>
-          <h2 class="font-weight-bolder m-2 col-md-3" style="color: white"> Wedding Images</h2>
-          <h2 class="font-weight-bolder m-2 col-md-3"> </h2>
-
-          <div class="col-md-3 m-2 no-gutters" *ngFor="let photo of images" id="images-container">
-            <a target="_blank" href="https://eventmandu.com/UPLOADS/images/portfolio/{{photo.image}}">
-              <img [style.background]="'url(https://eventmandu.com/UPLOADS/images/portfolio/' + photo.image + ')'"
-              id="image" [style.backgroundSize]="'cover'" [style.backgroundRepeat]="'no-repeat'">
-            </a>
-          </div>
-
-        </div>
+    <div class="row w-100 text-center m-0">
+      <div class="col-sm w-100 no-gutters font-weight-bold success-story-heading"> Wedding images
+        <span class="animated zoomInDown infinite"> </span>
       </div>
     </div>
+
+    <div class="row w-100 text-center m-0 mt-5" id="services">
+      <div class="col-md-2 text-center p-2 images-container mt-5" *ngFor="let photo of images" id="images-container">
+        <a href="{{photo.image}}" target="_blank">
+          <img [style.background]="'url(' + photo.image + ')'" id="image" [style.backgroundSize]="'cover'"
+            [style.backgroundRepeat]="'no-repeat'">
+        </a>
+        <span id="image-caption">{{photo.title}}</span>
+      </div>
+    </div>
+
   </div>
-  <!-- Container -->
 
 </section>
-<!--Section: gallery-->
-
-

@@ -22,8 +22,52 @@ export class PartyComponentComponent implements OnInit {
   constructor(private partyServices: PartyServiceService) { }
 
   ngOnInit() {
+    this.images = [
+      {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+        description: ' Description of the image'
+      },
+      {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+        description: ' Description of the image'
+      },
+      {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+        description: ' Description of the image'
+      },
+      {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+        description: ' Description of the image'
+      },
+      {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+        description: ' Description of the image'
+      },
+      {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+        description: ' Description of the image'
+      },
+      {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+        description: ' Description of the image'
+      },
+      {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+        description: ' Description of the image'
+      },
 
-    this.getPartyServices();
+    ];
+
+    // this.getPartyServices();
+
   }
 
 }

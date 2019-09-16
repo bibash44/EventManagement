@@ -25,7 +25,32 @@ export class WeedingImagesComponent implements OnInit {
   constructor(private weedingServices: WeedingServiceService) { }
 
   ngOnInit() {
-    this.getweedingImages();
+    // this.getweedingImages();
+
+    this.images = [
+      {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+      },
+      {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+      },
+      {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+      },
+      {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+      },
+
+      {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+      },
+
+    ];
   }
 
 }

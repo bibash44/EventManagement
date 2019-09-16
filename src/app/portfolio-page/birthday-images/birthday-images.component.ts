@@ -23,7 +23,33 @@ export class BirthdayImagesComponent implements OnInit {
   constructor(private birthdayServices: BirthdayServiceService) { }
 
   ngOnInit() {
-    this.birthdayImages();
+
+    // this.birthdayImages();
+
+    this.images = [
+      {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+      },
+      {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+      },
+      {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+      },
+      {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+      },
+
+      {
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Birthday wedding at home',
+      },
+
+    ];
   }
 
 }

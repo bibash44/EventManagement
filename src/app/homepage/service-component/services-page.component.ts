@@ -9,6 +9,7 @@ import * as $ from 'jquery';
 
 export class ServeicesPageComponent implements OnInit {
 
+  servicesContainer: any;
 
   constructor() { }
 
@@ -24,6 +25,26 @@ export class ServeicesPageComponent implements OnInit {
 
 
   ngOnInit() {
+    this.servicesContainer = [
+      {
+        routeLink: '/services',
+        toolTip: 'Click to know more about weeding',
+        image: 'assets/images/weeding_homepage.jpg',
+        title: 'Wedding'
+      },
+      {
+        routeLink: '/services',
+        toolTip: 'Click to know more about birthday',
+        image: 'assets/images/birthday_homepage.jpg',
+        title: 'Birthday'
+      },
+      {
+        routeLink: '/services',
+        toolTip: 'Click to know more about party',
+        image: 'assets/images/party_homepage.jpg',
+        title: 'Party'
+      }
+    ]
 
   }
 

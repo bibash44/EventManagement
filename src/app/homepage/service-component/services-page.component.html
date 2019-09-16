@@ -1,42 +1,23 @@
 <section id="gallery" class="text-center py-5">
 
-  <!-- Container -->
   <div class="container-fluid">
 
-    <div id="services" class="animated mr-0">
-      <div class="container-fluid">
-        <div class="row no-gutters m-0 p-0 mr-0" id="gallery-row">
-          <h2 class="font-weight-bolder m-3 col-md-3"> </h2>
-          <h2 class="font-weight-bolder m-3 col-md-3"> Our Services </h2>
-          <h2 class="font-weight-bolder m-3 col-md-3"> </h2>
+    <div class="row w-100 text-center m-0">
+      <div class="col-sm w-100 no-gutters font-weight-bold service-heading"> Our Services
+        <span class="animated zoomInDown infinite"> </span> </div>
+    </div>
 
-          <div class="col-md-3 mb-2 mr-2 p-1 no-gutters" id="images-container">
-            <a [routerLink]="'/services'"   placement="top" ngbTooltip="Click to know more about weeding">
-              <img src="assets/images/weeding_homepage.jpg" id="image">
-            </a>
-            <span id="image-caption">Wedding</span>
-          </div>
-
-          <div class="col-md-3 mb-2 mr-2 p-1 no-gutters" id="images-container">
-            <a [routerLink]="'/services'"   placement="top" ngbTooltip="Click more to know about party">
-              <img src="assets/images/party_homepage.jpg" id="image">
-            </a>
-            <span id="image-caption" class="p-3">Party</span>
-          </div>
-
-          <div class="col-md-3 mb-2 mr-2 p-1 no-gutters" id="images-container">
-            <a [routerLink]="'/services'"  placement="top" ngbTooltip="Click more to know about birthday">
-              <img src="assets/images/birthday_homepage.jpg" id="image">
-            </a>
-            <span id="image-caption" class="p-3">Birthday</span>
-          </div>
-
-
-        </div>
+    <div class="row w-100 text-center m-0 mt-5" id="services">
+      <div class="col-sm text-center p-2 m-3" *ngFor="let service of servicesContainer" id="images-container">
+        <a [routerLink]="service.routeLink" placement="top" ngbTooltip="{{service.tooltip}}">
+          <img [style.background]="'url(' + service.image + ')'" [style.backgroundSize]="'cover'"
+            [style.backgroundRepeat]="'no-repeat'" id="image">
+        </a>
+        <p> <span class="services-title"> {{service.title}} </span> </p>
       </div>
     </div>
+
   </div>
-  <!-- Container -->
 
 </section>
-<!--Section: gallery-->
+
