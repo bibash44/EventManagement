@@ -8,22 +8,21 @@
 
 
   <div class="input-name m-4">
-    <i class="fa fa-user comment-input-icons"></i>
-    <input class="p-2 w-75" placeholder="Enter your name *" type="text" name="name" id="name" ngModel #name="ngModel">
+    <!-- <i class="fa fa-user comment-input-icons"></i> -->
+    <input class="p-3 w-100" placeholder="Enter your name *" type="text" name="name" id="name" ngModel #name="ngModel">
   </div>
 
 
   <div class="input-comment m-4">
-    <i class="fa fa-comment comment-input-icons"></i>
-    <input class="p-2 w-75" placeholder="Comment *" type="text" name="comment" id="comment" ngModel #comment="ngModel">
+    <!-- <i class="fa fa-comment comment-input-icons"></i> -->
+    <input class="p-3 w-100" placeholder="Write something *" type="text" name="comment" id="comment" ngModel #comment="ngModel">
   </div>
 
-  <div class="input-comment m-4">
-    <i class="fa fa-image comment-input-icons"></i>
+  <div class="input-file m-4">
+    <!-- <i class="fa fa-image comment-input-icons"></i> -->
 
-    <!-- <input class="p-2 w-75" type="file" name="image" id="image" ngModel #image="ngModel"> -->
 
-    <input class="p-2 w-75" #file type="file" accept='image/*' (change)="preview(file.files)" name="image" id="image">
+    <input class="p-3 w-100" #file type="file" accept='image/*' (change)="preview(file.files)" name="image" id="image">
     <br> <br>
     <img [src]="imgURL" height="200" *ngIf="imgURL" id="display-image" class="img-fluid img-thumbnail">
 

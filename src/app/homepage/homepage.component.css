@@ -1,4 +1,9 @@
-.slider{
+* {
+  /* background: url('.././../assets/images/weeding_background.jpg'); */
+  background: white;
+}
+
+.slider {
   /* height: 500px; */
   text-align: center;
   /* margin-top: 25%; */
@@ -6,5 +11,15 @@
 
 .services-container {
   width: 100%;
+}
 
+.make-booking {
+  /* background: rgb(228, 225, 225); */
+  background: white;
+}
+
+.clients-review {
+  background: white;
+  color: black;
+  font-size: 3vh;
 }

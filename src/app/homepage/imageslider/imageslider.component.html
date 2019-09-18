@@ -1,15 +1,36 @@
-<ngb-carousel>
-    <ng-template ngbSlide *ngFor="let sliderimage of sliderimages;  let i = index">
-      <div class="picsum-img-wrapper animated fadeInLeft">
+<ngb-carousel *ngIf="isValueFromServerReceived===true">
 
-        <img [style.background]="'url(https://eventmandu.com/UPLOADS/images/sliding_image/' + sliderimage.image + ')'"
+  <ng-template ngbSlide *ngFor="let sliderimage of sliderimages;  let i = index">
+    <div class="picsum-img-wrapper animated fadeInLeft">
+
+      <img [style.background]="'url(https://eventmandu.com/UPLOADS/images/sliding_image/' + sliderimage.image + ')'"
         id="image" [style.backgroundSize]="'cover'" [style.backgroundRepeat]="'no-repeat'" [style.border]="'none'">
 
-      </div>
-      <div class="carousel-caption">
-        <h3>{{sliderimage.slider_title}}  </h3>
-        <p>{{sliderimage.sub_title}}</p>
-        <p>  </p>
-      </div>
-    </ng-template>
-  </ngb-carousel>
+    </div>
+    <div class="carousel-caption">
+      <h3>{{sliderimage.slider_title}} </h3>
+      <p>{{sliderimage.sub_title}}</p>
+      <p> </p>
+    </div>
+  </ng-template>
+
+</ngb-carousel>
+
+
+
+<ngb-carousel *ngIf="isValueFromServerReceived===false">
+
+  <ng-template ngbSlide *ngFor="let photo of staticImages">
+    <div class="picsum-img-wrapper animated fadeInLeft">
+      <img  [style.background]="'url(' + photo.image + ')'"
+        id="image" [style.backgroundSize]="'cover'" [style.backgroundRepeat]="'no-repeat'" [style.border]="'none'">
+    </div>
+
+    <div class="carousel-caption">
+      <h3> {{photo.title}} </h3>
+      <p>  {{photo.sub_title}} </p>
+      <p> </p>
+    </div>
+  </ng-template>
+
+</ngb-carousel>

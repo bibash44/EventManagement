@@ -1,47 +1,47 @@
 <section>
 
-<div class="clients-container container-fluid w-100">
-  <div class="clients-container-heading w-100 align-items-center col no-gutters">
-    <h2 style="color: white">What does our client say</h2>
-  </div>
+  <div class="clients-container container-fluid w-100">
+    <div class="clients-container-heading w-100 align-items-center col no-gutters">
+      <h2 style="color: white">What does our client say</h2>
+    </div>
 
-  <div class="clients-details-container container-fluid m-0">
+    <div class="clients-details-container container-fluid m-0">
 
+      <div class="client-details-content row animated text-center m-0" id="client-details-content">
 
+        <div class="col-sm-1"></div>
 
-    <div class="client-details-content row animated" id="client-details-content">
+        <button class="p-2" (click)=ShowPreviosSlides() id="show-previous-images"> <span
+            style='font: size 50px;'>&#8882;</span> </button>
 
-      <button class="p-2" (click)=ShowPreviosSlides() id="show-previous-images"> <span
-          style='font: size 50px;'>&#8882;</span> </button>
+        <div class="col-sm-3 client-details mt-5 mb-4 m-2 animated no-gutters" id="f-client-details">
+          <img src="https://eventmandu.com/UPLOADS/images/clients/{{clients[firstImage].image}}" alt=""
+            class="img-client img-fluid"> <br>
+          <span class="clients-saying font-italic"> " {{clients[firstImage].comment}} "</span> <br>
+          <span class="client-name font-weight-bold"> {{clients[firstImage].client_name}}</span> <br>
+          <span class="client-company font-weight-bold"> {{clients[firstImage].company}} </span>
+        </div>
 
-      <div class="col-sm-3 client-details p-2 mt-5 mb-4 animated" id="f-client-details">
-        <img src="https://eventmandu.com/UPLOADS/images/clients/{{clients[firstImage].image}}" alt=""
-          class="img-client img-fluid"> <br>
-        <span class="clients-saying font-italic"> " {{clients[firstImage].comment}} "</span> <br>
-        <span class="client-name font-weight-bold"> {{clients[firstImage].client_name}}</span> <br>
-        <span class="client-company font-weight-bold"> {{clients[firstImage].company}} </span>
+        <div class="col-sm-3 client-details mt-5 mb-4 m-2 animated no-gutters" id="s-client-details">
+          <img src="https://eventmandu.com/UPLOADS/images/clients/{{clients[secondImage].image}}" alt=""
+            class="img-client img-fluid"> <br>
+          <span class="clients-saying font-italic"> " {{clients[secondImage].comment}} "</span> <br>
+          <span class="client-name font-weight-bold"> {{clients[secondImage].client_name}}</span> <br>
+          <span class="client-company font-weight-bold"> {{clients[secondImage].company}} </span>
+        </div>
+
+        <div class="col-sm-3 client-details mt-5 mb-4 m-2 animated no-gutters" id="t-client-details">
+          <img src="https://eventmandu.com/UPLOADS/images/clients/{{clients[thirdImage].image}}" alt=""
+            class="img-client img-fluid"> <br>
+          <span class="clients-saying font-italic"> " {{clients[thirdImage].comment}} "</span> <br>
+          <span class="client-name font-weight-bold"> {{clients[thirdImage].client_name}}</span> <br>
+          <span class="client-company font-weight-bold"> {{clients[thirdImage].company}} </span>
+        </div>
+
+        <button class="p-2" (click)=showNextSlide() id="show-next-images"> <span style='font: size 50px;'>&#8883;</span>
+        </button>
+
       </div>
-
-      <div class="col-sm-3 client-details p-2 mt-5 mb-4 animated" id="s-client-details">
-        <img src="https://eventmandu.com/UPLOADS/images/clients/{{clients[secondImage].image}}" alt=""
-          class="img-client img-fluid"> <br>
-        <span class="clients-saying font-italic"> " {{clients[secondImage].comment}} "</span> <br>
-        <span class="client-name font-weight-bold"> {{clients[secondImage].client_name}}</span> <br>
-        <span class="client-company font-weight-bold"> {{clients[secondImage].company}} </span>
-      </div>
-
-      <div class="col-sm-3 client-details p-2 mt-5 mb-4 mr-5 animated" id="t-client-details">
-        <img src="https://eventmandu.com/UPLOADS/images/clients/{{clients[thirdImage].image}}" alt=""
-          class="img-client img-fluid"> <br>
-        <span class="clients-saying font-italic"> " {{clients[thirdImage].comment}} "</span> <br>
-        <span class="client-name font-weight-bold"> {{clients[thirdImage].client_name}}</span> <br>
-        <span class="client-company font-weight-bold"> {{clients[thirdImage].company}} </span>
-      </div>
-
-      <button class="p-2" (click)=showNextSlide() id="show-next-images"> <span style='font: size 50px;'>&#8883;</span>
-      </button>
-
     </div>
   </div>
-</div>
 </section>

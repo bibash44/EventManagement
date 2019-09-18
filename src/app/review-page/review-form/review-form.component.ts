@@ -100,7 +100,7 @@ export class ReviewFormComponent implements OnInit {
     if (nameValue == '') {
       $('#name').attr('placeholder', 'Please enter a name *');
       $('#name').focus();
-      $('#name').css({ 'border-bottom': '2px solid red' });
+      $('#name').css({ 'border': '2px solid red' });
     }
 
 
@@ -108,14 +108,14 @@ export class ReviewFormComponent implements OnInit {
       $('#name').val('');
       $('#name').attr('placeholder', 'Please enter a valid name');
       $('#name').focus();
-      $('#name').css({ 'border-bottom': '2px solid red' });
+      $('#name').css({ 'border': '2px solid red' });
 
     }
 
     else if (commentValue == '') {
       $('#comment').attr('placeholder', 'Please enter a  comment *');
       $('#comment').focus();
-      $('#comment').css({ 'border-bottom': '2px solid red' });
+      $('#comment').css({ 'border': '2px solid red' });
 
     } else {
 

@@ -19,7 +19,8 @@ export class OurSuccessStoryComponentComponent implements OnInit {
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    var scroll = window.scrollY;
+    // tslint:disable-next-line: prefer-const
+    let scroll = window.scrollY;
 
     if (scroll > 500) {
       $('#success-gallery').addClass('flipInX');
