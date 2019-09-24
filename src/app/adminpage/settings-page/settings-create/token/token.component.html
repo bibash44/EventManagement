@@ -1,0 +1,16 @@
+<span id="validatePasswordSection">
+      <input class="form-control form-control-lg mt-2" type="text" placeholder="Enter Password"
+             name="validatePassword"
+             id="validatePassword" ngModel #validatePassword="ngModel">
+      <button class="btn btn-warning mt-2" (click)="validatePwd()">Validate</button>
+</span>
+
+<span id="tokenField" style="display: none">
+  <button class="btn btn-warning w-100 mt-2" (click)="generateToken()" id="generateToken">Generate Token</button>
+  <span id="copyToken" style="display: none">
+  <input class="form-control form-control-lg mt-2" type="text" placeholder="Copy Token" id="newToken">
+
+  <button type="button" class="btn btn-info mt-2 w-100" (click)="updateToken()" id="updateToken">Confirm Token
+</button>
+</span>
+</span>

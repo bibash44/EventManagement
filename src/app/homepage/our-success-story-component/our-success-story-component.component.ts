@@ -32,8 +32,6 @@ export class OurSuccessStoryComponentComponent implements OnInit {
     this.successStoryService.getSuccessStoryImages().subscribe(data => {
       this.images = data;
     });
-
-
   }
 
 

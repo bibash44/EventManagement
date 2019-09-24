@@ -73,6 +73,10 @@ import { BookingComponent } from './adminpage/admin-service-page/booking/booking
 import { BookingEditComponent } from './adminpage/admin-service-page/booking/booking-edit/booking-edit.component';
 import { ClientsreviewComponent } from './clientspage/clientsreview/clientsreview.component';
 import { ContactdetailsComponent } from './contactuspage/contactdetails/contactdetails.component';
+import { SettingsPageComponent } from './adminpage/settings-page/settings-page.component';
+import { SettingsCreateComponent } from './adminpage/settings-page/settings-create/settings-create.component';
+import { PasswordComponent } from './adminpage/settings-page/settings-create/password/password.component';
+import { TokenComponent } from './adminpage/settings-page/settings-create/token/token.component';
 
 // import { LightboxModule, CarouselModule, ModalsModule, WavesModule } from 'angular-bootstrap-md';
 
@@ -132,6 +136,10 @@ import { ContactdetailsComponent } from './contactuspage/contactdetails/contactd
     BookingEditComponent,
     ClientsreviewComponent,
     ContactdetailsComponent,
+    SettingsPageComponent,
+    SettingsCreateComponent,
+    PasswordComponent,
+    TokenComponent,
 
   ],
 

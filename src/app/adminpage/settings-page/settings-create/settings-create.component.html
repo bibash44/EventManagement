@@ -1,0 +1,18 @@
+<form class="border border-light m-2">
+  <div class="form-group p-2">
+    <div class="w-100">
+      <button class="button btn-info w-50" (click)="hideAndShow(1)">Security Code</button>
+      <button class="button btn-success w-50" (click)="hideAndShow(0)">Password</button>
+    </div>
+    <div class="comment-validation alert alert-success p-3 mt-3" role="alert" id="comment-validation"
+         style="display: none"></div>
+    <div class="w-100" id="settingsCode" *ngIf="playCode">
+      <app-token></app-token>
+    </div>
+
+    <div class="w-100" id="settingsPassword" *ngIf="playPassword">
+      <app-password></app-password>
+    </div>
+  </div>
+</form>
+
