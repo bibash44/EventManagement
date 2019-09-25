@@ -1,3 +1,4 @@
+import { AppServiceService } from './../../../../app-service.service';
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { PortfolioEditService } from './portfolio-edit.service';
 import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
@@ -13,12 +14,13 @@ export class ProtfolioEditComponent implements OnInit, AfterViewInit {
 
 
   private clients;
-  baseurl = 'https://eventmandu.com';
+  // baseurl = 'https://eventmandu.com';
+  baseurl = this.BASE_URL.publishBaseUrl();
   fileToUpload: File = null;
   imagename = null;
   imageUrl: string;
 
-  constructor(private portfolioService: PortfolioEditService) {
+  constructor(private portfolioService: PortfolioEditService, private BASE_URL: AppServiceService) {
   }
 
   displayedColumns: string[] = ['type', 'image', 'actions'];
@@ -59,7 +61,7 @@ export class ProtfolioEditComponent implements OnInit, AfterViewInit {
     if (confirmDelete) {
       $.ajax({
         type: 'DELETE',
-        url: this.baseurl + '/portfolio/delete',
+        url: this.baseurl + 'portfolio/delete',
         data: {
           id,
           image
@@ -128,7 +130,7 @@ export class ProtfolioEditComponent implements OnInit, AfterViewInit {
     } else {
       $.ajax({
         type: 'POST',
-        url: this.baseurl + '/portfolio/upload/image',
+        url: this.baseurl + 'portfolio/upload/image',
         contentType: false,
         cache: false,
         processData: false,
@@ -164,7 +166,7 @@ export class ProtfolioEditComponent implements OnInit, AfterViewInit {
 
       $.ajax({
         type: 'put',
-        url: this.baseurl + '/portfolio/update/portfolio',
+        url: this.baseurl + 'portfolio/update/portfolio',
         data,
         success(res) {
           if (res) {

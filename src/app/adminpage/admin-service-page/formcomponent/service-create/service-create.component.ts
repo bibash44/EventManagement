@@ -1,3 +1,4 @@
+import { AppServiceService } from './../../../../app-service.service';
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 
@@ -11,7 +12,8 @@ export class ServiceCreateComponent implements OnInit {
   imageUrl: string;
   fileToUpload: File = null;
   imagename = null;
-  baseurl = 'https://eventmandu.com';
+  baseurl = this.BASE_URL.publishBaseUrl();
+
 
   handleFileInput(file: FileList) {
     this.fileToUpload = file.item(0);
@@ -24,7 +26,7 @@ export class ServiceCreateComponent implements OnInit {
     this.uploadImageToServer($('#create-services'));
   }
 
-  constructor() {
+  constructor(private BASE_URL: AppServiceService) {
   }
 
   ngOnInit() {
@@ -54,7 +56,7 @@ export class ServiceCreateComponent implements OnInit {
 
       $.ajax({
         type: 'POST',
-        url: this.baseurl + '/services/upload/image',
+        url: this.baseurl + 'services/upload/image',
         contentType: false,
         cache: false,
         processData: false,
@@ -125,7 +127,7 @@ export class ServiceCreateComponent implements OnInit {
 
       $.ajax({
         type: 'POST',
-        url: this.baseurl + '/services/addServices',
+        url: this.baseurl + 'services/addServices',
         data,
         success(res) {
           if (res) {

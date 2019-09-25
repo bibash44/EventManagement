@@ -1,40 +1,35 @@
 <div class="update-comment-validation alert alert-success p-3 mt-3" role="alert" id="success-story-comment-validation"
-style="display: none"></div>
+  style="display: none"></div>
 <form class="border border-light m-2 mb-5" id="success-story-update-form"
-      style="display: none; background-color: darkslategrey">
+  style="display: none; background-color: darkslategrey">
   <div class="form-group p-2">
-    <div class="update-comment-validation alert alert-success p-3 mt-3" role="alert" id="success-story-update-comment-validation"
-    style="display: none"></div>
+    <div class="update-comment-validation alert alert-success p-3 mt-3" role="alert"
+      id="success-story-update-comment-validation" style="display: none"></div>
     <input type="file" class="form-control-file mt-2" id="update-success-story-image"
-           (change)="handleFileInput($event.target.files)" name="updateSuccessStoryImage"
-           ngModel
-           #updateClientImage="ngModel" hidden/>
+      (change)="handleFileInput($event.target.files)" name="updateSuccessStoryImage" ngModel
+      #updateClientImage="ngModel" hidden />
 
     <input class="form-control form-control-lg mt-2" type="text" placeholder="Title" name="updateSuccessStoryTitle"
-           id="update-success-story-title" ngModel #updateSuccessStoryTitle="ngModel">
+      id="update-success-story-title" ngModel #updateSuccessStoryTitle="ngModel">
 
     <input class="form-control form-control-lg mt-2" type="text" name="updateSuccessStory"
-           id="update-success-story-image-name"
-           ngModel #updateSuccessStory="ngModel">
+      id="update-success-story-image-name" ngModel #updateSuccessStory="ngModel">
 
     <input class="form-control form-control-lg mt-2" type="text" name="updateSuccessStoryId"
-           id="update-success-story-id"
-           ngModel
-           #updateSuccessStoryId="ngModel" placeholder="id">
+      id="update-success-story-id" ngModel #updateSuccessStoryId="ngModel" placeholder="id">
 
     <label class="select-image btn btn-secondary mt-2 mb-2 w-100" for="update-success-story-image"> <i
-      class="fa fa-photo fa-3x "></i>
+        class="fa fa-photo fa-3x "></i>
     </label>
 
     <span class="display-image mt-2" id="display-success-story-image">
-              <img [src]="imageUrl" class="w-100">
+      <img [src]="imageUrl" class="w-100">
     </span>
 
     <button type="button" class="btn btn-info mt-2 w-50" style="margin-top: 0px"
-            (click)="successStoryFormUpdate()">Update
+      (click)="successStoryFormUpdate()">Update
     </button>
-    <button type="button" class="btn btn-danger mt-2 w-50" style="margin-top: 0px"
-            (click)="closeForm()">Close
+    <button type="button" class="btn btn-danger mt-2 w-50" style="margin-top: 0px" (click)="closeForm()">Close
     </button>
 
   </div>
@@ -56,18 +51,17 @@ style="display: none"></div>
   <ng-container matColumnDef="image">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>Image</th>
     <td mat-cell *matCellDef="let element" style="width: 25%"><img
-      [src]="'http://eventmandu.com/UPLOADS/images/success_story/'+element.image" class="w-100 img-fluid img-thumbnail">
+        [src]="baseurl+'UPLOADS/images/success_story/'+element.image" class="w-100 img-fluid img-thumbnail">
     </td>
   </ng-container>
 
   <ng-container matColumnDef="actions">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Actions</th>
     <td mat-cell *matCellDef="let element">
-      <button class="btn btn-danger" (click)="deleteById(element.id,element.image)"><i
-        class="fa fa-trash"></i>
+      <button class="btn btn-danger" (click)="deleteById(element.id,element.image)"><i class="fa fa-trash"></i>
       </button>
       <button type="button" class="btn btn-success ml-2" style="color: white;" (click)="populateForm(element)"><i
-        class="fa fa-pencil"></i>
+          class="fa fa-pencil"></i>
       </button>
     </td>
   </ng-container>

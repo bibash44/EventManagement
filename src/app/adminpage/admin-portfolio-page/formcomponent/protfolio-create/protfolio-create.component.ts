@@ -1,3 +1,4 @@
+import { AppServiceService } from './../../../../app-service.service';
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 
@@ -10,7 +11,9 @@ export class ProtfolioCreateComponent implements OnInit {
 
   imageUrl: string;
   fileToUpload: File = null;
-  baseurl = 'https://eventmandu.com';
+  // baseurl = 'https://eventmandu.com';
+  baseurl = this.BASE_URL.publishBaseUrl();
+
 
   handleFileInput(file: FileList) {
     this.fileToUpload = file.item(0);
@@ -46,7 +49,7 @@ export class ProtfolioCreateComponent implements OnInit {
 
       $.ajax({
         type: 'POST',
-        url: this.baseurl + '/portfolio/upload/image',
+        url: this.baseurl + 'portfolio/upload/image',
         contentType: false,
         cache: false,
         processData: false,
@@ -99,7 +102,7 @@ export class ProtfolioCreateComponent implements OnInit {
 
       $.ajax({
         type: 'POST',
-        url: this.baseurl + '/portfolio/addPortfolio',
+        url: this.baseurl + 'portfolio/addPortfolio',
         data,
         success(res) {
           if (res) {
@@ -133,7 +136,7 @@ export class ProtfolioCreateComponent implements OnInit {
   }
 
 
-  constructor() {
+  constructor(private BASE_URL: AppServiceService) {
   }
 
   ngOnInit() {

@@ -1,3 +1,4 @@
+import { AppServiceService } from './../../../../app-service.service';
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 import * as $ from 'jquery';
@@ -12,12 +13,13 @@ export class SuccessStoryEditComponent implements OnInit, AfterViewInit {
 
 
   private servicesDisplay;
-  baseurl = 'https://localhost:1954';
+  baseurl = this.BASE_URL.publishBaseUrl();
+
   fileToUpload: File = null;
   imagename = null;
   imageUrl: string;
 
-  constructor(private  successStoryEditService: SuccessStoryEditService) {
+  constructor(private  successStoryEditService: SuccessStoryEditService, private BASE_URL: AppServiceService) {
   }
 
   displayedColumns: string[] = ['title', 'image', 'actions'];
@@ -57,7 +59,7 @@ export class SuccessStoryEditComponent implements OnInit, AfterViewInit {
     if (Confirmdelete) {
     $.ajax({
       type: 'DELETE',
-      url: this.baseurl + '/success_story/delete',
+      url: this.baseurl + 'success_story/delete',
       data: {
         id,
         image
@@ -124,7 +126,7 @@ export class SuccessStoryEditComponent implements OnInit, AfterViewInit {
     } else {
       $.ajax({
         type: 'POST',
-        url: this.baseurl + '/success_story/upload/image',
+        url: this.baseurl + 'success_story/upload/image',
         contentType: false,
         cache: false,
         processData: false,
@@ -160,7 +162,7 @@ export class SuccessStoryEditComponent implements OnInit, AfterViewInit {
 
       $.ajax({
         type: 'put',
-        url: this.baseurl + '/success_story/update',
+        url: this.baseurl + 'success_story/update',
         data,
         success(res) {
           if (res) {

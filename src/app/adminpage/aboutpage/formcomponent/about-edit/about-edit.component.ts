@@ -1,7 +1,8 @@
+import { AppServiceService } from './../../../../app-service.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
+import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 import * as $ from 'jquery';
-import {AboutUsEditService} from './about-edit.service';
+import { AboutUsEditService } from './about-edit.service';
 
 @Component({
   selector: 'app-about-edit',
@@ -11,16 +12,17 @@ import {AboutUsEditService} from './about-edit.service';
 export class AboutEditComponent implements OnInit {
 
   private clients;
-  baseurl = 'https://eventmandu.com';
+  // baseurl = 'https://eventmandu.com';
+  baseurl = this.BASE_URL.publishBaseUrl();
 
-  constructor(private  aboutusService: AboutUsEditService) { }
+  constructor(private aboutusService: AboutUsEditService, private BASE_URL: AppServiceService) { }
 
 
   displayedColumns: string[] = ['title', 'content', 'actions'];
   dataSource = new MatTableDataSource(this.clients);
 
-  @ViewChild(MatSort, {static: true}) sort: MatSort;
-  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+  @ViewChild(MatSort, { static: true }) sort: MatSort;
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
@@ -39,13 +41,13 @@ export class AboutEditComponent implements OnInit {
   deleteById(id: any) {
     $.ajax({
       type: 'DELETE',
-      url: this.baseurl + '/aboutus/delete',
+      url: this.baseurl + 'aboutus/delete',
       data: {
         id
       },
       success(res) {
         alert('Content Deleted');
-        setTimeout(function() {
+        setTimeout(function () {
           window.location.reload();
         }, 2000);
       },
@@ -74,7 +76,7 @@ export class AboutEditComponent implements OnInit {
     if (titleValue == '') {
       alert('Please enter AboutUs title');
 
-    }else if (contentValue == '') {
+    } else if (contentValue == '') {
       alert('Please enter content');
     } else {
       const data = {
@@ -85,7 +87,7 @@ export class AboutEditComponent implements OnInit {
 
       $.ajax({
         type: 'put',
-        url: this.baseurl + '/aboutus/update/aboutus',
+        url: this.baseurl + 'aboutus/update/aboutus',
         data,
         success(res) {
           if (res) {
@@ -95,12 +97,12 @@ export class AboutEditComponent implements OnInit {
             $('#update-comment-validation').fadeIn(100);
             $('#update-comment-validation').focus();
 
-            setTimeout(function() {
+            setTimeout(function () {
               $('#update-comment-validation').fadeOut(1000);
             }, 2000);
 
 
-            setTimeout(function() {
+            setTimeout(function () {
               window.location.reload();
             }, 2000);
           }
@@ -112,7 +114,7 @@ export class AboutEditComponent implements OnInit {
           $('#update-comment-validation').fadeIn(100);
           $('#update-comment-validation').focus();
 
-          setTimeout(function() {
+          setTimeout(function () {
             $('#update-comment-validation').fadeOut(1000);
           }, 2000);
         }

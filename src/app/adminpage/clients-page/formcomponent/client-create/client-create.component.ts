@@ -1,3 +1,4 @@
+import { AppServiceService } from './../../../../app-service.service';
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 
@@ -12,8 +13,14 @@ export class ClientCreateComponent implements OnInit {
   imageUrl: string;
   imageSize: string;
   fileToUpload: File = null;
-  baseurl = 'https://eventmandu.com';
-  // baseurl = 'http://localhost:1954';
+  // baseurl = 'https://eventmandu.com';
+  //  baseurl = 'http://localhost:1954';
+  baseurl = this.BASE_URL.publishBaseUrl();
+
+  constructor(private BASE_URL: AppServiceService) { }
+
+  ngOnInit() {
+  }
 
   handleFileInput(file: FileList) {
     this.fileToUpload = file.item(0);
@@ -34,17 +41,17 @@ export class ClientCreateComponent implements OnInit {
     if (nameValue === '') {
       $('#clientName').attr('placeholder', 'Please enter a name *');
       $('#clientName').focus();
-      $('#clientName').css({border: '2px solid red'});
+      $('#clientName').css({ border: '2px solid red' });
 
     } else if (commentValue === '') {
       $('#clientComment').attr('placeholder', 'Please enter company name *');
       $('#clientComment').focus();
-      $('#clientComment').css({border: '2px solid red'});
+      $('#clientComment').css({ border: '2px solid red' });
 
     } else if (companyValue === '') {
       $('#company').attr('placeholder', 'Please enter a name *');
       $('#company').focus();
-      $('#company').css({border: '2px solid red'});
+      $('#company').css({ border: '2px solid red' });
     } else {
       const data = {
         client_name: nameValue,
@@ -55,7 +62,7 @@ export class ClientCreateComponent implements OnInit {
 
       $.ajax({
         type: 'POST',
-        url: this.baseurl + '/clients/addClients',
+        url: this.baseurl + 'clients/addClients',
         data,
         success(res) {
           if (res) {
@@ -114,13 +121,13 @@ export class ClientCreateComponent implements OnInit {
 
       $.ajax({
         type: 'POST',
-        url: this.baseurl + '/clients/upload/image',
+        url: this.baseurl + 'clients/upload/image',
         contentType: false,
         cache: false,
         processData: false,
         data: formData,
         success(data) {
-          console.log('client image'+data)
+          console.log('client image' + data)
           $('#clients-image-name').val(data);
         },
         error(error) {
@@ -138,9 +145,6 @@ export class ClientCreateComponent implements OnInit {
     }
   }
 
-  constructor() { }
 
-  ngOnInit() {
-  }
 
 }

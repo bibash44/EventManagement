@@ -1,3 +1,4 @@
+import { AppServiceService } from './../../../../app-service.service';
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 
@@ -8,7 +9,9 @@ import * as $ from 'jquery';
 })
 export class AboutCreateComponent implements OnInit {
 
-  constructor() { }
+  base_url = this.BASE_URL.publishBaseUrl();
+
+  constructor(private BASE_URL: AppServiceService) { }
 
   ngOnInit() {
   }
@@ -37,7 +40,7 @@ export class AboutCreateComponent implements OnInit {
 
       $.ajax({
         type: 'POST',
-        url: 'https://eventmandu.com/aboutus/addAboutUs',
+        url: this.base_url + 'boutus/addAboutUs',
         data,
         success(res) {
           if (res) {

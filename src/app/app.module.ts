@@ -61,10 +61,14 @@ import { AdminServicePageComponent } from './adminpage/admin-service-page/admin-
 import { ServiceCreateComponent } from './adminpage/admin-service-page/formcomponent/service-create/service-create.component';
 import { ServiceEditComponent } from './adminpage/admin-service-page/formcomponent/service-edit/service-edit.component';
 import { AdminHomepageComponent } from './admin-homepage/admin-homepage.component';
+// tslint:disable-next-line: max-line-length
 import { ServicesDisplayEditComponent } from './admin-homepage/form-component/services/services-display-edit/services-display-edit.component';
+// tslint:disable-next-line: max-line-length
 import { ServicesDisplayCreateComponent } from './admin-homepage/form-component/services/services-display-create/services-display-create.component';
+// tslint:disable-next-line: max-line-length
 import { SlidingImageCreateComponent } from './admin-homepage/form-component/slidingimage/sliding-image-create/sliding-image-create.component';
 import { SlidingImageEditComponent } from './admin-homepage/form-component/slidingimage/sliding-image-edit/sliding-image-edit.component';
+// tslint:disable-next-line: max-line-length
 import { SuccessStoryCreateComponent } from './admin-homepage/form-component/success-story/success-story-create/success-story-create.component';
 import { SuccessStoryEditComponent } from './admin-homepage/form-component/success-story/success-story-edit/success-story-edit.component';
 import { AdminReviewComponent } from './adminpage/admin-review/admin-review.component';
@@ -132,6 +136,8 @@ import { ContactdetailsComponent } from './contactuspage/contactdetails/contactd
     BookingEditComponent,
     ClientsreviewComponent,
     ContactdetailsComponent,
+    SlidingImageCreateComponent,
+    SuccessStoryCreateComponent
 
   ],
 

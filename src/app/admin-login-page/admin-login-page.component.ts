@@ -1,3 +1,4 @@
+import { AppServiceService } from './../app-service.service';
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 
@@ -8,7 +9,8 @@ import * as $ from 'jquery';
 })
 export class AdminLoginPageComponent implements OnInit {
 
-  base_url: string = 'http://localhost:1954/';
+  // base_url: string = 'http://localhost:1954/';
+  base_url: string = this.BASE_URL.publishBaseUrl();
   // getPassword(email) {
   //   let emailLogin = email.value;
   //   if (emailLogin == '') {
@@ -108,7 +110,7 @@ export class AdminLoginPageComponent implements OnInit {
 
   }
 
-  constructor() { }
+  constructor(private BASE_URL: AppServiceService) { }
 
   ngOnInit() {
   }

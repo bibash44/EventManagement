@@ -1,3 +1,4 @@
+import { AppServiceService } from './../../../../app-service.service';
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
@@ -15,12 +16,13 @@ export class ServiceEditComponent implements OnInit, AfterViewInit {
 
 
   private clients;
-  baseurl = 'https://eventmandu.com';
+  // baseurl = 'https://eventmandu.com';
+  baseurl = this.BASE_URL.publishBaseUrl();
   fileToUpload: File = null;
   imagename = null;
   imageUrl: string;
 
-  constructor(private serviceService: ServicesEditService) {
+  constructor(private serviceService: ServicesEditService, private BASE_URL: AppServiceService) {
   }
 
   displayedColumns: string[] = ['type', 'title', 'image', 'description', 'actions'];
@@ -60,7 +62,7 @@ export class ServiceEditComponent implements OnInit, AfterViewInit {
     if (confirmDelete) {
       $.ajax({
         type: 'DELETE',
-        url: this.baseurl + '/services/delete',
+        url: this.baseurl + 'services/delete',
         data: {
           id,
           image
@@ -133,7 +135,7 @@ export class ServiceEditComponent implements OnInit, AfterViewInit {
 
       $.ajax({
         type: 'POST',
-        url: this.baseurl + '/services/upload/image',
+        url: this.baseurl + 'services/upload/image',
         contentType: false,
         cache: false,
         processData: false,
@@ -196,7 +198,7 @@ export class ServiceEditComponent implements OnInit, AfterViewInit {
 
       $.ajax({
         type: 'put',
-        url: this.baseurl + '/services/update/services',
+        url: this.baseurl + 'services/update/services',
         data,
         success(res) {
           if (res) {

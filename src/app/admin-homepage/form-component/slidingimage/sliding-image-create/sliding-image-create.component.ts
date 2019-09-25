@@ -1,3 +1,4 @@
+import { AppServiceService } from './../../../../app-service.service';
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 
@@ -10,7 +11,8 @@ export class SlidingImageCreateComponent implements OnInit {
 
   imageUrl: string;
   fileToUpload: File = null;
-  baseurl = 'https://eventmandu.com';
+   baseurl = this.BASE_URL.publishBaseUrl();
+
 
   handleFileInput(file: FileList) {
     this.fileToUpload = file.item(0);
@@ -24,7 +26,7 @@ export class SlidingImageCreateComponent implements OnInit {
     this.uploadImageToServer($('#create-slider'));
   }
 
-  constructor() {
+  constructor(private BASE_URL: AppServiceService) {
   }
 
   ngOnInit() {
@@ -54,7 +56,7 @@ export class SlidingImageCreateComponent implements OnInit {
 
       $.ajax({
         type: 'POST',
-        url: this.baseurl + '/sliding_image/upload/image/sliding',
+        url: this.baseurl + 'sliding_image/upload/image/sliding',
         contentType: false,
         cache: false,
         processData: false,
@@ -111,7 +113,7 @@ export class SlidingImageCreateComponent implements OnInit {
 
       $.ajax({
         type: 'POST',
-        url: this.baseurl + '/sliding_image/addImageSlider',
+        url: this.baseurl + 'sliding_image/addImageSlider',
         data,
         success(res) {
           if (res) {

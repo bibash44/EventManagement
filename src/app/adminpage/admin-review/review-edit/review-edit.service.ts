@@ -1,15 +1,17 @@
-import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {catchError, tap} from 'rxjs/operators';
+import { AppServiceService } from './../../../app-service.service';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { catchError, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class ReviewEditService {
-  private url = 'https://eventmandu.com/review';
+  // private url = 'https://eventmandu.com/review';
+  private url = this.BASE_URL.publishBaseUrl() + 'review';
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private BASE_URL: AppServiceService) {
   }
 
   getData() {

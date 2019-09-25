@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class AppServiceService {
 
-  BASE_URL: string = 'htttps://eventmandu.com/';
+  BASE_URL: string = 'https://eventmandu.com/';
 
   constructor() { }
 

@@ -1,15 +1,17 @@
-import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {catchError, map, tap} from 'rxjs/operators';
+import { AppServiceService } from './../../../../app-service.service';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { catchError, map, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class ServicesEditService {
-  private url = 'https://eventmandu.com/services/getServices';
+  url = this.BASE_URL.publishBaseUrl() + 'services/getServices';
+  // url = 'https://eventmandu.com/services/getServices';
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private BASE_URL: AppServiceService) {
   }
 
   getData() {

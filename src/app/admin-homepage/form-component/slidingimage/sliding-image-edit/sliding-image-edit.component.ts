@@ -1,3 +1,4 @@
+import { AppServiceService } from './../../../../app-service.service';
 import { SlidingImageEditService } from './sliding-image-edit.service';
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
@@ -12,12 +13,12 @@ export class SlidingImageEditComponent implements OnInit, AfterViewInit {
 
 
   private servicesDisplay;
-  baseurl = 'https://localhost:1954';
+  baseurl = this.BASE_URL.publishBaseUrl();
   fileToUpload: File = null;
   imagename = null;
   imageUrl: string;
 
-  constructor(private slidingImageEditService: SlidingImageEditService) {
+  constructor(private slidingImageEditService: SlidingImageEditService, private BASE_URL: AppServiceService) {
   }
 
   displayedColumns: string[] = ['image', 'slider_title', 'sub_title', 'actions'];
@@ -57,7 +58,7 @@ export class SlidingImageEditComponent implements OnInit, AfterViewInit {
     if (Confirmdelete) {
       $.ajax({
         type: 'DELETE',
-        url: this.baseurl + '/sliding_image/delete',
+        url: this.baseurl + 'sliding_image/delete',
         data: {
           id,
           image
@@ -125,7 +126,7 @@ export class SlidingImageEditComponent implements OnInit, AfterViewInit {
     } else {
       $.ajax({
         type: 'POST',
-        url: this.baseurl + '/sliding_image/upload/image/sliding',
+        url: this.baseurl + 'sliding_image/upload/image/sliding',
         contentType: false,
         cache: false,
         processData: false,
@@ -168,7 +169,7 @@ export class SlidingImageEditComponent implements OnInit, AfterViewInit {
 
       $.ajax({
         type: 'put',
-        url: this.baseurl + '/sliding_image/update/slidingImage',
+        url: this.baseurl + 'sliding_image/update/slidingImage',
         data,
         success(res) {
           if (res) {

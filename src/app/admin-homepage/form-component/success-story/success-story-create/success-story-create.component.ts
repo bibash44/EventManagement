@@ -1,3 +1,4 @@
+import { AppServiceService } from './../../../../app-service.service';
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 
@@ -11,7 +12,7 @@ export class SuccessStoryCreateComponent implements OnInit {
 
   imageUrl: string;
   fileToUpload: File = null;
-  baseurl = 'http://eventmandu.com';
+  baseurl = this.BASE_URL.publishBaseUrl();
 
   handleFileInput(file: FileList) {
     this.fileToUpload = file.item(0);
@@ -52,7 +53,7 @@ export class SuccessStoryCreateComponent implements OnInit {
 
       $.ajax({
         type: 'POST',
-        url: this.baseurl + '/success_story/addSuccessStory',
+        url: this.baseurl + 'success_story/addSuccessStory',
         data,
         success(res) {
           if (res) {
@@ -99,7 +100,7 @@ export class SuccessStoryCreateComponent implements OnInit {
 
       $.ajax({
         type: 'POST',
-        url: this.baseurl + '/success_story/upload/image',
+        url: this.baseurl + 'success_story/upload/image',
         contentType: false,
         cache: false,
         processData: false,
@@ -116,7 +117,7 @@ export class SuccessStoryCreateComponent implements OnInit {
   }
 
 
-  constructor() {
+  constructor(private BASE_URL: AppServiceService) {
   }
 
   ngOnInit() {

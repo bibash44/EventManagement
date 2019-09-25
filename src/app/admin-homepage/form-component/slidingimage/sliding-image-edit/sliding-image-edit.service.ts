@@ -1,15 +1,17 @@
-import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {catchError, tap} from 'rxjs/operators';
+import { AppServiceService } from './../../../../app-service.service';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { catchError, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class SlidingImageEditService {
-  private url = 'http://eventmandu.com/sliding_image/getImageSlider';
+  // private url = 'http://eventmandu.com/sliding_image/getImageSlider';
+  url = this.BASE_URL.publishBaseUrl() + 'sliding_image/getImageSlider';
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private BASE_URL: AppServiceService) {
   }
 
   getData() {
