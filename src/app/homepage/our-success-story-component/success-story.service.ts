@@ -1,14 +1,16 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {AppServiceService} from '../../app-service.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SuccessStoryService {
 
-  base_url: string = 'http://localhost:1954/';
+  base_url = this.BASE_URL.publishBaseUrl();
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private BASE_URL: AppServiceService) {
+  }
 
   getSuccessStoryImages() {
     return this.http.get(this.base_url + 'success_story/getSuccessStory');
