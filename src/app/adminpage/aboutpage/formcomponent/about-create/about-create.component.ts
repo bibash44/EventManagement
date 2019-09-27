@@ -40,7 +40,7 @@ export class AboutCreateComponent implements OnInit {
 
       $.ajax({
         type: 'POST',
-        url: this.base_url + 'boutus/addAboutUs',
+        url: this.base_url + 'aboutus/addAboutUs',
         data,
         success(res) {
           if (res) {

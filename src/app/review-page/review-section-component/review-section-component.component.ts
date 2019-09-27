@@ -15,6 +15,7 @@ export class ReviewSectionComponentComponent implements OnInit {
   comments: any;
   // base_url: string = 'https://eventmandu.com/';
   base_url: string = this.BASE_URL.publishBaseUrl();
+  public serverFromData;
 
   constructor(private reviewService: ReviewSectionService, private BASE_URL: AppServiceService) { }
 
@@ -92,14 +93,19 @@ export class ReviewSectionComponentComponent implements OnInit {
     this.reviewService.getReviews()
       .subscribe(data => {
         this.comments = data['data'];
+        if (this.comments.length > 0) {
+          this.serverFromData = true;
+          console.log(this.comments);
+        }
+        else { this.serverFromData = false }
       });
+
   }
 
 
   ngOnInit() {
 
     this.showConfig();
-    console.log(this.comments);
 
     setInterval(() => {
       this.showNextSlide();

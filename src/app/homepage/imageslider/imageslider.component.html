@@ -3,7 +3,7 @@
   <ng-template ngbSlide *ngFor="let sliderimage of sliderimages;  let i = index">
     <div class="picsum-img-wrapper animated fadeInLeft">
       <!--
-      <img [style.background]="base_url+'UPLOADS/images/sliding_image/' + sliderimage.image + ''"
+      <img [style.background]="base_url+'uploads/images/sliding_image/' + sliderimage.image + ''"
            id="image" [style.backgroundSize]="'cover'" [style.backgroundRepeat]="'no-repeat'" [style.border]="'none'"> -->
 
       <img [style.background]="'url(' +base_url+'uploads/images/sliding_image/'+sliderimage.image + ')'" id="image"

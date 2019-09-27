@@ -137,8 +137,6 @@ export class ReviewFormComponent implements OnInit {
           var database_failed = res.database_failed;
           var success = res.success;
 
-          console.log(res);
-
           if (database_failed == false) {
             $('#comment-validation').removeClass('alert-success').fadeIn(100);
             $('#comment-validation').addClass('alert-danger').fadeIn(100);

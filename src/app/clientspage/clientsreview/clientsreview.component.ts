@@ -30,7 +30,7 @@ export class ClientsreviewComponent implements OnInit {
     this.secondImage = this.thirdImage;
     this.thirdImage = this.thirdImage + 1;
 
-    if (this.thirdImage == total_images) {
+    if (this.thirdImage === total_images) {
       this.firstImage = 0;
       this.secondImage = 1;
       this.thirdImage = 2;
