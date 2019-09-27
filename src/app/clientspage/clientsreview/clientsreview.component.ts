@@ -1,3 +1,4 @@
+import { AppServiceService } from './../../app-service.service';
 import { ClientspageService } from './clientspage.service';
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
@@ -17,6 +18,7 @@ export class ClientsreviewComponent implements OnInit {
   slides = Array(3);
 
   clients: any;
+  base_url = this.BASE_URL.publishBaseUrl();
 
 
 
@@ -89,7 +91,7 @@ export class ClientsreviewComponent implements OnInit {
   }
 
 
-  constructor(private clientsPageService: ClientspageService) { }
+  constructor(private clientsPageService: ClientspageService, private BASE_URL: AppServiceService) { }
 
   ngOnInit() {
 

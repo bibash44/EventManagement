@@ -1,3 +1,4 @@
+import { AppServiceService } from './../../../../app-service.service';
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
@@ -13,14 +14,15 @@ import * as $ from 'jquery';
 export class ClientEditComponent implements OnInit, AfterViewInit {
 
   private clients;
-  baseurl = 'https://eventmandu.com';
+  // baseurl = 'https://eventmandu.com';
+  baseurl = this.BASE_URL.publishBaseUrl();
   // baseurl = 'http://localhost:1954';
   fileToUpload: File = null;
   imagename = null;
   imageUrl: string;
 
   // tslint:disable-next-line: no-unused-expression
-  constructor(private clientsService: ClientsEditService) { }
+  constructor(private clientsService: ClientsEditService, private BASE_URL: AppServiceService) { }
 
 
   displayedColumns: string[] = ['client_name', 'image', 'comment', 'company', 'actions'];
