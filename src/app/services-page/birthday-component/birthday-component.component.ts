@@ -1,3 +1,4 @@
+import { AppServiceService } from './../../app-service.service';
 import { Component, OnInit } from '@angular/core';
 import { BirthdayServiceService } from './birthday-service.service';
 
@@ -10,6 +11,7 @@ import { BirthdayServiceService } from './birthday-service.service';
 export class BirthdayComponentComponent implements OnInit {
 
   images: any;
+  base_url = this.BASE_URL.publishBaseUrl();
 
   getbirthdayServices() {
     this.birthdayServices.getBirthdayServices().subscribe(data => {
@@ -19,52 +21,53 @@ export class BirthdayComponentComponent implements OnInit {
   }
 
 
-  constructor(private birthdayServices: BirthdayServiceService) { }
+  constructor(private birthdayServices: BirthdayServiceService, private BASE_URL: AppServiceService) { }
 
   ngOnInit() {
-    this.images = [
-      {
-        image: 'assets/images/weeding_homepage.jpg',
-        title: 'Birthday wedding at home',
-        description: ' Description of the image'
-      },
-      {
-        image: 'assets/images/weeding_homepage.jpg',
-        title: 'Birthday wedding at home',
-        description: ' Description of the image'
-      },
-      {
-        image: 'assets/images/weeding_homepage.jpg',
-        title: 'Birthday wedding at home',
-        description: ' Description of the image'
-      },
-      {
-        image: 'assets/images/weeding_homepage.jpg',
-        title: 'Birthday wedding at home',
-        description: ' Description of the image'
-      },
-      {
-        image: 'assets/images/weeding_homepage.jpg',
-        title: 'Birthday wedding at home',
-        description: ' Description of the image'
-      },
-      {
-        image: 'assets/images/weeding_homepage.jpg',
-        title: 'Birthday wedding at home',
-        description: ' Description of the image'
-      },
-      {
-        image: 'assets/images/weeding_homepage.jpg',
-        title: 'Birthday wedding at home',
-        description: ' Description of the image'
-      },
-      {
-        image: 'assets/images/weeding_homepage.jpg',
-        title: 'Birthday wedding at home',
-        description: ' Description of the image'
-      },
+    this.getbirthdayServices();
+    // this.images = [
+    //   {
+    //     image: 'assets/images/weeding_homepage.jpg',
+    //     title: 'Birthday wedding at home',
+    //     description: ' Description of the image'
+    //   },
+    //   {
+    //     image: 'assets/images/weeding_homepage.jpg',
+    //     title: 'Birthday wedding at home',
+    //     description: ' Description of the image'
+    //   },
+    //   {
+    //     image: 'assets/images/weeding_homepage.jpg',
+    //     title: 'Birthday wedding at home',
+    //     description: ' Description of the image'
+    //   },
+    //   {
+    //     image: 'assets/images/weeding_homepage.jpg',
+    //     title: 'Birthday wedding at home',
+    //     description: ' Description of the image'
+    //   },
+    //   {
+    //     image: 'assets/images/weeding_homepage.jpg',
+    //     title: 'Birthday wedding at home',
+    //     description: ' Description of the image'
+    //   },
+    //   {
+    //     image: 'assets/images/weeding_homepage.jpg',
+    //     title: 'Birthday wedding at home',
+    //     description: ' Description of the image'
+    //   },
+    //   {
+    //     image: 'assets/images/weeding_homepage.jpg',
+    //     title: 'Birthday wedding at home',
+    //     description: ' Description of the image'
+    //   },
+    //   {
+    //     image: 'assets/images/weeding_homepage.jpg',
+    //     title: 'Birthday wedding at home',
+    //     description: ' Description of the image'
+    //   },
 
-    ];
+    // ];
     // this.getbirthdayServices();
   }
 

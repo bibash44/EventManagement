@@ -1,3 +1,4 @@
+import { AppServiceService } from './../../app-service.service';
 import { Component, OnInit, Inject, HostListener } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import * as $ from 'jquery';
@@ -14,8 +15,9 @@ export class OurSuccessStoryComponentComponent implements OnInit {
 
   images: any;
   imagesUrl: any;
+  baseurl = this.BASE_URL.publishBaseUrl();
 
-  constructor(private successStoryService: SuccessStoryService, private sanitizer: DomSanitizer) { }
+  constructor(private successStoryService: SuccessStoryService, private sanitizer: DomSanitizer, private BASE_URL: AppServiceService) { }
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
@@ -38,65 +40,66 @@ export class OurSuccessStoryComponentComponent implements OnInit {
 
 
   ngOnInit() {
+    this.getSuccessStory();
 
-    this.images = [
-      {
-        image: 'assets/images/weeding_homepage.jpg',
-        title: 'Birthday wedding at home',
-      },
-      {
-        image: 'assets/images/birthday_homepage.jpg',
-        title: 'Birthday wedding at home',
-      },
-      {
-        image: 'assets/images/weeding_homepage.jpg',
-        title: 'Birthday wedding at home',
-      },
-      {
-        image: 'assets/images/party_homepage.jpg',
-        title: 'Birthday wedding at home',
-      },
-      {
-        image: 'assets/images/weeding_homepage.jpg',
-        title: 'Birthday wedding at home',
-      },
-      {
-        image: 'assets/images/weeding_homepage.jpg',
-        title: 'Birthday wedding at home',
-      },
+    // this.images = [
+    //   {
+    //     image: 'assets/images/weeding_homepage.jpg',
+    //     title: 'Birthday wedding at home',
+    //   },
+    //   {
+    //     image: 'assets/images/birthday_homepage.jpg',
+    //     title: 'Birthday wedding at home',
+    //   },
+    //   {
+    //     image: 'assets/images/weeding_homepage.jpg',
+    //     title: 'Birthday wedding at home',
+    //   },
+    //   {
+    //     image: 'assets/images/party_homepage.jpg',
+    //     title: 'Birthday wedding at home',
+    //   },
+    //   {
+    //     image: 'assets/images/weeding_homepage.jpg',
+    //     title: 'Birthday wedding at home',
+    //   },
+    //   {
+    //     image: 'assets/images/weeding_homepage.jpg',
+    //     title: 'Birthday wedding at home',
+    //   },
 
-      {
-        image: 'assets/images/weeding_homepage.jpg',
-        title: 'Birthday wedding at home',
-      },
+    //   {
+    //     image: 'assets/images/weeding_homepage.jpg',
+    //     title: 'Birthday wedding at home',
+    //   },
 
-      {
-        image: 'assets/images/weeding_homepage.jpg',
-        title: 'Birthday wedding at home',
-      },
+    //   {
+    //     image: 'assets/images/weeding_homepage.jpg',
+    //     title: 'Birthday wedding at home',
+    //   },
 
-      {
-        image: 'assets/images/weeding_homepage.jpg',
-        title: 'Birthday wedding at home',
-      },
-      {
-        image: 'assets/images/weeding_homepage.jpg',
-        title: 'Birthday wedding at home',
-      },
-      {
-        image: 'assets/images/weeding_homepage.jpg',
-        title: 'Birthday wedding at home',
-      }
-      , {
-        image: 'assets/images/weeding_homepage.jpg',
-        title: 'Birthday wedding at home',
-      }
-      , {
-        image: 'assets/images/weeding_homepage.jpg',
-        title: 'Birthday wedding at home',
-      }
+    //   {
+    //     image: 'assets/images/weeding_homepage.jpg',
+    //     title: 'Birthday wedding at home',
+    //   },
+    //   {
+    //     image: 'assets/images/weeding_homepage.jpg',
+    //     title: 'Birthday wedding at home',
+    //   },
+    //   {
+    //     image: 'assets/images/weeding_homepage.jpg',
+    //     title: 'Birthday wedding at home',
+    //   }
+    //   , {
+    //     image: 'assets/images/weeding_homepage.jpg',
+    //     title: 'Birthday wedding at home',
+    //   }
+    //   , {
+    //     image: 'assets/images/weeding_homepage.jpg',
+    //     title: 'Birthday wedding at home',
+    //   }
 
-    ];
+    // ];
     // this.getSuccessStory();
   }
 

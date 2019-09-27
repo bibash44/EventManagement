@@ -28,19 +28,19 @@ export class ServeicesPageComponent implements OnInit {
   ngOnInit() {
     this.servicesContainer = [
       {
-        routeLink: '/services',
+        routeLink: '/services/wedding',
         toolTip: 'Click to know more about weeding',
         image: 'assets/images/weeding_homepage.jpg',
         title: 'Wedding'
       },
       {
-        routeLink: '/services',
+        routeLink: '/services/birthday',
         toolTip: 'Click to know more about birthday',
         image: 'assets/images/birthday_homepage.jpg',
         title: 'Birthday'
       },
       {
-        routeLink: '/services',
+        routeLink: '/services/party',
         toolTip: 'Click to know more about party',
         image: 'assets/images/party_homepage.jpg',
         title: 'Party'

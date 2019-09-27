@@ -1,3 +1,4 @@
+import { AppServiceService } from './../../app-service.service';
 import { WeedingServiceService } from './weeding-service.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -11,6 +12,7 @@ export class WeedingImagesComponent implements OnInit {
 
 
   images: any;
+  base_url = this.BASE_URL.publishBaseUrl();
 
   getweedingImages() {
 
@@ -22,35 +24,36 @@ export class WeedingImagesComponent implements OnInit {
 
   }
 
-  constructor(private weedingServices: WeedingServiceService) { }
+  constructor(private weedingServices: WeedingServiceService, private BASE_URL: AppServiceService) { }
 
   ngOnInit() {
     // this.getweedingImages();
+    this.getweedingImages();
 
-    this.images = [
-      {
-        image: 'assets/images/weeding_homepage.jpg',
-        title: 'Birthday wedding at home',
-      },
-      {
-        image: 'assets/images/weeding_homepage.jpg',
-        title: 'Birthday wedding at home',
-      },
-      {
-        image: 'assets/images/weeding_homepage.jpg',
-        title: 'Birthday wedding at home',
-      },
-      {
-        image: 'assets/images/weeding_homepage.jpg',
-        title: 'Birthday wedding at home',
-      },
+    // this.images = [
+    //   {
+    //     image: 'assets/images/weeding_homepage.jpg',
+    //     title: 'Birthday wedding at home',
+    //   },
+    //   {
+    //     image: 'assets/images/weeding_homepage.jpg',
+    //     title: 'Birthday wedding at home',
+    //   },
+    //   {
+    //     image: 'assets/images/weeding_homepage.jpg',
+    //     title: 'Birthday wedding at home',
+    //   },
+    //   {
+    //     image: 'assets/images/weeding_homepage.jpg',
+    //     title: 'Birthday wedding at home',
+    //   },
 
-      {
-        image: 'assets/images/weeding_homepage.jpg',
-        title: 'Birthday wedding at home',
-      },
+    //   {
+    //     image: 'assets/images/weeding_homepage.jpg',
+    //     title: 'Birthday wedding at home',
+    //   },
 
-    ];
+    // ];
   }
 
 }

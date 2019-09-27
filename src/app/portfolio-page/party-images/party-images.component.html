@@ -9,8 +9,8 @@
 
       <div class="row w-100 text-center m-0 mt-5" id="services">
         <div class="col-md-2 text-center p-2 images-container mt-5" *ngFor="let photo of images" id="images-container">
-          <a href="{{photo.image}}" target="_blank">
-            <img [style.background]="'url(' + photo.image + ')'" id="image" [style.backgroundSize]="'cover'"
+          <a [href]="base_url+'uploads/images/portfolio/'+photo.image" target="_blank">
+            <img [style.background]="'url(' +base_url+'uploads/images/portfolio/'+photo.image + ')'" id="image" [style.backgroundSize]="'cover'"
               [style.backgroundRepeat]="'no-repeat'">
           </a>
           <span id="image-caption">{{photo.title}}</span>

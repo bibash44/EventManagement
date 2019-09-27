@@ -1,6 +1,6 @@
-import {ImagesliderService} from './imageslider.service';
-import {Component, OnInit} from '@angular/core';
-import {AppServiceService} from '../../app-service.service';
+import { ImagesliderService } from './imageslider.service';
+import { Component, OnInit } from '@angular/core';
+import { AppServiceService } from '../../app-service.service';
 
 
 @Component({
@@ -24,10 +24,11 @@ export class ImagesliderComponent implements OnInit {
       }
       else {
         this.isValueFromServerReceived = false;
+        this.sliderimages = this.staticImages;
       }
     });
 
-    console.log(this.isValueFromServerReceived);
+
   }
 
   constructor(private imageSliderService: ImagesliderService, private BASE_URL: AppServiceService) {

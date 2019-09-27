@@ -1,3 +1,4 @@
+import { AppServiceService } from './../../../../app-service.service';
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 
@@ -7,6 +8,10 @@ import * as $ from 'jquery';
   styleUrls: ['./contact-create.component.css']
 })
 export class ContactCreateComponent implements OnInit {
+
+  url = this.BASE_URL.publishBaseUrl();
+
+  constructor(private BASE_URL: AppServiceService) { }
 
 
   contactFormSubmit() {
@@ -20,27 +25,27 @@ export class ContactCreateComponent implements OnInit {
     if (emailValue === '') {
       $('#email').attr('placeholder', 'Please enter a email address *');
       $('#email').focus();
-      $('#email').css({border: '2px solid red'});
+      $('#email').css({ border: '2px solid red' });
 
     } else if (phoneOneValue === '') {
       $('#phoneOne').attr('placeholder', 'Please enter a phone number *');
       $('#phoneOne').focus();
-      $('#phoneOne').css({border: '2px solid red'});
+      $('#phoneOne').css({ border: '2px solid red' });
 
-    }  else if (mapValue === '') {
+    } else if (mapValue === '') {
       $('#map').attr('placeholder', 'Please insert map link *');
       $('#map').focus();
-      $('#map').css({border: '2px solid red'});
+      $('#map').css({ border: '2px solid red' });
 
     } else if (openingHourValue === '') {
       $('#openingHour').attr('placeholder', 'Please enter the opening hour *');
       $('#openingHour').focus();
-      $('#openingHour').css({border: '2px solid red'});
+      $('#openingHour').css({ border: '2px solid red' });
 
     } else if (addressValue === '') {
       $('#address').attr('placeholder', 'Please set a address *');
       $('#address').focus();
-      $('#address').css({border: '2px solid red'});
+      $('#address').css({ border: '2px solid red' });
 
     } else {
       const data = {
@@ -54,7 +59,7 @@ export class ContactCreateComponent implements OnInit {
 
       $.ajax({
         type: 'PUT',
-        url: 'https://eventmandu.com/contact/update/contact',
+        url: this.url + 'contact/update/contact',
         data,
         success(res) {
           if (res) {
@@ -92,17 +97,17 @@ export class ContactCreateComponent implements OnInit {
 
     $.ajax({
       type: 'GET',
-      url: 'https://localhost:1954/contact/getContact',
+      url: this.url + 'contact/getContact',
       success(data) {
 
 
-          $('#id').val(data.id);
-          $('#email').val(data[0].email);
-          $('#phoneOne').val(data[0].phone_one);
-          $('#phoneTwo').val(data[0].phone_two);
-          $('#map').val(data[0].map);
-          $('#openingHour').val(data[0].opening_hour);
-          $('#address').val(data[0].address);
+        $('#id').val(data.id);
+        $('#email').val(data[0].email);
+        $('#phoneOne').val(data[0].phone_one);
+        $('#phoneTwo').val(data[0].phone_two);
+        $('#map').val(data[0].map);
+        $('#openingHour').val(data[0].opening_hour);
+        $('#address').val(data[0].address);
 
 
       },
@@ -113,7 +118,7 @@ export class ContactCreateComponent implements OnInit {
 
   }
 
-  constructor() { }
+
 
   ngOnInit() {
     this.populateForm();

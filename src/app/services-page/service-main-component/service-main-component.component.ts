@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -12,6 +13,28 @@ export class ServiceMainComponentComponent implements OnInit {
 
 
   service_category: string = '';
+
+  public Urlitem: string;
+  constructor(private activatedRoute: ActivatedRoute) {
+    this.Urlitem = this.activatedRoute.snapshot.paramMap.get('service');
+  }
+
+
+
+  ngOnInit() {
+    if (this.Urlitem === 'wedding') {
+      this.showWeedingService();
+    }
+
+    else if (this.Urlitem === 'birthday') {
+      this.showBirthdayService();
+    }
+
+    else if (this.Urlitem === 'party') {
+      this.showPartyService();
+    }
+  }
+
 
 
 
@@ -64,10 +87,6 @@ export class ServiceMainComponentComponent implements OnInit {
   }
 
 
-  constructor() {
-  }
 
-  ngOnInit() {
-  }
 
 }

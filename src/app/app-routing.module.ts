@@ -60,6 +60,11 @@ const routes: Routes = [
     component: AboutUsPageComponent,
     data: { aboutactive: 'aboutactive' }
   },
+  {
+    path: 'services/:service',
+    component: ServiceMainComponentComponent,
+    data: { activservice: 'activeservice' }
+  },
 
 
 
@@ -81,7 +86,7 @@ const routes: Routes = [
 
       {
         path: 'about',
-        component: AboutpageComponent ,
+        component: AboutpageComponent,
         data: { aboutactive: 'aboutactive' }
       },
 

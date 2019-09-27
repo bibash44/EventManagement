@@ -1,3 +1,4 @@
+import { AppServiceService } from './../../app-service.service';
 // import { ReviewSectionServiceService } from './review.service';
 import { Component, OnInit } from '@angular/core';
 import { ReviewSectionService } from './review-section.service';
@@ -12,9 +13,10 @@ export class ReviewSectionComponentComponent implements OnInit {
 
 
   comments: any;
-  base_url: string = 'https://eventmandu.com/';
+  // base_url: string = 'https://eventmandu.com/';
+  base_url: string = this.BASE_URL.publishBaseUrl();
 
-  constructor(private reviewService: ReviewSectionService) { }
+  constructor(private reviewService: ReviewSectionService, private BASE_URL: AppServiceService) { }
 
   firstImage = 0;
   secondImage = 1;

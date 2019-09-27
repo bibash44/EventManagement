@@ -1,3 +1,4 @@
+import { AppServiceService } from './../../app-service.service';
 import { Component, OnInit } from '@angular/core';
 import { BirthdayServiceService } from './birthday-service.service';
 
@@ -10,6 +11,7 @@ import { BirthdayServiceService } from './birthday-service.service';
 export class BirthdayImagesComponent implements OnInit {
 
   images: any;
+  base_url = this.BASE_URL.publishBaseUrl();
 
   birthdayImages() {
 
@@ -20,36 +22,36 @@ export class BirthdayImagesComponent implements OnInit {
       });
   }
 
-  constructor(private birthdayServices: BirthdayServiceService) { }
+  constructor(private birthdayServices: BirthdayServiceService, private BASE_URL: AppServiceService) { }
 
   ngOnInit() {
-
+    this.birthdayImages();
     // this.birthdayImages();
 
-    this.images = [
-      {
-        image: 'assets/images/weeding_homepage.jpg',
-        title: 'Birthday wedding at home',
-      },
-      {
-        image: 'assets/images/weeding_homepage.jpg',
-        title: 'Birthday wedding at home',
-      },
-      {
-        image: 'assets/images/weeding_homepage.jpg',
-        title: 'Birthday wedding at home',
-      },
-      {
-        image: 'assets/images/weeding_homepage.jpg',
-        title: 'Birthday wedding at home',
-      },
+    // this.images = [
+    //   {
+    //     image: 'assets/images/weeding_homepage.jpg',
+    //     title: 'Birthday wedding at home',
+    //   },
+    //   {
+    //     image: 'assets/images/weeding_homepage.jpg',
+    //     title: 'Birthday wedding at home',
+    //   },
+    //   {
+    //     image: 'assets/images/weeding_homepage.jpg',
+    //     title: 'Birthday wedding at home',
+    //   },
+    //   {
+    //     image: 'assets/images/weeding_homepage.jpg',
+    //     title: 'Birthday wedding at home',
+    //   },
 
-      {
-        image: 'assets/images/weeding_homepage.jpg',
-        title: 'Birthday wedding at home',
-      },
+    //   {
+    //     image: 'assets/images/weeding_homepage.jpg',
+    //     title: 'Birthday wedding at home',
+    //   },
 
-    ];
+    // ];
   }
 
 }
