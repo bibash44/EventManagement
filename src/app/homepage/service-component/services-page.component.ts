@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import {Component, OnInit, HostListener} from '@angular/core';
 import * as $ from 'jquery';
 
 @Component({
@@ -11,7 +11,8 @@ export class ServeicesPageComponent implements OnInit {
 
   servicesContainer: any;
 
-  constructor() { }
+  constructor() {
+  }
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
@@ -44,7 +45,7 @@ export class ServeicesPageComponent implements OnInit {
         image: 'assets/images/party_homepage.jpg',
         title: 'Party'
       }
-    ]
+    ];
 
   }
 

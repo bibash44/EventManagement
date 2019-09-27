@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import * as $ from 'jquery';
+import {AppServiceService} from '../../app-service.service';
 
 @Component({
   selector: 'app-review-form',
@@ -12,7 +13,7 @@ export class ReviewFormComponent implements OnInit {
   comment = '';
   imagename = '';
   // tslint:disable-next-line: no-inferrable-types
-  base_url: string = 'https://eventmandu.com/';
+  base_url: string = this.BASE_URL.publishBaseUrl();
 
   public imagePath;
   imgURL: any;
@@ -27,7 +28,7 @@ export class ReviewFormComponent implements OnInit {
     var mimeType = files[0].type;
     if (mimeType.match(/image\/*/) == null) {
       // tslint:disable-next-line: quotemark
-      this.message = "Only images are supported.";
+      this.message = 'Only images are supported.';
       return;
     }
 
@@ -37,7 +38,7 @@ export class ReviewFormComponent implements OnInit {
     reader.readAsDataURL(files[0]);
     reader.onload = (_event) => {
       this.imgURL = reader.result;
-    }
+    };
 
     this.uploadImageToServer($('#image'));
   }
@@ -48,10 +49,10 @@ export class ReviewFormComponent implements OnInit {
     let formData = new FormData();
     let files = imageUploadSelector.get(0).files;
     if (files.length > 0) {
-      formData.append("image", files[0]);
+      formData.append('image', files[0]);
     }
 
-    var fileDetails = imageUploadSelector[0].files[0]
+    var fileDetails = imageUploadSelector[0].files[0];
     var fileSize = fileDetails.size;
 
     if (fileSize > 10000000) {
@@ -74,7 +75,7 @@ export class ReviewFormComponent implements OnInit {
         processData: false,
         data: formData,
         success: function (data) {
-          console.log(data)
+          console.log(data);
           $('#imagename').val(data.image);
         },
         error: function () {
@@ -100,7 +101,7 @@ export class ReviewFormComponent implements OnInit {
     if (nameValue == '') {
       $('#name').attr('placeholder', 'Please enter a name *');
       $('#name').focus();
-      $('#name').css({ 'border': '2px solid red' });
+      $('#name').css({'border': '2px solid red'});
     }
 
 
@@ -108,14 +109,14 @@ export class ReviewFormComponent implements OnInit {
       $('#name').val('');
       $('#name').attr('placeholder', 'Please enter a valid name');
       $('#name').focus();
-      $('#name').css({ 'border': '2px solid red' });
+      $('#name').css({'border': '2px solid red'});
 
     }
 
     else if (commentValue == '') {
       $('#comment').attr('placeholder', 'Please enter a  comment *');
       $('#comment').focus();
-      $('#comment').css({ 'border': '2px solid red' });
+      $('#comment').css({'border': '2px solid red'});
 
     } else {
 
@@ -136,7 +137,7 @@ export class ReviewFormComponent implements OnInit {
           var database_failed = res.database_failed;
           var success = res.success;
 
-          console.log(res)
+          console.log(res);
 
           if (database_failed == false) {
             $('#comment-validation').removeClass('alert-success').fadeIn(100);
@@ -176,12 +177,13 @@ export class ReviewFormComponent implements OnInit {
             $('#comment-validation').fadeOut(100);
           }, 2000);
         }
-      })
+      });
 
     }
   }
 
-  constructor() { }
+  constructor(private BASE_URL: AppServiceService) {
+  }
 
   ngOnInit() {
   }

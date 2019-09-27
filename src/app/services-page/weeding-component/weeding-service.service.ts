@@ -1,5 +1,6 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {AppServiceService} from '../../app-service.service';
 
 
 @Injectable({
@@ -7,13 +8,14 @@ import { Injectable } from '@angular/core';
 })
 export class WeedingServiceService {
 
+  base_url = this.BASE_URL.publishBaseUrl();
 
-  base_url = 'https://eventmandu.com/';
   type = 'Wedding';
 
   getWeedingServices() {
     return this.http.get(this.base_url + 'services/get_services_type/' + this.type);
   }
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private BASE_URL: AppServiceService) {
+  }
 }

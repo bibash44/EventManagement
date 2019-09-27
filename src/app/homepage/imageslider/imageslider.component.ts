@@ -1,6 +1,6 @@
-import { ImagesliderService } from './imageslider.service';
-import { Component, OnInit } from '@angular/core';
-
+import {ImagesliderService} from './imageslider.service';
+import {Component, OnInit} from '@angular/core';
+import {AppServiceService} from '../../app-service.service';
 
 
 @Component({
@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./imageslider.component.css']
 })
 export class ImagesliderComponent implements OnInit {
+  base_url = this.BASE_URL.publishBaseUrl();
 
   sliderimages: any;
   isValueFromServerReceived = false;
@@ -29,7 +30,8 @@ export class ImagesliderComponent implements OnInit {
     console.log(this.isValueFromServerReceived);
   }
 
-  constructor(private imageSliderService: ImagesliderService) { }
+  constructor(private imageSliderService: ImagesliderService, private BASE_URL: AppServiceService) {
+  }
 
   ngOnInit() {
 

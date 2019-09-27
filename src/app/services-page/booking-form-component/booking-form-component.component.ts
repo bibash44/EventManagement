@@ -1,6 +1,6 @@
-
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import {Component, OnInit, ViewChild, AfterViewInit} from '@angular/core';
 import * as $ from 'jquery';
+import {AppServiceService} from '../../app-service.service';
 
 
 @Component({
@@ -15,9 +15,7 @@ export class BookingFormComponentComponent implements OnInit {
   phone_number = '';
   email = '';
   prefered_location = '';
-  base_url = 'https://eventmandu.com/';
-
-
+  base_url = this.BASE_URL.publishBaseUrl();
 
 
   bookingFormSubmit(name, phone_number, email, prefered_location) {
@@ -31,35 +29,35 @@ export class BookingFormComponentComponent implements OnInit {
     if (nameValue == '') {
       $('#name').attr('placeholder', 'Please enter a name *');
       $('#name').focus();
-      $('#name').css({ 'border': '2px solid red' });
+      $('#name').css({'border': '2px solid red'});
 
     } else if (!nameValue.match('^[A-Z a-z a-z A-Z]{3,16}$')) {
       $('#name').val('');
       $('#name').attr('placeholder', 'Please enter a valid name');
       $('#name').focus();
-      $('#name').css({ 'border': '2px solid red' });
+      $('#name').css({'border': '2px solid red'});
 
     } else if (phone_numberValue == '') {
       $('#phone_number').attr('placeholder', 'Please enter a phone number');
       $('#phone_number').focus();
-      $('#phone_number').css({ 'border': '2px solid red' });
+      $('#phone_number').css({'border': '2px solid red'});
 
     } else if (!phone_numberValue.match('([0-9 + -]+).{7,}')) {
       $('#phone_number').val('');
       $('#phone_number').attr('placeholder', 'Please enter a phone valid phone number');
       $('#phone_number').focus();
-      $('#phone_number').css({ 'border': '2px solid red' });
+      $('#phone_number').css({'border': '2px solid red'});
 
     } else if (emailValue == '') {
       $('#email').attr('placeholder', 'Please enter a email');
       $('#email').focus();
-      $('#email').css({ 'border': '2px solid red' });
+      $('#email').css({'border': '2px solid red'});
 
     } else if (!emailValue.match('[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$')) {
       $('#email').val('');
       $('#email').attr('placeholder', 'Please enter a valid email');
       $('#email').focus();
-      $('#email').css({ 'border': '2px solid red' });
+      $('#email').css({'border': '2px solid red'});
 
     } else {
 
@@ -117,12 +115,13 @@ export class BookingFormComponentComponent implements OnInit {
             $('#comment-validation').fadeOut(1000);
           }, 2000);
         }
-      })
+      });
     }
   }
 
 
-  constructor() { }
+  constructor(private BASE_URL: AppServiceService) {
+  }
 
   ngOnInit() {
   }
